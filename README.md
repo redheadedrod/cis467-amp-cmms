@@ -6,11 +6,11 @@ This will be used for the Winter 2017 GVSU Computer Science Project Team writing
 Please do NOT directly commit to this branch...   
 Proper branching method for this is:
 
-                Main Branch
-                            \
-                             Forked Branch for each team member (Can include additional branches within the fork)
-                                                         \
-                                                           Local Branch (Branch actually on local computer. Includes all WIP)
+Main Branch
+           \
+            Forked Branch for each team member (Can include additional branches within the fork)
+                                              \
+                                               Local Branch (Branch actually on local computer. Includes all WIP)
                                                           
 Proper work flow is to use local branch to do work in progress and use forked branch as a backup and for
 work to be pushed to the main branch.  
