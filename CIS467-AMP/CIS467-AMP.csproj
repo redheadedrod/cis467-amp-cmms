@@ -280,6 +280,15 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Admin\" />
+    <Folder Include="Controllers\Maintenance\" />
+    <Folder Include="Controllers\Stockroom\" />
+    <Folder Include="Models\Admin\" />
+    <Folder Include="Models\Maintenance\" />
+    <Folder Include="Models\Stockroom\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Maintenance\" />
+    <Folder Include="Views\Stockroom\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
