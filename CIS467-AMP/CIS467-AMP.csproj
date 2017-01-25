@@ -197,6 +197,21 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Areas\Shared\Model\AssetInventory.cs" />
+    <Compile Include="Areas\Shared\Model\AssetType.cs" />
+    <Compile Include="Areas\Shared\Model\JobPlan.cs" />
+    <Compile Include="Areas\Shared\Model\JobPlanDocuments.cs" />
+    <Compile Include="Areas\Shared\Model\JobPlanParts.cs" />
+    <Compile Include="Areas\Shared\Model\Manufacturer.cs" />
+    <Compile Include="Areas\Shared\Model\ManufacturerContact.cs" />
+    <Compile Include="Areas\Shared\Model\ManufacturerContactIndex.cs" />
+    <Compile Include="Areas\Shared\Model\Map.cs" />
+    <Compile Include="Areas\Shared\Model\PartsList.cs" />
+    <Compile Include="Areas\Shared\Model\PartsListIndex.cs" />
+    <Compile Include="Areas\Shared\Model\Variant.cs" />
+    <Compile Include="Areas\Shared\Model\Workers.cs" />
+    <Compile Include="Areas\Shared\Model\WorkGroup.cs" />
+    <Compile Include="Areas\Shared\Model\WorkGroupSupervisors.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -227,7 +242,6 @@
     <Content Include="Areas\Maintenance\Controller\text" />
     <Content Include="Areas\Maintenance\Model\text" />
     <Content Include="Areas\Maintenance\View\text" />
-    <Content Include="Areas\Shared\Model\text" />
     <Content Include="Areas\StockRoom\Controller\text" />
     <Content Include="Areas\StockRoom\Model\text" />
     <Content Include="Areas\StockRoom\View\text" />
@@ -280,15 +294,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Controllers\Admin\" />
-    <Folder Include="Controllers\Maintenance\" />
-    <Folder Include="Controllers\Stockroom\" />
-    <Folder Include="Models\Admin\" />
-    <Folder Include="Models\Maintenance\" />
-    <Folder Include="Models\Stockroom\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Maintenance\" />
-    <Folder Include="Views\Stockroom\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
