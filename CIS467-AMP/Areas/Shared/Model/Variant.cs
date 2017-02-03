@@ -17,8 +17,8 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class Variant
     {
-        public int VariantID { get; set; }
-        public int AssetTypeID { get; set; }
+        public int VariantId { get; set; }
+        public AssetType AssetTypeId { get; set; }
         public string VariantType { get; set; }
         public string VariantDescription { get; set; }
     }

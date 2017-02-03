@@ -13,7 +13,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class WorkGroup
     {
-        public int WorkGroupID { get; set; }
+        public int WorkGroupId { get; set; }
         public string Name { get; set; }
     }
 }

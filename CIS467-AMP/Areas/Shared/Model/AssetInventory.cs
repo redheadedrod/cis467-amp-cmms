@@ -16,10 +16,10 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class AssetInventory
     {
-        public int AssetInventoryID { get; set; }
-        public string AssetName { get; set; }
-        public int VariantID { get; set; }
-        public int MapID { get; set; }
+        public int AssetInventoryId { get; set; }
+        public AssetType AssetName { get; set; }
+        public Variant VariantId { get; set; }
+        public Map MapId { get; set; }
         public bool Active { get; set; }
     }
 }

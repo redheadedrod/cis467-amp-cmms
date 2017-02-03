@@ -17,7 +17,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class ManufacturerContact
     {
-        public int ManContactID { get; set; }
+        public int ManContactId { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string FaxNumber { get; set; }

@@ -19,7 +19,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class Manufacturer
     {
-        public int ManID { get; set; }
+        public int ManId { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

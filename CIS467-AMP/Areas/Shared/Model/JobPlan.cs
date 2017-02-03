@@ -14,8 +14,8 @@ namespace CIS467_AMP.Areas.Shared.Model
     ///  </summary>
     public class JobPlan
     {
-        public int JobPlanID { get; set; }
+        public int JobPlanId { get; set; }
         public string JobPlanName { get; set; }
-        public string VariantID { get; set; }
+        public Variant VariantId { get; set; }
     }
 }
