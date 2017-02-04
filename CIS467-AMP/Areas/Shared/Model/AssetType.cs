@@ -15,9 +15,9 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class AssetType
     {
-        public int AssetTypeID { get; set; }
+        public int AssetTypeId { get; set; }
         public string AssetName { get; set; }
-        public int ManID { get; set; } // Links to manufacturer field
-        public string PartNumber { get; set; } // Manufacturers part number for asset (can be number, numbers or combination)
+        public Manufacturer ManId { get; set; } // Links to manufacturer field
+        public Manufacturer PartNumber { get; set; } // Manufacturers part number for asset (can be number, numbers or combination)
     }
 }

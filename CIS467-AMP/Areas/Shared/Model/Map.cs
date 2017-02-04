@@ -23,7 +23,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class Map
     {
-        public int MapID { get; set; }
+        public int MapId { get; set; }
         public string Name { get; set; }
         public int Parent { get; set; }
         public string Address { get; set; }

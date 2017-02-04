@@ -15,12 +15,12 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// Name - name of part
     /// ManID - manufacturer ID
     /// </summary>
-    public class PartsList
+    public class Part
     {
-        public int PartID { get; set; }
+        public int PartId { get; set; }
         public int PartType { get; set; }
         public string Number { get; set;  } 
         public string Name { get; set; } 
-        public int ManID { get; set; } 
+        public Manufacturer ManId { get; set; } 
     }
 }

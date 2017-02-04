@@ -14,8 +14,8 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class PartsListIndex
     {
-        public int PartsListID { get; set; }
-        public int PartID { get; set; }
-        public int VariantID { get; set; }
+        public int PartsListId { get; set; }
+        public Part PartId { get; set; }
+        public Variant VariantId { get; set; }
     }
 }

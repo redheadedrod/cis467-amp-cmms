@@ -14,8 +14,8 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class WorkGroupSupervisors
     {
-        public int WorkGroupSupervisorsID { get; set; }
-        public int WorkerID { get; set; }
-        public int WorkGroupID { get; set; }
+        public int WorkGroupSupervisorsId { get; set; }
+        public Worker WorkerId { get; set; }
+        public WorkGroup WorkGroupId { get; set; }
     }
 }

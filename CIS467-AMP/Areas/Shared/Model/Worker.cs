@@ -15,12 +15,12 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// PhoneNumber - contact number for employee
     /// EmailAddress - contact email for employee
     /// </summary>
-    public class Workers
+    public class Worker
     {
-        public int WorkerID { get; set; }
-        public int WorkGroupID { get; set; }
+        public int WorkerId { get; set; }
+        public WorkGroup WorkGroupId { get; set; }
         public string Name { get; set; }
-        public string EmployeeID { get; set; }
+        public string EmployeeId { get; set; }
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }
     }

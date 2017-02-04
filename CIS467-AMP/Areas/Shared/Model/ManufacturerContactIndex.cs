@@ -16,8 +16,8 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class ManufacturerContactIndex
     {
-        public int ID { get; set; }
-        public int ManID { get; set; } 
-        public int ManContactID { get; set; }
+        public int Id { get; set; }
+        public Manufacturer ManId { get; set; } 
+        public ManufacturerContact ManContactId { get; set; }
     }
 }
