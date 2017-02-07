@@ -206,10 +206,10 @@
     <Compile Include="Areas\Shared\Model\ManufacturerContact.cs" />
     <Compile Include="Areas\Shared\Model\ManufacturerContactIndex.cs" />
     <Compile Include="Areas\Shared\Model\Map.cs" />
-    <Compile Include="Areas\Shared\Model\PartsList.cs" />
+    <Compile Include="Areas\Shared\Model\Part.cs" />
     <Compile Include="Areas\Shared\Model\PartsListIndex.cs" />
     <Compile Include="Areas\Shared\Model\Variant.cs" />
-    <Compile Include="Areas\Shared\Model\Workers.cs" />
+    <Compile Include="Areas\Shared\Model\Worker.cs" />
     <Compile Include="Areas\Shared\Model\WorkGroup.cs" />
     <Compile Include="Areas\Shared\Model\WorkGroupSupervisors.cs" />
     <Compile Include="Controllers\AccountController.cs" />
