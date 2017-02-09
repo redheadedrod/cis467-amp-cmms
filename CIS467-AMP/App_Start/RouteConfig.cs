@@ -9,6 +9,12 @@ namespace CIS467_AMP
 {
     public class RouteConfig
     {
+
+        /**
+         * 
+         * Routes will be configured and mapped to each individual area of the web application
+         *
+         */
         public static void RegisterRoutes(RouteCollection routes)
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
@@ -19,27 +25,39 @@ namespace CIS467_AMP
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
+
+            /**
+             * 
+             * Default routes configured to each Area of the project
+             * 
+             */
+    
             routes.MapRoute(
                 name: "Admin",
-                url: "Areas/Admin/{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "Admin/{controller}/{action}/{id}",
+                defaults: new { controller = "Admin", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "StockRoom",
-                url: "Areas/StockRoom/{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "StockRoom/{controller}/{action}/{id}",
+                defaults: new { controller = "StockRoom", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
                 name: "Maintenance",
-                url: "Areas/Maintenance/{controller}/{action}/{id}",
-                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
+                url: "Maintenance/{controller}/{action}/{id}",
+                defaults: new { controller = "Maintenance", action = "Index", id = UrlParameter.Optional }
             );
 
             routes.MapRoute(
+                name: "Logbook",
+                url: "Logbook/{controller}/{action}/{id}",
+                defaults: new { controller = "Logbook", action = "Index", id = UrlParameter.Optional }
+            );
+            routes.MapRoute(
                 name: "Shared",
-                url: "Areas/Shared/{controller}/{action}/{id}",
+                url: "Shared/{controller}/{action}/{id}",
                 defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
         }

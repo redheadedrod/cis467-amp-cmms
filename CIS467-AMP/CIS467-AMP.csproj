@@ -197,21 +197,22 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
-    <Compile Include="Areas\Shared\Model\AssetInventory.cs" />
-    <Compile Include="Areas\Shared\Model\AssetType.cs" />
-    <Compile Include="Areas\Shared\Model\JobPlan.cs" />
-    <Compile Include="Areas\Shared\Model\JobPlanDocuments.cs" />
-    <Compile Include="Areas\Shared\Model\JobPlanParts.cs" />
-    <Compile Include="Areas\Shared\Model\Manufacturer.cs" />
-    <Compile Include="Areas\Shared\Model\ManufacturerContact.cs" />
-    <Compile Include="Areas\Shared\Model\ManufacturerContactIndex.cs" />
-    <Compile Include="Areas\Shared\Model\Map.cs" />
-    <Compile Include="Areas\Shared\Model\Part.cs" />
-    <Compile Include="Areas\Shared\Model\PartsListIndex.cs" />
-    <Compile Include="Areas\Shared\Model\Variant.cs" />
-    <Compile Include="Areas\Shared\Model\Worker.cs" />
-    <Compile Include="Areas\Shared\Model\WorkGroup.cs" />
-    <Compile Include="Areas\Shared\Model\WorkGroupSupervisors.cs" />
+    <Compile Include="Models\Shared\AssetInventory.cs" />
+    <Compile Include="Models\Shared\AssetType.cs" />
+    <Compile Include="Models\Shared\JobPlan.cs" />
+    <Compile Include="Models\Shared\JobPlanDocuments.cs" />
+    <Compile Include="Models\Shared\JobPlanParts.cs" />
+    <Compile Include="Models\Shared\Manufacturer.cs" />
+    <Compile Include="Models\Shared\ManufacturerContact.cs" />
+    <Compile Include="Models\Shared\ManufacturerContactIndex.cs" />
+    <Compile Include="Models\Shared\Map.cs" />
+    <Compile Include="Models\Shared\Part.cs" />
+    <Compile Include="Models\Shared\PartsListIndex.cs" />
+    <Compile Include="Models\Shared\Variant.cs" />
+    <Compile Include="Models\Shared\Worker.cs" />
+    <Compile Include="Models\Shared\WorkGroup.cs" />
+    <Compile Include="Models\Shared\WorkGroupSupervisors.cs" />
+    <Compile Include="Controllers\StockRoom\StockRoomController.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -236,15 +237,6 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Areas\Admin\Controller\text" />
-    <Content Include="Areas\Admin\Model\text" />
-    <Content Include="Areas\Admin\View\text" />
-    <Content Include="Areas\Maintenance\Controller\text" />
-    <Content Include="Areas\Maintenance\Model\text" />
-    <Content Include="Areas\Maintenance\View\text" />
-    <Content Include="Areas\StockRoom\Controller\text" />
-    <Content Include="Areas\StockRoom\Model\text" />
-    <Content Include="Areas\StockRoom\View\text" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -291,9 +283,21 @@
     <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
+    <Content Include="Views\Shared\_Navbar.cshtml" />
+    <Content Include="Views\StockRoom\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Controllers\Admin\" />
+    <Folder Include="Controllers\Logbook\" />
+    <Folder Include="Controllers\Maintenance\" />
+    <Folder Include="Models\Admin\" />
+    <Folder Include="Models\Logbook\" />
+    <Folder Include="Models\Maintenance\" />
+    <Folder Include="Models\StockRoom\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Logbook\" />
+    <Folder Include="Views\Maintenance\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
