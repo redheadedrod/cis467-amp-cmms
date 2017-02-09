@@ -6,10 +6,10 @@
     <title>@ViewBag.Title</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/HomePage.css")
 
 </head>
 <body>
-    @Html.Partial("_Navbar");
     <div class="container body-content">
         @RenderBody()
         <hr />
