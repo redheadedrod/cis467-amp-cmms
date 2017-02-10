@@ -197,6 +197,19 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Controllers\Admin\AdminController.cs" />
+    <Compile Include="Controllers\Logbook\LogbookController.cs" />
+    <Compile Include="Controllers\Maintenance\MaintenanceController.cs" />
+    <Compile Include="Models\Logbook\Record.cs" />
+    <Compile Include="Models\Logbook\Status.cs" />
+    <Compile Include="Models\Logbook\Type.cs" />
+    <Compile Include="Models\Maintenance\ClassOfIssue.cs" />
+    <Compile Include="Models\Maintenance\Issue.cs" />
+    <Compile Include="Models\Maintenance\PartIndex.cs" />
+    <Compile Include="Models\Maintenance\Status.cs" />
+    <Compile Include="Models\Maintenance\Type.cs" />
+    <Compile Include="Models\Maintenance\WorkOrderRecord.cs" />
+    <Compile Include="Models\Maintenance\WorkTime.cs" />
     <Compile Include="Models\Shared\AssetInventory.cs" />
     <Compile Include="Models\Shared\AssetType.cs" />
     <Compile Include="Models\Shared\JobPlan.cs" />
@@ -238,12 +251,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Controllers\Admin\text" />
-    <Content Include="Controllers\Logbook\text" />
-    <Content Include="Controllers\Maintenance\text" />
     <Content Include="Models\Admin\text" />
-    <Content Include="Models\Logbook\text" />
-    <Content Include="Models\Maintenance\text" />
     <Content Include="Models\StockRoom\text" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -268,8 +276,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Account\_ExternalLoginsListPartial.cshtml" />
     <Content Include="Views\Account\ConfirmEmail.cshtml" />
@@ -293,10 +299,10 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\StockRoom\Index.cshtml" />
-    <Content Include="Views\Admin\text" />
-    <Content Include="Views\Logbook\text" />
-    <Content Include="Views\Maintenance\text" />
     <Content Include="Views\Shared\_HomeLayout.cshtml" />
+    <Content Include="Views\Logbook\Index.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Maintenance\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
