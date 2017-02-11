@@ -1,10 +1,15 @@
-﻿namespace CIS467_AMP.Models.Shared
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+
+namespace CIS467_AMP.Models.StockRoom
 {
     /// <summary>
     /// This class is simply a manufacturer listing 
     /// Contacts will be associated through the Manufacturer Contact Index 
     ///
-    /// ManId - Id for this entry
+    /// Id - Id for this entry
     /// Name - Name of manufacturer
     /// Address - Address of home office
     /// City - city of home office
@@ -12,9 +17,9 @@
     /// Country - Country of home office
     /// PostalCode - Postal code of home office
     /// </summary>
-    public class Manufacturer
+    public class Supplier
     {
-        public int ManId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

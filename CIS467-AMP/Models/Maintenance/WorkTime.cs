@@ -20,6 +20,6 @@ namespace CIS467_AMP.Models.Maintenance
         public Worker WorkerId { get; set; }
         public DateTime StartTime { get; set; }
         public int HoursWorked { get; set; }
-        public WorkOrderRecord WorkOrderId { get; set; }
+        public WorkOrder WorkOrderId { get; set; }
     }
 }

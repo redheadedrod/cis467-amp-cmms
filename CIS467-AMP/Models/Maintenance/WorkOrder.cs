@@ -21,7 +21,7 @@ namespace CIS467_AMP.Models.Maintenance
     /// LongDesc - additional information about work to be done if necissary. 
     /// IssueId - Id of the type of issue this work order is addressing
     /// </summary>
-    public class WorkOrderRecord
+    public class WorkOrder
     {
         //
         public int Id { get; set; }
