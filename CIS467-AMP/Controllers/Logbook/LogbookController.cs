@@ -13,5 +13,26 @@ namespace CIS467_AMP.Controllers.Logbook
         {
             return View();
         }
+
+        public ActionResult General()
+        {
+            return View();
+        }
+
+        public ActionResult GeneralEntry()
+        {
+            return View();
+        }
+
+        public ActionResult Maintenance()
+        {
+            return View();
+        }
+
+        public ActionResult Stockroom()
+        {
+            return View();
+        }
+
     }
 }
