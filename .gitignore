@@ -2,5 +2,7 @@
 *.dll
 *.pdb
 *.cache
+*.mdf
+*.ldf
 bin\*.*
 obj\*.*
