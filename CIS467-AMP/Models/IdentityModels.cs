@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using CIS467_AMP.Models.Shared;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 
@@ -20,6 +21,24 @@ namespace CIS467_AMP.Models
 
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
+        // Shared databases - Must be done in this order due to dependencies
+        public DbSet<Manufacturer> Manufacturers { get; set; }
+        public DbSet<Map> Maps { get; set; }
+        public DbSet<WorkGroup> WorkGroups { get; set; }
+        public DbSet<ManufacturerContact> ManufacturerContacts { get; set; }
+        public DbSet<Part> Parts { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<AssetType> AssetTypes { get; set; }
+        public DbSet<PartsListIndex> PartsListIndices { get; set; }
+        public DbSet<WorkGroupSupervisor> WorkGroupSupervisors { get; set; }
+        public DbSet<Variant> Variants { get; set; }
+        public DbSet<AssetInventory> AssetInventories { get; set; }
+        public DbSet<JobPlan> JobPlans { get; set; }
+        public DbSet<JobPlanDocument> JobPlanDocuments { get; set; }
+        public DbSet<JobPlanPart> JobPlanParts { get; set; }
+        /*public DbSet<> Type { get; set; }
+        public DbSet<> Type { get; set; }
+        public DbSet<> Type { get; set; }*/
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

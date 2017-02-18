@@ -8,7 +8,7 @@
     /// </summary>
     public class WorkGroup
     {
-        public int WorkGroupId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

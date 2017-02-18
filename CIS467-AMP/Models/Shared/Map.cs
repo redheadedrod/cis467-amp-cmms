@@ -18,7 +18,7 @@
     /// </summary>
     public class Map
     {
-        public int MapId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Parent { get; set; }
         public string Address { get; set; }

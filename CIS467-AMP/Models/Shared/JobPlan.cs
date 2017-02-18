@@ -9,7 +9,7 @@
     ///  </summary>
     public class JobPlan
     {
-        public int JobPlanId { get; set; }
+        public int Id { get; set; }
         public string JobPlanName { get; set; }
         public Variant VariantId { get; set; }
     }

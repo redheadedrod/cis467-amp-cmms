@@ -11,7 +11,7 @@
     /// </summary>
     public class AssetInventory
     {
-        public int AssetInventoryId { get; set; }
+        public int Id { get; set; }
         public AssetType AssetName { get; set; }
         public Variant VariantId { get; set; }
         public Map MapId { get; set; }
