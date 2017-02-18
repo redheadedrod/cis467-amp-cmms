@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using Antlr.Runtime;
-
-namespace CIS467_AMP.Areas.Shared.Model
+﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// parts listing
@@ -17,7 +11,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class Part
     {
-        public int PartId { get; set; }
+        public int Id { get; set; }
         public int PartType { get; set; }
         public string Number { get; set;  } 
         public string Name { get; set; } 

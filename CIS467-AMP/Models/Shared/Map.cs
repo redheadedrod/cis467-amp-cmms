@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CIS467_AMP.Areas.Shared.Model
+﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// Map index listing
@@ -23,7 +18,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class Map
     {
-        public int MapId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int Parent { get; set; }
         public string Address { get; set; }

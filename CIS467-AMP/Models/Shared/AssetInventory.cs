@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CIS467_AMP.Areas.Shared.Model
+﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// List of currently installed assets
@@ -16,7 +11,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class AssetInventory
     {
-        public int AssetInventoryId { get; set; }
+        public int Id { get; set; }
         public AssetType AssetName { get; set; }
         public Variant VariantId { get; set; }
         public Map MapId { get; set; }

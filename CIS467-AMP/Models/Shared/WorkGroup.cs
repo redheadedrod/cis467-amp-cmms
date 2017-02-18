@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CIS467_AMP.Areas.Shared.Model
+﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// Work Group listing
@@ -13,7 +8,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class WorkGroup
     {
-        public int WorkGroupId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
     }
 }

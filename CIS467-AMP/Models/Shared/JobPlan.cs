@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CIS467_AMP.Areas.Shared.Model
+﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// Job plan listings
@@ -14,7 +9,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     ///  </summary>
     public class JobPlan
     {
-        public int JobPlanId { get; set; }
+        public int Id { get; set; }
         public string JobPlanName { get; set; }
         public Variant VariantId { get; set; }
     }

@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CIS467_AMP.Areas.Shared.Model
+﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// This class is simply a manufacturer listing 
     /// Contacts will be associated through the Manufacturer Contact Index 
     ///
-    /// ManID - Id for this entry
+    /// ManId - Id for this entry
     /// Name - Name of manufacturer
     /// Address - Address of home office
     /// City - city of home office
@@ -19,7 +14,7 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class Manufacturer
     {
-        public int ManId { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Address { get; set; }
         public string City { get; set; }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-
-namespace CIS467_AMP.Areas.Shared.Model
+﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// This class will hold asset types
@@ -15,9 +10,9 @@ namespace CIS467_AMP.Areas.Shared.Model
     /// </summary>
     public class AssetType
     {
-        public int AssetTypeId { get; set; }
+        public int Id { get; set; }
         public string AssetName { get; set; }
         public Manufacturer ManId { get; set; } // Links to manufacturer field
-        public Manufacturer PartNumber { get; set; } // Manufacturers part number for asset (can be number, numbers or combination)
+        public string PartNumber { get; set; } // Manufacturers part number for asset (can be number, numbers or combination)
     }
 }
