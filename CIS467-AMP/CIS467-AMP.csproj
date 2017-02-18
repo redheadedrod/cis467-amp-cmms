@@ -322,6 +322,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Models\Admin\text" />
+    <Content Include="Project Documentation\Combined AMS-CMMS-Draft.docx" />
+    <Content Include="Project Documentation\Plan.pdf" />
+    <Content Include="Project Documentation\Plan.vsd" />
+    <Content Include="Project Documentation\Stockroom\StockoomDescription.docx" />
+    <Content Include="Project Documentation\Stockroom\Stockroom webform workflow.docx" />
+    <Content Include="Project Documentation\Maintenance\Maintenance Description.docx" />
+    <Content Include="Project Documentation\Maintenance\Maintenance webform workflow.docx" />
+    <Content Include="Project Documentation\Admin\AdminDescription.docx" />
+    <Content Include="Project Documentation\Logbook\Logbook webpage workflow.docx" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
