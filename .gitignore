@@ -2,8 +2,6 @@
 *.dll
 *.pdb
 *.cache
-*.mdf
-*.ldf
 bin\*.*
 obj\*.*
 /CIS467-AMP/Scripts
