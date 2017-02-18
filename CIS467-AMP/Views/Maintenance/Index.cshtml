@@ -12,8 +12,15 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div>
-    <h1>
-        @ViewBag.Title - AMP
-    </h1>
+<div class="row">
+    <div class="col col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+            <li>@Html.ActionLink("Maintenance Home", "Index")</li>
+            <li>@Html.ActionLink("Current Work Orders", "CurrentWorkOrder")</li>
+            <li>@Html.ActionLink("Create Work Order", "WorkOrder")</li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <h1>@ViewBag.Title</h1>
+    </div>
 </div>
