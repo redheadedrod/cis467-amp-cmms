@@ -228,15 +228,47 @@
     <Compile Include="Migrations\201702180936061_Shared-6.Designer.cs">
       <DependentUpon>201702180936061_Shared-6.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702181021129_Maintenance-1.cs" />
+    <Compile Include="Migrations\201702181021129_Maintenance-1.Designer.cs">
+      <DependentUpon>201702181021129_Maintenance-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181021411_Maintenance-2.cs" />
+    <Compile Include="Migrations\201702181021411_Maintenance-2.Designer.cs">
+      <DependentUpon>201702181021411_Maintenance-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181022170_Maintenance-3.cs" />
+    <Compile Include="Migrations\201702181022170_Maintenance-3.Designer.cs">
+      <DependentUpon>201702181022170_Maintenance-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181023448_Stockroom-1.cs" />
+    <Compile Include="Migrations\201702181023448_Stockroom-1.Designer.cs">
+      <DependentUpon>201702181023448_Stockroom-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181026231_Stockroom-2.cs" />
+    <Compile Include="Migrations\201702181026231_Stockroom-2.Designer.cs">
+      <DependentUpon>201702181026231_Stockroom-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181027571_Stockroom-3.cs" />
+    <Compile Include="Migrations\201702181027571_Stockroom-3.Designer.cs">
+      <DependentUpon>201702181027571_Stockroom-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181030153_Logbook-1.cs" />
+    <Compile Include="Migrations\201702181030153_Logbook-1.Designer.cs">
+      <DependentUpon>201702181030153_Logbook-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702181030460_Logbook-2.cs" />
+    <Compile Include="Migrations\201702181030460_Logbook-2.Designer.cs">
+      <DependentUpon>201702181030460_Logbook-2.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Logbook\Record.cs" />
-    <Compile Include="Models\Logbook\Status.cs" />
-    <Compile Include="Models\Logbook\Type.cs" />
+    <Compile Include="Models\Logbook\LogbookRecord.cs" />
+    <Compile Include="Models\Logbook\LogbookStatus.cs" />
+    <Compile Include="Models\Logbook\LogbookType.cs" />
     <Compile Include="Models\Maintenance\ClassOfIssue.cs" />
     <Compile Include="Models\Maintenance\Issue.cs" />
     <Compile Include="Models\Maintenance\PartIndex.cs" />
-    <Compile Include="Models\Maintenance\Status.cs" />
-    <Compile Include="Models\Maintenance\Type.cs" />
+    <Compile Include="Models\Maintenance\MaintenanceStatus.cs" />
+    <Compile Include="Models\Maintenance\MaintenanceType.cs" />
     <Compile Include="Models\Maintenance\WorkOrder.cs" />
     <Compile Include="Models\Maintenance\WorkTime.cs" />
     <Compile Include="Models\Shared\AssetInventory.cs" />
@@ -265,7 +297,7 @@
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\StockRoom\Order.cs" />
     <Compile Include="Models\StockRoom\OrderLine.cs" />
-    <Compile Include="Models\StockRoom\OrderNotes.cs" />
+    <Compile Include="Models\StockRoom\OrderNote.cs" />
     <Compile Include="Models\StockRoom\OrderStatus.cs" />
     <Compile Include="Models\StockRoom\Request.cs" />
     <Compile Include="Models\StockRoom\RequestLine.cs" />
@@ -377,6 +409,30 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702180936061_Shared-6.resx">
       <DependentUpon>201702180936061_Shared-6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181021129_Maintenance-1.resx">
+      <DependentUpon>201702181021129_Maintenance-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181021411_Maintenance-2.resx">
+      <DependentUpon>201702181021411_Maintenance-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181022170_Maintenance-3.resx">
+      <DependentUpon>201702181022170_Maintenance-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181023448_Stockroom-1.resx">
+      <DependentUpon>201702181023448_Stockroom-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181026231_Stockroom-2.resx">
+      <DependentUpon>201702181026231_Stockroom-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181027571_Stockroom-3.resx">
+      <DependentUpon>201702181027571_Stockroom-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181030153_Logbook-1.resx">
+      <DependentUpon>201702181030153_Logbook-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702181030460_Logbook-2.resx">
+      <DependentUpon>201702181030460_Logbook-2.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
