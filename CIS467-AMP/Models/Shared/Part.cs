@@ -11,7 +11,7 @@
     /// </summary>
     public class Part
     {
-        public int PartId { get; set; }
+        public int Id { get; set; }
         public int PartType { get; set; }
         public string Number { get; set;  } 
         public string Name { get; set; } 

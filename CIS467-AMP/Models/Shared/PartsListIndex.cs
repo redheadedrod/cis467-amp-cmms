@@ -9,7 +9,7 @@
     /// </summary>
     public class PartsListIndex
     {
-        public int PartsListId { get; set; }
+        public int Id { get; set; }
         public Part PartId { get; set; }
         public Variant VariantId { get; set; }
     }

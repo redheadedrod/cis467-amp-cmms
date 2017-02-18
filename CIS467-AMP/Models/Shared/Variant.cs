@@ -12,7 +12,7 @@
     /// </summary>
     public class Variant
     {
-        public int VariantId { get; set; }
+        public int Id { get; set; }
         public AssetType AssetTypeId { get; set; }
         public string VariantType { get; set; }
         public string VariantDescription { get; set; }

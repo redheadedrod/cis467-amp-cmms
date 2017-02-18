@@ -12,7 +12,7 @@
     /// </summary>
     public class Worker
     {
-        public int WorkerId { get; set; }
+        public int Id { get; set; }
         public WorkGroup WorkGroupId { get; set; }
         public string Name { get; set; }
         public string EmployeeId { get; set; }

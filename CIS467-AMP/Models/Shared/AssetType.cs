@@ -10,9 +10,9 @@
     /// </summary>
     public class AssetType
     {
-        public int AssetTypeId { get; set; }
+        public int Id { get; set; }
         public string AssetName { get; set; }
         public Manufacturer ManId { get; set; } // Links to manufacturer field
-        public Manufacturer PartNumber { get; set; } // Manufacturers part number for asset (can be number, numbers or combination)
+        public string PartNumber { get; set; } // Manufacturers part number for asset (can be number, numbers or combination)
     }
 }
