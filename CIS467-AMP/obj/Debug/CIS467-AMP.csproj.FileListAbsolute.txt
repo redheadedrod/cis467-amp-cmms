@@ -178,10 +178,8 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\VBCSCompiler.exe.co
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\CIS467-AMP.dll.config
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\CIS467-AMP.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\CIS467-AMP.pdb
-D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Antlr3.Runtime.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\EntityFramework.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\EntityFramework.SqlServer.dll
-D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.Agent.Intercept.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.DependencyCollector.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.PerfCounterCollector.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.ServerTelemetryChannel.dll
@@ -191,7 +189,6 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.ApplicationInsig
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AspNet.Identity.Core.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AspNet.Identity.EntityFramework.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AspNet.Identity.Owin.dll
-D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Host.SystemWeb.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.Cookies.dll
@@ -202,7 +199,6 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.Mi
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.OAuth.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.Twitter.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Web.Infrastructure.dll
-D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Newtonsoft.Json.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Owin.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.Helpers.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.Mvc.dll
@@ -211,7 +207,6 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.Razor.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.WebPages.Deployment.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.WebPages.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.WebPages.Razor.dll
-D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\WebGrease.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.DependencyCollector.xml
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.ServerTelemetryChannel.xml
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.Web.xml
@@ -290,3 +285,22 @@ C:\Users\benselj\Workspace\cis467-amp-cmms\CIS467-AMP\bin\roslyn\System.IO.FileS
 C:\Users\benselj\Workspace\cis467-amp-cmms\CIS467-AMP\bin\roslyn\System.IO.FileSystem.Primitives.dll
 C:\Users\benselj\Workspace\cis467-amp-cmms\CIS467-AMP\bin\roslyn\vbc.exe.config
 C:\Users\benselj\Workspace\cis467-amp-cmms\CIS467-AMP\bin\roslyn\vbc.rsp
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\csc.exe.config
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\csc.rsp
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\csi.exe
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\csi.rsp
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\vbc.exe.config
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\vbc.rsp
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\System.AppContext.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\System.IO.FileSystem.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Antlr3.Runtime.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.Agent.Intercept.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Newtonsoft.Json.dll
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\WebGrease.dll
