@@ -22,28 +22,34 @@
         </ul>
     </div>
     <div class="col-md-10">
-        <h1>@ViewBag.Title</h1>
+        <h1 id="title">@ViewBag.Title</h1>
     </div>
 </div>
     <table class="table">
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.StockId)
+                @Html.DisplayNameFor(m => m.StockId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Name)
+                @Html.DisplayNameFor(m => m.Name)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.ManufacturerPartNumber)
+                @Html.DisplayNameFor(m => m.AssetId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.OnHand)
+                @Html.DisplayNameFor(m => m.PartId)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.MinRequired)
+                @Html.DisplayNameFor(m => m.ManufacturerPartNumber)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Reserved)
+                @Html.DisplayNameFor(m => m.OnHand)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.MinRequired)
+            </th>
+            <th>
+                @Html.DisplayNameFor(m => m.Reserved)
             </th>
             <th></th>
         </tr>
@@ -55,6 +61,12 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AssetId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PartId)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.ManufacturerPartNumber)

@@ -1,4 +1,4 @@
-﻿@model CIS467_AMP.Models.StockRoom.Request
+﻿@model CIS467_AMP.Models.StockRoom.Order
 
 @{
     /**
@@ -22,19 +22,19 @@
         </ul>
     </div>
     <div class="col-md-10">
-        <h1>@ViewBag.Title</h1>
+        <h1 id="title">@ViewBag.Title</h1>
     </div>
 </div>
-    @using (Html.BeginForm("Create Order", "StockRoom")) 
+    @*@using (Html.BeginForm("CreateOrder", "StockRoom")) 
     {
         <div class="form-group">
-            @Html.LabelFor(m => m.WorkerId)
-            @Html.TextBoxFor(m => m.WorkerId, new {@class  ="form-control"})
+            @Html.LabelFor(m => m.OrderNumber);
+            @Html.TextBoxFor(m => m.OrderNumber, new {@class  ="form-control"})
         </div>
         <div class="form-group">
-            
+            @Html.LabelFor(m => m.SupplierId);
         </div>
-    }
+    }*@
     
     <div>
         @Html.ActionLink("Back to List", "Index")

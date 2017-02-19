@@ -42,8 +42,17 @@ namespace CIS467_AMP.Controllers.StockRoom
         //NOT DONE YET
         public ActionResult OrderRequest()
         {
-            var orderRequest = _context.StockroomRequests;
+            var orderRequest = _context.StockroomOrders;
             return View(orderRequest);
+        }
+
+        [HttpPost]
+        public ActionResult CreateOrder(Order order)
+        {
+            _context.StockroomOrders.Add(order);
+            _context.SaveChanges();
+            
+            return RedirectToAction("Index");
         }
     }
 }
