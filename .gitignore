@@ -2,7 +2,7 @@
 *.dll
 *.pdb
 *.cache
-*.mdf
-*.ldf
 bin\*.*
 obj\*.*
+/CIS467-AMP/Scripts
+/packages/bootstrap.3.3.7
