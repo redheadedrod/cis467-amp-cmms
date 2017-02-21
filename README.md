@@ -9,10 +9,5 @@ Create a fork of this main branch and use pull requests when wanting to add work
 
 So you will need to fork this branch then create a local repository on any computer actually doing work on.
 
-##TODO 
-* Have rodney explain in depth what a work order is going to look like, how they are resolved, who can create
-* System map - functionality, job plan - functionality. 
-* discuss front end requirements ( how many pages per section ?)
-* explain user case scenarios: how each user will interact with system and information each user will have available to him
 
 
