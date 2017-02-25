@@ -32,6 +32,7 @@ namespace CIS467_AMP.Models
         public DbSet<Map> Maps { get; set; }
         public DbSet<WorkGroup> WorkGroups { get; set; }
         public DbSet<ManufacturerContact> ManufacturerContacts { get; set; }
+        public DbSet<PartType> PartTypes { get; set; }
         public DbSet<Part> Parts { get; set; }
         public DbSet<Worker> Workers { get; set; }
         public DbSet<AssetType> AssetTypes { get; set; }
@@ -49,6 +50,7 @@ namespace CIS467_AMP.Models
         public DbSet<MaintenanceType> MaintenanceTypes { get; set; }
         public DbSet<WorkTime> MaintenanceWorkTimes { get; set; }
         public DbSet<Issue> MaintenanceIssues { get; set; }
+        public DbSet<IssueIndex> IssueIndexes { get; set; }
         public DbSet<WorkOrder> MaintenanceWorkOrders { get; set; }
         //stockroom databases
         public DbSet<OrderStatus> StockroomOrderStatuses { get; set; }

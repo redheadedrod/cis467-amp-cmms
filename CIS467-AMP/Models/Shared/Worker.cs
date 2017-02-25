@@ -13,9 +13,9 @@
     public class Worker
     {
         public int Id { get; set; }
-        public WorkGroup WorkGroupId { get; set; }
+        public WorkGroup WorkGroup { get; set; }
         public string Name { get; set; }
-        public string EmployeeId { get; set; }
+        public string Employee { get; set; }
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }
     }

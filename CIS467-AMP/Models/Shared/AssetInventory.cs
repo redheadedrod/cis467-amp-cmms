@@ -12,9 +12,9 @@
     public class AssetInventory
     {
         public int Id { get; set; }
-        public AssetType AssetName { get; set; }
-        public Variant VariantId { get; set; }
-        public Map MapId { get; set; }
+        public AssetType AssetType { get; set; }
+        public Variant Variant { get; set; }
+        public Map Map { get; set; }
         public bool Active { get; set; }
     }
 }
