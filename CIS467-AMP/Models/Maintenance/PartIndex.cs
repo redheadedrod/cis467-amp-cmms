@@ -16,8 +16,8 @@ namespace CIS467_AMP.Models.Maintenance
     public class PartIndex
     {
         public int Id { get; set; }
-        public WorkOrder WorkOrderId { get; set; }
-        public PartsListIndex PartsIndex { get; set; }
+        public WorkOrder WorkOrder { get; set; }
+        public PartsListIndex PartsListIndex{ get; set; }
         public int Number { get; set; }
     }
 }

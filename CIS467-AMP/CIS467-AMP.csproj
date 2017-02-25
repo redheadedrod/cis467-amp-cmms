@@ -261,12 +261,85 @@
     <Compile Include="Migrations\201702181030460_Logbook-2.Designer.cs">
       <DependentUpon>201702181030460_Logbook-2.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702231659317_populate-logbook-types.cs" />
+    <Compile Include="Migrations\201702231659317_populate-logbook-types.Designer.cs">
+      <DependentUpon>201702231659317_populate-logbook-types.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702231721093_MaintenancePopulateClassOfIssue.cs" />
+    <Compile Include="Migrations\201702231721093_MaintenancePopulateClassOfIssue.Designer.cs">
+      <DependentUpon>201702231721093_MaintenancePopulateClassOfIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702231735161_addIssueIndex.cs" />
+    <Compile Include="Migrations\201702231735161_addIssueIndex.Designer.cs">
+      <DependentUpon>201702231735161_addIssueIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702251816408_PopulateIssue.cs" />
+    <Compile Include="Migrations\201702251816408_PopulateIssue.Designer.cs">
+      <DependentUpon>201702251816408_PopulateIssue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252200446_VariousFixes.cs" />
+    <Compile Include="Migrations\201702252200446_VariousFixes.Designer.cs">
+      <DependentUpon>201702252200446_VariousFixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252201320_PopulateIssueIndex.cs" />
+    <Compile Include="Migrations\201702252201320_PopulateIssueIndex.Designer.cs">
+      <DependentUpon>201702252201320_PopulateIssueIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252206301_MoreModelFixes.cs" />
+    <Compile Include="Migrations\201702252206301_MoreModelFixes.Designer.cs">
+      <DependentUpon>201702252206301_MoreModelFixes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252207281_PopulateMaintenanceStatus.cs" />
+    <Compile Include="Migrations\201702252207281_PopulateMaintenanceStatus.Designer.cs">
+      <DependentUpon>201702252207281_PopulateMaintenanceStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252208297_PopulateMaintenanceType.cs" />
+    <Compile Include="Migrations\201702252208297_PopulateMaintenanceType.Designer.cs">
+      <DependentUpon>201702252208297_PopulateMaintenanceType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252209397_PopulateOrderStatus.cs" />
+    <Compile Include="Migrations\201702252209397_PopulateOrderStatus.Designer.cs">
+      <DependentUpon>201702252209397_PopulateOrderStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252211344_PopulateSupplier.cs" />
+    <Compile Include="Migrations\201702252211344_PopulateSupplier.Designer.cs">
+      <DependentUpon>201702252211344_PopulateSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252213273_PopulateSupplierContacts.cs" />
+    <Compile Include="Migrations\201702252213273_PopulateSupplierContacts.Designer.cs">
+      <DependentUpon>201702252213273_PopulateSupplierContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252214009_PopulateManufacturer.cs" />
+    <Compile Include="Migrations\201702252214009_PopulateManufacturer.Designer.cs">
+      <DependentUpon>201702252214009_PopulateManufacturer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252217386_PopulateManufacturerContacts.cs" />
+    <Compile Include="Migrations\201702252217386_PopulateManufacturerContacts.Designer.cs">
+      <DependentUpon>201702252217386_PopulateManufacturerContacts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252218551_PopulateAssetTypes.cs" />
+    <Compile Include="Migrations\201702252218551_PopulateAssetTypes.Designer.cs">
+      <DependentUpon>201702252218551_PopulateAssetTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252221121_PopulateMaps.cs" />
+    <Compile Include="Migrations\201702252221121_PopulateMaps.Designer.cs">
+      <DependentUpon>201702252221121_PopulateMaps.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252221503_PopulatePartTypes.cs" />
+    <Compile Include="Migrations\201702252221503_PopulatePartTypes.Designer.cs">
+      <DependentUpon>201702252221503_PopulatePartTypes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252222296_PopulateVariants.cs" />
+    <Compile Include="Migrations\201702252222296_PopulateVariants.Designer.cs">
+      <DependentUpon>201702252222296_PopulateVariants.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookRecord.cs" />
     <Compile Include="Models\Logbook\LogbookStatus.cs" />
     <Compile Include="Models\Logbook\LogbookType.cs" />
     <Compile Include="Models\Maintenance\ClassOfIssue.cs" />
     <Compile Include="Models\Maintenance\Issue.cs" />
+    <Compile Include="Models\Maintenance\IssueIndex.cs" />
     <Compile Include="Models\Maintenance\PartIndex.cs" />
     <Compile Include="Models\Maintenance\MaintenanceStatus.cs" />
     <Compile Include="Models\Maintenance\MaintenanceType.cs" />
@@ -282,6 +355,7 @@
     <Compile Include="Models\Shared\Map.cs" />
     <Compile Include="Models\Shared\Part.cs" />
     <Compile Include="Models\Shared\PartsListIndex.cs" />
+    <Compile Include="Models\Shared\PartType.cs" />
     <Compile Include="Models\Shared\Variant.cs" />
     <Compile Include="Models\Shared\Worker.cs" />
     <Compile Include="Models\Shared\WorkGroup.cs" />
@@ -342,6 +416,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="JobPlanDocuments\demo.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
@@ -462,6 +537,60 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702181030460_Logbook-2.resx">
       <DependentUpon>201702181030460_Logbook-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231659317_populate-logbook-types.resx">
+      <DependentUpon>201702231659317_populate-logbook-types.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231721093_MaintenancePopulateClassOfIssue.resx">
+      <DependentUpon>201702231721093_MaintenancePopulateClassOfIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702231735161_addIssueIndex.resx">
+      <DependentUpon>201702231735161_addIssueIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702251816408_PopulateIssue.resx">
+      <DependentUpon>201702251816408_PopulateIssue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252200446_VariousFixes.resx">
+      <DependentUpon>201702252200446_VariousFixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252201320_PopulateIssueIndex.resx">
+      <DependentUpon>201702252201320_PopulateIssueIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252206301_MoreModelFixes.resx">
+      <DependentUpon>201702252206301_MoreModelFixes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252207281_PopulateMaintenanceStatus.resx">
+      <DependentUpon>201702252207281_PopulateMaintenanceStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252208297_PopulateMaintenanceType.resx">
+      <DependentUpon>201702252208297_PopulateMaintenanceType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252209397_PopulateOrderStatus.resx">
+      <DependentUpon>201702252209397_PopulateOrderStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252211344_PopulateSupplier.resx">
+      <DependentUpon>201702252211344_PopulateSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252213273_PopulateSupplierContacts.resx">
+      <DependentUpon>201702252213273_PopulateSupplierContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252214009_PopulateManufacturer.resx">
+      <DependentUpon>201702252214009_PopulateManufacturer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252217386_PopulateManufacturerContacts.resx">
+      <DependentUpon>201702252217386_PopulateManufacturerContacts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252218551_PopulateAssetTypes.resx">
+      <DependentUpon>201702252218551_PopulateAssetTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252221121_PopulateMaps.resx">
+      <DependentUpon>201702252221121_PopulateMaps.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252221503_PopulatePartTypes.resx">
+      <DependentUpon>201702252221503_PopulatePartTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252222296_PopulateVariants.resx">
+      <DependentUpon>201702252222296_PopulateVariants.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

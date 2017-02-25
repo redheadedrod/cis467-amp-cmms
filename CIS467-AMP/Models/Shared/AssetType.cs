@@ -11,8 +11,7 @@
     public class AssetType
     {
         public int Id { get; set; }
-        public string AssetName { get; set; }
-        public Manufacturer ManId { get; set; } // Links to manufacturer field
-        public string PartNumber { get; set; } // Manufacturers part number for asset (can be number, numbers or combination)
+        public string Name { get; set; }
+        public Manufacturer Manufacturer { get; set; } // Links to manufacturer field
     }
 }
