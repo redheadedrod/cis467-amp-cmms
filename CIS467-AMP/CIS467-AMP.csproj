@@ -381,6 +381,22 @@
     <Compile Include="Migrations\201702260228481_PopulateJobPlanParts.Designer.cs">
       <DependentUpon>201702260228481_PopulateJobPlanParts.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702260305158_Adjust-WorkOrders.cs" />
+    <Compile Include="Migrations\201702260305158_Adjust-WorkOrders.Designer.cs">
+      <DependentUpon>201702260305158_Adjust-WorkOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260309207_PopulateWorkOrders.cs" />
+    <Compile Include="Migrations\201702260309207_PopulateWorkOrders.Designer.cs">
+      <DependentUpon>201702260309207_PopulateWorkOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260327220_PopulatePartIndexes.cs" />
+    <Compile Include="Migrations\201702260327220_PopulatePartIndexes.Designer.cs">
+      <DependentUpon>201702260327220_PopulatePartIndexes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260358560_PopulateWorkTimes.cs" />
+    <Compile Include="Migrations\201702260358560_PopulateWorkTimes.Designer.cs">
+      <DependentUpon>201702260358560_PopulateWorkTimes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookRecord.cs" />
     <Compile Include="Models\Logbook\LogbookStatus.cs" />
@@ -675,6 +691,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702260228481_PopulateJobPlanParts.resx">
       <DependentUpon>201702260228481_PopulateJobPlanParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260305158_Adjust-WorkOrders.resx">
+      <DependentUpon>201702260305158_Adjust-WorkOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260309207_PopulateWorkOrders.resx">
+      <DependentUpon>201702260309207_PopulateWorkOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260327220_PopulatePartIndexes.resx">
+      <DependentUpon>201702260327220_PopulatePartIndexes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260358560_PopulateWorkTimes.resx">
+      <DependentUpon>201702260358560_PopulateWorkTimes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

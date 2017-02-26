@@ -27,7 +27,7 @@ namespace CIS467_AMP.Models.Maintenance
         public int Id { get; set; }
         public Worker Creator { get; set; }
         public DateTime CreatedDateTime { get; set; }
-        public MaintenanceStatus StatusId { get; set; }
+        public MaintenanceStatus MaintenanceStatus { get; set; }
         public DateTime LastStatusDateTime { get; set; }
         public int Priority { get; set; }
         public Worker Supervisor { get; set; }

@@ -48,10 +48,10 @@ namespace CIS467_AMP.Models
         public DbSet<PartIndex> MaintenancePartIndices { get; set; }
         public DbSet<MaintenanceStatus> MaintenanceStatuses { get; set; }
         public DbSet<MaintenanceType> MaintenanceTypes { get; set; }
-        public DbSet<WorkTime> MaintenanceWorkTimes { get; set; }
         public DbSet<Issue> MaintenanceIssues { get; set; }
         public DbSet<IssueIndex> IssueIndexes { get; set; }
         public DbSet<WorkOrder> MaintenanceWorkOrders { get; set; }
+        public DbSet<WorkTime> MaintenanceWorkTimes { get; set; }
         //stockroom databases
         public DbSet<OrderStatus> StockroomOrderStatuses { get; set; }
         public DbSet<Request> StockroomRequests { get; set; }
