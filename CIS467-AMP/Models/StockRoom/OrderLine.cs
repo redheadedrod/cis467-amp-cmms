@@ -16,8 +16,8 @@ namespace CIS467_AMP.Models.StockRoom
     public class OrderLine
     {
         public int Id { get; set; }
-        public Order OrderId { get; set; }
-        public SupplierPartIndex PartId { get; set; }
+        public Order Order { get; set; }
+        public SupplierPartIndex SupplierPartIndex { get; set; }
         public int NumberOfItemsOrdered { get; set; }
     }
 }

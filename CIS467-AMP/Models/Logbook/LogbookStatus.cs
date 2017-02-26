@@ -13,7 +13,8 @@ namespace CIS467_AMP.Models.Logbook
     /// Name - Name of Status
     /// 
     /// TODO: This will be tied into all of ths statuses for Maintenance and Stockroom
-    /// Have to wait until those are built until figuring best way to do this one. 
+    /// Have to wait until those are built until figuring best way to do this one.
+    /// Leave empty for now 
     /// </summary>
     public class LogbookStatus
     {

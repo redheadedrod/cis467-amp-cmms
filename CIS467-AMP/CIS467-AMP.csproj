@@ -397,6 +397,62 @@
     <Compile Include="Migrations\201702260358560_PopulateWorkTimes.Designer.cs">
       <DependentUpon>201702260358560_PopulateWorkTimes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702260500527_AdjustOrders.cs" />
+    <Compile Include="Migrations\201702260500527_AdjustOrders.Designer.cs">
+      <DependentUpon>201702260500527_AdjustOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260504306_PopulateOrders.cs" />
+    <Compile Include="Migrations\201702260504306_PopulateOrders.Designer.cs">
+      <DependentUpon>201702260504306_PopulateOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260526381_AdjustStockroomInventory-AddLocation.cs" />
+    <Compile Include="Migrations\201702260526381_AdjustStockroomInventory-AddLocation.Designer.cs">
+      <DependentUpon>201702260526381_AdjustStockroomInventory-AddLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.cs" />
+    <Compile Include="Migrations\201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.Designer.cs">
+      <DependentUpon>201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260534546_PopulateStockroomInventory.cs" />
+    <Compile Include="Migrations\201702260534546_PopulateStockroomInventory.Designer.cs">
+      <DependentUpon>201702260534546_PopulateStockroomInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260553043_RefactorStockroomModels.cs" />
+    <Compile Include="Migrations\201702260553043_RefactorStockroomModels.Designer.cs">
+      <DependentUpon>201702260553043_RefactorStockroomModels.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260600085_AdjustSupplierPartIndex.cs" />
+    <Compile Include="Migrations\201702260600085_AdjustSupplierPartIndex.Designer.cs">
+      <DependentUpon>201702260600085_AdjustSupplierPartIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260600212_PopulateSupplierPartIndex.cs" />
+    <Compile Include="Migrations\201702260600212_PopulateSupplierPartIndex.Designer.cs">
+      <DependentUpon>201702260600212_PopulateSupplierPartIndex.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260623389_AdjustOrderLine.cs" />
+    <Compile Include="Migrations\201702260623389_AdjustOrderLine.Designer.cs">
+      <DependentUpon>201702260623389_AdjustOrderLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260629523_PopulateOrderLines.cs" />
+    <Compile Include="Migrations\201702260629523_PopulateOrderLines.Designer.cs">
+      <DependentUpon>201702260629523_PopulateOrderLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260640228_PopulateOrderNotes.cs" />
+    <Compile Include="Migrations\201702260640228_PopulateOrderNotes.Designer.cs">
+      <DependentUpon>201702260640228_PopulateOrderNotes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260648049_PopulateRequests.cs" />
+    <Compile Include="Migrations\201702260648049_PopulateRequests.Designer.cs">
+      <DependentUpon>201702260648049_PopulateRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260655033_PopulateRequestLines.cs" />
+    <Compile Include="Migrations\201702260655033_PopulateRequestLines.Designer.cs">
+      <DependentUpon>201702260655033_PopulateRequestLines.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260714575_PopulateLogbookRecord.cs" />
+    <Compile Include="Migrations\201702260714575_PopulateLogbookRecord.Designer.cs">
+      <DependentUpon>201702260714575_PopulateLogbookRecord.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookRecord.cs" />
     <Compile Include="Models\Logbook\LogbookStatus.cs" />
@@ -703,6 +759,48 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702260358560_PopulateWorkTimes.resx">
       <DependentUpon>201702260358560_PopulateWorkTimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260500527_AdjustOrders.resx">
+      <DependentUpon>201702260500527_AdjustOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260504306_PopulateOrders.resx">
+      <DependentUpon>201702260504306_PopulateOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260526381_AdjustStockroomInventory-AddLocation.resx">
+      <DependentUpon>201702260526381_AdjustStockroomInventory-AddLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.resx">
+      <DependentUpon>201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260534546_PopulateStockroomInventory.resx">
+      <DependentUpon>201702260534546_PopulateStockroomInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260553043_RefactorStockroomModels.resx">
+      <DependentUpon>201702260553043_RefactorStockroomModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260600085_AdjustSupplierPartIndex.resx">
+      <DependentUpon>201702260600085_AdjustSupplierPartIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260600212_PopulateSupplierPartIndex.resx">
+      <DependentUpon>201702260600212_PopulateSupplierPartIndex.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260623389_AdjustOrderLine.resx">
+      <DependentUpon>201702260623389_AdjustOrderLine.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260629523_PopulateOrderLines.resx">
+      <DependentUpon>201702260629523_PopulateOrderLines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260640228_PopulateOrderNotes.resx">
+      <DependentUpon>201702260640228_PopulateOrderNotes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260648049_PopulateRequests.resx">
+      <DependentUpon>201702260648049_PopulateRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260655033_PopulateRequestLines.resx">
+      <DependentUpon>201702260655033_PopulateRequestLines.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260714575_PopulateLogbookRecord.resx">
+      <DependentUpon>201702260714575_PopulateLogbookRecord.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

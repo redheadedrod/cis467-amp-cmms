@@ -10,13 +10,12 @@ namespace CIS467_AMP.Models.StockRoom
     /// This is the stockroom inventory listing
     /// Id - record id
     /// StockID - Stockroom ID used within stockroom. Can be any Alpha Numeric combo
-    /// Asset - Id of asset type if this is a complete item. (Example - a whole pump)
+    /// Variant - Id of asset type if this is a complete item. (Example - a whole pump)
     /// Part - Id of part if item is a part of an asset type
-    /// Name - Name of part
-    /// ManufacturerPartNumber - Manufacturer part number - Optional.. Not neded if in Part listing
     /// OnHand - Number of parts onhand
     /// MinRequired - Minimum number of item that are required to have onhand
     /// Reserved - Number of items currently reserved
+    /// Location - Location within stockroom
     /// </summary>
     public class StockroomInventory
     {
@@ -24,10 +23,9 @@ namespace CIS467_AMP.Models.StockRoom
         public string StockId { get; set; }
         public Variant Variant { get; set; }
         public Part Part { get; set; }
-        public string Name { get; set; }
-        public string ManufacturerPartNumber { get; set; }
         public int OnHand { get; set; }
         public int MinRequired { get; set; }
         public int Reserved { get; set; }
+        public string Location { get; set; }
     }
 }
