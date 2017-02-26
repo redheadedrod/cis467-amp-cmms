@@ -10,8 +10,8 @@
     public class JobPlanPart
     {
         public int Id { get; set; }
-        public JobPlan JobPlanId { get; set; }
-        public Part PartId { get; set; }
+        public JobPlan JobPlan { get; set; }
+        public Part Part { get; set; }
 
     }
 }

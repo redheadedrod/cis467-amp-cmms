@@ -10,7 +10,7 @@
     public class JobPlanDocument
     {
         public int Id { get; set; }
-        public JobPlan JobPlanId { get; set; }
+        public JobPlan JobPlan { get; set; }
         public string Filename { get; set; } 
     }
 }

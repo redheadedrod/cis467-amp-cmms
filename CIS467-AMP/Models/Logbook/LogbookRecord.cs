@@ -19,11 +19,11 @@ namespace CIS467_AMP.Models.Logbook
     public class LogbookRecord
     {
         public int Id { get; set; }
-        public AssetInventory AssetId { get; set; }
+        public AssetInventory AssetInventory { get; set; }
         public DateTime EnteredDateTime { get; set; }
-        public Worker WorkerId { get; set; }
-        public LogbookStatus StatusId { get; set; }
-        public LogbookType TypeId { get; set; }
+        public Worker Worker { get; set; }
+        public LogbookStatus LogbookStatus { get; set; }
+        public LogbookType LogbookType { get; set; }
         public string Entry { get; set; }
     }
 }

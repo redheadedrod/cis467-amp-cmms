@@ -11,6 +11,6 @@
     {
         public int Id { get; set; }
         public string JobPlanName { get; set; }
-        public Variant VariantId { get; set; }
+        public Variant Variant { get; set; }
     }
 }

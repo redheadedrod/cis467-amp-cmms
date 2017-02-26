@@ -17,8 +17,8 @@ namespace CIS467_AMP.Models.StockRoom
     public class OrderNote
     {
         public int Id { get; set; }
-        public Order OrderId { get; set; }
-        public Worker WorkerId { get; set; }
+        public Order Order { get; set; }
+        public Worker Worker { get; set; }
         public DateTime WhenEntered { get; set; }
         public string Note { get; set; }
     }
