@@ -437,3 +437,15 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateMaps.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulatePartTypes.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateVariants.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateWorkGroup.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.UpdateWorker.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateWorker.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateSupervisors.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AdjustAssetInventories.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateAssetInventories.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateJobPlan.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateJobPlanDocuments.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateParts.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.adjustStockroomInventory.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulatePartsListIndexes.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.PopulateJobPlanParts.resources

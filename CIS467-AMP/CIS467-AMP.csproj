@@ -333,6 +333,54 @@
     <Compile Include="Migrations\201702252222296_PopulateVariants.Designer.cs">
       <DependentUpon>201702252222296_PopulateVariants.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702252232342_PopulateWorkGroup.cs" />
+    <Compile Include="Migrations\201702252232342_PopulateWorkGroup.Designer.cs">
+      <DependentUpon>201702252232342_PopulateWorkGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252238297_UpdateWorker.cs" />
+    <Compile Include="Migrations\201702252238297_UpdateWorker.Designer.cs">
+      <DependentUpon>201702252238297_UpdateWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252238531_PopulateWorker.cs" />
+    <Compile Include="Migrations\201702252238531_PopulateWorker.Designer.cs">
+      <DependentUpon>201702252238531_PopulateWorker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252248529_PopulateSupervisors.cs" />
+    <Compile Include="Migrations\201702252248529_PopulateSupervisors.Designer.cs">
+      <DependentUpon>201702252248529_PopulateSupervisors.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252316327_AdjustAssetInventories.cs" />
+    <Compile Include="Migrations\201702252316327_AdjustAssetInventories.Designer.cs">
+      <DependentUpon>201702252316327_AdjustAssetInventories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252320551_PopulateAssetInventories.cs" />
+    <Compile Include="Migrations\201702252320551_PopulateAssetInventories.Designer.cs">
+      <DependentUpon>201702252320551_PopulateAssetInventories.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252327133_PopulateJobPlan.cs" />
+    <Compile Include="Migrations\201702252327133_PopulateJobPlan.Designer.cs">
+      <DependentUpon>201702252327133_PopulateJobPlan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702252330424_PopulateJobPlanDocuments.cs" />
+    <Compile Include="Migrations\201702252330424_PopulateJobPlanDocuments.Designer.cs">
+      <DependentUpon>201702252330424_PopulateJobPlanDocuments.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260204357_PopulateParts.cs" />
+    <Compile Include="Migrations\201702260204357_PopulateParts.Designer.cs">
+      <DependentUpon>201702260204357_PopulateParts.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260218147_adjust-StockroomInventory.cs" />
+    <Compile Include="Migrations\201702260218147_adjust-StockroomInventory.Designer.cs">
+      <DependentUpon>201702260218147_adjust-StockroomInventory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260220303_PopulatePartsListIndexes.cs" />
+    <Compile Include="Migrations\201702260220303_PopulatePartsListIndexes.Designer.cs">
+      <DependentUpon>201702260220303_PopulatePartsListIndexes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702260228481_PopulateJobPlanParts.cs" />
+    <Compile Include="Migrations\201702260228481_PopulateJobPlanParts.Designer.cs">
+      <DependentUpon>201702260228481_PopulateJobPlanParts.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookRecord.cs" />
     <Compile Include="Models\Logbook\LogbookStatus.cs" />
@@ -591,6 +639,42 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702252222296_PopulateVariants.resx">
       <DependentUpon>201702252222296_PopulateVariants.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252232342_PopulateWorkGroup.resx">
+      <DependentUpon>201702252232342_PopulateWorkGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252238297_UpdateWorker.resx">
+      <DependentUpon>201702252238297_UpdateWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252238531_PopulateWorker.resx">
+      <DependentUpon>201702252238531_PopulateWorker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252248529_PopulateSupervisors.resx">
+      <DependentUpon>201702252248529_PopulateSupervisors.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252316327_AdjustAssetInventories.resx">
+      <DependentUpon>201702252316327_AdjustAssetInventories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252320551_PopulateAssetInventories.resx">
+      <DependentUpon>201702252320551_PopulateAssetInventories.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252327133_PopulateJobPlan.resx">
+      <DependentUpon>201702252327133_PopulateJobPlan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702252330424_PopulateJobPlanDocuments.resx">
+      <DependentUpon>201702252330424_PopulateJobPlanDocuments.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260204357_PopulateParts.resx">
+      <DependentUpon>201702260204357_PopulateParts.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260218147_adjust-StockroomInventory.resx">
+      <DependentUpon>201702260218147_adjust-StockroomInventory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260220303_PopulatePartsListIndexes.resx">
+      <DependentUpon>201702260220303_PopulatePartsListIndexes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702260228481_PopulateJobPlanParts.resx">
+      <DependentUpon>201702260228481_PopulateJobPlanParts.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
