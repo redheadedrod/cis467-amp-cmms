@@ -64,9 +64,13 @@ namespace CIS467_AMP.Models
         public DbSet<OrderLine> StockroomOrderLines { get; set; }
         public DbSet<OrderNote> StockroomOrderNotes { get; set; }
         //logbook databases
-        public DbSet<LogbookStatus> LogbookStatuses { get; set; }
-        public DbSet<LogbookType> LogbookTypes { get; set; }
-        public DbSet<LogbookRecord> LogbookRecords { get; set; }
+        DbSet<LogbookGeneralStatus> LogbookGeneralStatuses { get; set; }
+        DbSet<LogbookGeneral> LogbookGeneral { get; set; }
+        DbSet<LogbookStockroomOrder> LogbookStockroomOrders { get; set; }
+        DbSet<LogbookStockroomRequest> LogbookStockroomRequests { get; set; }
+        DbSet<LogbookWorkOrder> LogbookWorkOrders { get; set; }
+        //public DbSet<LogbookType> LogbookTypes { get; set; }
+        //public DbSet<LogbookRecord> LogbookRecords { get; set; }
         //admin databases (Settings, Permissions, defaults)
         //todo
         public ApplicationDbContext()

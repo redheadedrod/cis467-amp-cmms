@@ -28,5 +28,6 @@ namespace CIS467_AMP.Models.StockRoom
         public DateTime Requested { get; set; }
         public DateTime Required { get; set; }
         public bool Approval { get; set; }
+        public RequestStatus RequestStatus { get; set; }
     }
 }

@@ -30,18 +30,18 @@
             <th>
                 @Html.DisplayNameFor(m => m.StockId)
             </th>
+           @* <th>
+               @Html.DisplayNameFor(m => m.Name) 
+            </th>*@
             <th>
-                @Html.DisplayNameFor(m => m.Name)
+                @Html.DisplayNameFor(m => m.Variant)
             </th>
             <th>
-                @Html.DisplayNameFor(m => m.AssetId)
+                @Html.DisplayNameFor(m => m.Part)
             </th>
-            <th>
-                @Html.DisplayNameFor(m => m.PartId)
-            </th>
-            <th>
+            @*<th>
                 @Html.DisplayNameFor(m => m.ManufacturerPartNumber)
-            </th>
+            </th>*@
             <th>
                 @Html.DisplayNameFor(m => m.OnHand)
             </th>
@@ -59,18 +59,18 @@
             <td>
                 @Html.DisplayFor(modelItem => item.StockId)
             </td>
+            @*<td>
+                <!--Html.DisplayFor(modelItem => item.Name) -->
+            </td>*@
             <td>
-                @Html.DisplayFor(modelItem => item.Name)
+                @Html.DisplayFor(modelItem => item.Variant)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.AssetId)
+                @Html.DisplayFor(modelItem => item.Part)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PartId)
-            </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => item.ManufacturerPartNumber)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => item.OnHand)
             </td>

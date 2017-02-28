@@ -453,10 +453,33 @@
     <Compile Include="Migrations\201702260714575_PopulateLogbookRecord.Designer.cs">
       <DependentUpon>201702260714575_PopulateLogbookRecord.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201702281359300_RemoveLogbookTables.cs" />
+    <Compile Include="Migrations\201702281359300_RemoveLogbookTables.Designer.cs">
+      <DependentUpon>201702281359300_RemoveLogbookTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281724041_AddRequestStatus.cs" />
+    <Compile Include="Migrations\201702281724041_AddRequestStatus.Designer.cs">
+      <DependentUpon>201702281724041_AddRequestStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281725041_PopulateRequestStatusAndUpdateRequestsWithStat.cs" />
+    <Compile Include="Migrations\201702281725041_PopulateRequestStatusAndUpdateRequestsWithStat.Designer.cs">
+      <DependentUpon>201702281725041_PopulateRequestStatusAndUpdateRequestsWithStat.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281750090_AddLogbookTables.cs" />
+    <Compile Include="Migrations\201702281750090_AddLogbookTables.Designer.cs">
+      <DependentUpon>201702281750090_AddLogbookTables.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201702281752338_PopulateLogbooks.cs" />
+    <Compile Include="Migrations\201702281752338_PopulateLogbooks.Designer.cs">
+      <DependentUpon>201702281752338_PopulateLogbooks.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Logbook\LogbookRecord.cs" />
-    <Compile Include="Models\Logbook\LogbookStatus.cs" />
-    <Compile Include="Models\Logbook\LogbookType.cs" />
+    <Compile Include="Models\Logbook\LogbookGeneralStatus.cs" />
+    <Compile Include="Models\Logbook\LogbookBase.cs" />
+    <Compile Include="Models\Logbook\LogbookGeneral.cs" />
+    <Compile Include="Models\Logbook\LogbookStockroomOrder.cs" />
+    <Compile Include="Models\Logbook\LogbookStockroomRequest.cs" />
+    <Compile Include="Models\Logbook\LogbookWorkOrder.cs" />
     <Compile Include="Models\Maintenance\ClassOfIssue.cs" />
     <Compile Include="Models\Maintenance\Issue.cs" />
     <Compile Include="Models\Maintenance\IssueIndex.cs" />
@@ -496,6 +519,7 @@
     <Compile Include="Models\StockRoom\OrderStatus.cs" />
     <Compile Include="Models\StockRoom\Request.cs" />
     <Compile Include="Models\StockRoom\RequestLine.cs" />
+    <Compile Include="Models\StockRoom\RequestStatus.cs" />
     <Compile Include="Models\StockRoom\StockroomInventory.cs" />
     <Compile Include="Models\StockRoom\Supplier.cs" />
     <Compile Include="Models\StockRoom\SupplierContact.cs" />
@@ -801,6 +825,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201702260714575_PopulateLogbookRecord.resx">
       <DependentUpon>201702260714575_PopulateLogbookRecord.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281359300_RemoveLogbookTables.resx">
+      <DependentUpon>201702281359300_RemoveLogbookTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281724041_AddRequestStatus.resx">
+      <DependentUpon>201702281724041_AddRequestStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281725041_PopulateRequestStatusAndUpdateRequestsWithStat.resx">
+      <DependentUpon>201702281725041_PopulateRequestStatusAndUpdateRequestsWithStat.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281750090_AddLogbookTables.resx">
+      <DependentUpon>201702281750090_AddLogbookTables.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201702281752338_PopulateLogbooks.resx">
+      <DependentUpon>201702281752338_PopulateLogbooks.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
