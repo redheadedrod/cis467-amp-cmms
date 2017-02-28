@@ -25,17 +25,17 @@ namespace CIS467_AMP.Models.Maintenance
     {
         //
         public int Id { get; set; }
-        public Worker CreatorId { get; set; }
+        public Worker Creator { get; set; }
         public DateTime CreatedDateTime { get; set; }
-        public MaintenanceStatus StatusId { get; set; }
+        public MaintenanceStatus MaintenanceStatus { get; set; }
         public DateTime LastStatusDateTime { get; set; }
         public int Priority { get; set; }
-        public Worker SupervisorId { get; set; }
-        public Worker LeadWorkerId { get; set; }
-        public AssetInventory AssetId { get; set; }
+        public Worker Supervisor { get; set; }
+        public Worker LeadWorker { get; set; }
+        public AssetInventory AssetInventory { get; set; }
         public string ShortDesc { get; set; }
         public string LongDesc { get; set; }
-        public JobPlan JobPlanId { get; set; }
-        public Issue IssueId { get; set; }
+        public JobPlan JobPlan { get; set; }
+        public Issue Issue { get; set; }
     }
 }

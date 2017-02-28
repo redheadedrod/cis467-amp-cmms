@@ -13,7 +13,7 @@
     public class Variant
     {
         public int Id { get; set; }
-        public AssetType AssetTypeId { get; set; }
+        public AssetType AssetType { get; set; }
         public string VariantType { get; set; }
         public string VariantDescription { get; set; }
     }
