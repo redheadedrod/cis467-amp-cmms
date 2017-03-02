@@ -10,7 +10,7 @@
     public class WorkGroupSupervisor
     {
         public int Id { get; set; }
-        public Worker WorkerId { get; set; }
-        public WorkGroup WorkGroupId { get; set; }
+        public Worker Worker { get; set; }
+        public WorkGroup WorkGroup { get; set; }
     }
 }

@@ -23,13 +23,13 @@ namespace CIS467_AMP.Models.StockRoom
     {
         public int Id { get; set; } 
         public string OrderNumber { get; set; }
-        public Supplier SupplierId { get; set; }
-        public WorkOrder WorkOrderId { get; set; }
-        public SupplierContact SupplierContactId { get; set; }
+        public Supplier Supplier { get; set; }
+        public WorkOrder WorkOrder { get; set; }
+        public SupplierContact SupplierContact { get; set; }
         public DateTime OrderPlaced { get; set; }
         public DateTime OrderExpected { get; set; }
         public DateTime StatusLastUpDate { get; set; }
-        public OrderStatus OrderStatusId { get; set; }
+        public OrderStatus OrderStatus { get; set; }
         public bool OrderApproved { get; set; }
     }
 }
