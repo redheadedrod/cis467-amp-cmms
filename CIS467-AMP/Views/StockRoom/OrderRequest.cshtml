@@ -1,4 +1,4 @@
-﻿@model CIS467_AMP.Models.StockRoom.Order
+﻿@model CIS467_AMP.ViewModels.StockRoom.OrderRequestViewModel
 
 @{
     /**
@@ -13,30 +13,48 @@
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+<div class="row" id="content">
+    <div class="col col-md-12">
+        <h1 id="title">@ViewBag.Title</h1>
+    </div>
+</div>
 <div class="row">
-    <div class="col col-md-2">
+    <div class="navbar col-md-2" id="sideLinks">
         <ul class="nav nav-pills nav-stacked">
             <li>@Html.ActionLink("Stock Room Home", "Index")</li>
             <li>@Html.ActionLink("Inventory", "Inventory")</li>
             <li>@Html.ActionLink("Order Request", "OrderRequest")</li>
         </ul>
     </div>
-    <div class="col-md-10">
-        <h1 id="title">@ViewBag.Title</h1>
+
+    <div class="col col-md-10">
+        @using (Html.BeginForm("CreateOrder", "StockRoom"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order.OrderNumber);
+                @Html.TextBoxFor(m => m.Order.OrderNumber, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Part.Name);
+                @Html.TextBoxFor(m => m.Part.Name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Part.Number);
+                @Html.TextBoxFor(m => m.Part.Number, new { @class = "form-control" })
+            </div>
+            @*<div class="form-group">
+                @Html.DropDownListFor(m => m);
+                @Html.TextBoxFor(m => m.Order.OrderNumber, new { @class = "form-control" })
+            </div>*@
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
     </div>
 </div>
-    @*@using (Html.BeginForm("CreateOrder", "StockRoom")) 
-    {
-        <div class="form-group">
-            @Html.LabelFor(m => m.OrderNumber);
-            @Html.TextBoxFor(m => m.OrderNumber, new {@class  ="form-control"})
-        </div>
-        <div class="form-group">
-            @Html.LabelFor(m => m.SupplierId);
-        </div>
-    }*@
-    
-    <div>
-        @Html.ActionLink("Back to List", "Index")
-    </div>
+
+
+   
 

@@ -1,4 +1,4 @@
-﻿@model CIS467_AMP.Models.StockRoom.StockroomInventory
+﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.StockroomInventory>
 
 @{
     /**
@@ -13,43 +13,59 @@
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<div class="row" id="content">
+    <div class="col col-md-12">
+        <h1 id="title">@ViewBag.Title</h1>
+    </div>
+</div>
  <div class="row">
-    <div class="col col-md-2">
+    <div class="navbar col-md-2" id="sideLinks">
         <ul class="nav nav-pills nav-stacked">
             <li>@Html.ActionLink("Stock Room Home", "Index")</li>
             <li>@Html.ActionLink("Inventory", "Inventory")</li>
             <li>@Html.ActionLink("Order Request", "OrderRequest")</li>
         </ul>
     </div>
-    <div class="col-md-10">
-        <h1 id="title">@ViewBag.Title</h1>
-    </div>
-</div>
+    
+     <div class="col col-md-10">
     <table class="table">
         <tr>
-            <th>@Html.DisplayNameFor(m => m.StockId)</th>
-            <th>@Html.DisplayNameFor(m => m.Variant)</th>
+            <th>ID</th>
+            <th>Variant Type</th>
+            <th>Variant Description</th>
+            <th>Part Number</th>
             <th>@Html.DisplayNameFor(m => m.Location)</th>
-            <th>@Html.DisplayNameFor(m => m.OnHand)</th>
-            <th>@Html.DisplayNameFor(m => m.MinRequired)</th>
+            <th>On Hand</th>
             <th>@Html.DisplayNameFor(m => m.Reserved)</th>
-            <th></th>
+            <th>Minimum Required</th>
+            <th>Place Order</th>
         </tr>
-    
-    @foreach (var item in Model) {
-        <tr>
-            <td>@Html.DisplayFor(modelItem => item.StockId)</td>
-            <td>@Html.DisplayFor(modelItem => item.Variant)</td>
-            <td>@Html.DisplayFor(modelItem => item.Location)</td>
-            <td>@Html.DisplayFor(modelItem => item.OnHand)</td>
-            <td>@Html.DisplayFor(modelItem => item.MinRequired)</td>
-            <td>@Html.DisplayFor(modelItem => item.Reserved)</td>
-            @*<td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-            </td>*@
-        </tr>
-    }
-    
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.StockId)</td>
+                <td>@Html.DisplayFor(modelItem => item.Variant.VariantType)</td>
+                <td>@Html.DisplayFor(modelItem => item.Variant.VariantDescription)</td>
+                <td>@Html.DisplayFor(modelItem => item.Part.Number)</td>
+                <td>@Html.DisplayFor(modelItem => item.Location)</td>
+                <td>@Html.DisplayFor(modelItem => item.OnHand)</td>
+                <td>@Html.DisplayFor(modelItem => item.Reserved)</td>
+                <td>@Html.DisplayFor(modelItem => item.MinRequired)</td>
+                <td>
+                    @{
+                        var button = "btn btn-primary";
+                        if (item.OnHand < item.MinRequired || (item.OnHand - item.Reserved) < item.MinRequired)
+                        {
+                            button = "btn btn-danger";
+                        }
+                        @Html.ActionLink("Order", "OrderRequest", new { StockId = item.StockId, PartId = item.Part.Id }, new { @class = button });
+                    }
+                </td>
+            </tr>
+                        }
+
     </table>
+    </div>
+</div>
+
