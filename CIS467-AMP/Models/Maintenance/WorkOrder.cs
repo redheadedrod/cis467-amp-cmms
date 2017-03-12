@@ -23,19 +23,25 @@ namespace CIS467_AMP.Models.Maintenance
     /// </summary>
     public class WorkOrder
     {
-        //
         public int Id { get; set; }
         public Worker Creator { get; set; }
+        public int CreatorId { get; set; }
         public DateTime CreatedDateTime { get; set; }
         public MaintenanceStatus MaintenanceStatus { get; set; }
+        public int MaintenanceStatusId { get; set; }
         public DateTime LastStatusDateTime { get; set; }
         public int Priority { get; set; }
         public Worker Supervisor { get; set; }
+        public int SupervisorId { get; set; }
         public Worker LeadWorker { get; set; }
+        public int LeadWorkerId { get; set; }
         public AssetInventory AssetInventory { get; set; }
+        public int AssetInventoryId { get; set; }
         public string ShortDesc { get; set; }
         public string LongDesc { get; set; }
         public JobPlan JobPlan { get; set; }
+        public int JobPlanId { get; set; }
         public Issue Issue { get; set; }
+        public int IssueId { get; set; }
     }
 }

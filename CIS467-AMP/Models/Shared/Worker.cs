@@ -14,8 +14,10 @@
     {
         public int Id { get; set; }
         public WorkGroup WorkGroup { get; set; }
+        public int WorkGroupId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Name { get; set; }
         public string Employee { get; set; }
         public string PhoneNumber { get; set; }
         public string EmailAddress { get; set; }

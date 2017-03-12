@@ -23,10 +23,15 @@ namespace CIS467_AMP.Models.StockRoom
     {
         public int Id { get; set; }
         public Worker Worker { get; set; }
+        public int WorkerId { get; set; }
         public WorkOrder WorkOrder { get; set; }
-        public AssetInventory Asset { get; set; }
+        public int WorkOrderId { get; set; }
+        public AssetInventory AssetInventory { get; set; }
+        public int AssetInventoryId { get; set; }
         public DateTime Requested { get; set; }
         public DateTime Required { get; set; }
         public bool Approval { get; set; }
+        public StockroomRequestStatus StockroomRequestStatus { get; set; }
+        public int StockroomRequestStatusId { get; set; }
     }
 }

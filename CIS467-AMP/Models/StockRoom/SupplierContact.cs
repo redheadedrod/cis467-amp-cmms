@@ -18,7 +18,8 @@ namespace CIS467_AMP.Models.StockRoom
     public class SupplierContact
     {
         public int Id { get; set; }
-        public Supplier SupplierId { get; set; }
+        public Supplier Supplier { get; set; }
+        public int SupplierId { get; set; }
         public string Name { get; set; }
         public string PhoneNumber { get; set; }
         public string FaxNumber { get; set; }

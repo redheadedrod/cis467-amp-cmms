@@ -18,8 +18,10 @@ namespace CIS467_AMP.Models.Maintenance
     {
         public int Id { get; set; }
         public Worker Worker { get; set; }
+        public int WorkerId { get; set; }
         public DateTime StartTime { get; set; }
         public int HoursWorked { get; set; }
         public WorkOrder WorkOrder { get; set; }
+        public int WorkOrderId { get; set; }
     }
 }

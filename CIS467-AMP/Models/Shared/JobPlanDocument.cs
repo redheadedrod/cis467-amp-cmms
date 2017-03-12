@@ -11,6 +11,7 @@
     {
         public int Id { get; set; }
         public JobPlan JobPlan { get; set; }
+        public int JobPlanId { get; set; }
         public string Filename { get; set; } 
     }
 }

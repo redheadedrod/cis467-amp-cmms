@@ -17,7 +17,9 @@ namespace CIS467_AMP.Models.StockRoom
     {
         public int Id { get; set; }
         public Order Order { get; set; }
+        public int OrderId { get; set; }
         public SupplierPartIndex SupplierPartIndex { get; set; }
+        public int SupplierPartIndexId { get; set; }
         public int NumberOfItemsOrdered { get; set; }
     }
 }

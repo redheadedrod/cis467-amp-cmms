@@ -12,6 +12,7 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public Manufacturer Manufacturer { get; set; } // Links to manufacturer field
+        public Manufacturer Manufacturer { get; set; }
+        public int ManufacturerId { get; set; }
     }
 }

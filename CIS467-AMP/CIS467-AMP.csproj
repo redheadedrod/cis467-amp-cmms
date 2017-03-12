@@ -205,258 +205,149 @@
     <Compile Include="Migrations\201702180853430_Initial.Designer.cs">
       <DependentUpon>201702180853430_Initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702180902110_Shared-1.cs" />
-    <Compile Include="Migrations\201702180902110_Shared-1.Designer.cs">
-      <DependentUpon>201702180902110_Shared-1.cs</DependentUpon>
+    <Compile Include="Migrations\201703120522490_AddShared1.cs" />
+    <Compile Include="Migrations\201703120522490_AddShared1.Designer.cs">
+      <DependentUpon>201703120522490_AddShared1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702180907373_Shared-2.cs" />
-    <Compile Include="Migrations\201702180907373_Shared-2.Designer.cs">
-      <DependentUpon>201702180907373_Shared-2.cs</DependentUpon>
+    <Compile Include="Migrations\201703120523221_SeedShared1.cs" />
+    <Compile Include="Migrations\201703120523221_SeedShared1.Designer.cs">
+      <DependentUpon>201703120523221_SeedShared1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702180911373_Shared-3.cs" />
-    <Compile Include="Migrations\201702180911373_Shared-3.Designer.cs">
-      <DependentUpon>201702180911373_Shared-3.cs</DependentUpon>
+    <Compile Include="Migrations\201703120530452_AddShared2.cs" />
+    <Compile Include="Migrations\201703120530452_AddShared2.Designer.cs">
+      <DependentUpon>201703120530452_AddShared2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702180930045_Shared-4.cs" />
-    <Compile Include="Migrations\201702180930045_Shared-4.Designer.cs">
-      <DependentUpon>201702180930045_Shared-4.cs</DependentUpon>
+    <Compile Include="Migrations\201703120531158_SeedShared2.cs" />
+    <Compile Include="Migrations\201703120531158_SeedShared2.Designer.cs">
+      <DependentUpon>201703120531158_SeedShared2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702180933000_Shared-5.cs" />
-    <Compile Include="Migrations\201702180933000_Shared-5.Designer.cs">
-      <DependentUpon>201702180933000_Shared-5.cs</DependentUpon>
+    <Compile Include="Migrations\201703120540097_AddShared3.cs" />
+    <Compile Include="Migrations\201703120540097_AddShared3.Designer.cs">
+      <DependentUpon>201703120540097_AddShared3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702180936061_Shared-6.cs" />
-    <Compile Include="Migrations\201702180936061_Shared-6.Designer.cs">
-      <DependentUpon>201702180936061_Shared-6.cs</DependentUpon>
+    <Compile Include="Migrations\201703120540333_SeedShared3.cs" />
+    <Compile Include="Migrations\201703120540333_SeedShared3.Designer.cs">
+      <DependentUpon>201703120540333_SeedShared3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181021129_Maintenance-1.cs" />
-    <Compile Include="Migrations\201702181021129_Maintenance-1.Designer.cs">
-      <DependentUpon>201702181021129_Maintenance-1.cs</DependentUpon>
+    <Compile Include="Migrations\201703120601137_AddShared4.cs" />
+    <Compile Include="Migrations\201703120601137_AddShared4.Designer.cs">
+      <DependentUpon>201703120601137_AddShared4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181021411_Maintenance-2.cs" />
-    <Compile Include="Migrations\201702181021411_Maintenance-2.Designer.cs">
-      <DependentUpon>201702181021411_Maintenance-2.cs</DependentUpon>
+    <Compile Include="Migrations\201703120602266_SeedShared4.cs" />
+    <Compile Include="Migrations\201703120602266_SeedShared4.Designer.cs">
+      <DependentUpon>201703120602266_SeedShared4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181022170_Maintenance-3.cs" />
-    <Compile Include="Migrations\201702181022170_Maintenance-3.Designer.cs">
-      <DependentUpon>201702181022170_Maintenance-3.cs</DependentUpon>
+    <Compile Include="Migrations\201703120604230_AddShared5.cs" />
+    <Compile Include="Migrations\201703120604230_AddShared5.Designer.cs">
+      <DependentUpon>201703120604230_AddShared5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181023448_Stockroom-1.cs" />
-    <Compile Include="Migrations\201702181023448_Stockroom-1.Designer.cs">
-      <DependentUpon>201702181023448_Stockroom-1.cs</DependentUpon>
+    <Compile Include="Migrations\201703120612469_SeedShared5.cs" />
+    <Compile Include="Migrations\201703120612469_SeedShared5.Designer.cs">
+      <DependentUpon>201703120612469_SeedShared5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181026231_Stockroom-2.cs" />
-    <Compile Include="Migrations\201702181026231_Stockroom-2.Designer.cs">
-      <DependentUpon>201702181026231_Stockroom-2.cs</DependentUpon>
+    <Compile Include="Migrations\201703120618053_AddShared6.cs" />
+    <Compile Include="Migrations\201703120618053_AddShared6.Designer.cs">
+      <DependentUpon>201703120618053_AddShared6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181027571_Stockroom-3.cs" />
-    <Compile Include="Migrations\201702181027571_Stockroom-3.Designer.cs">
-      <DependentUpon>201702181027571_Stockroom-3.cs</DependentUpon>
+    <Compile Include="Migrations\201703120619039_SeedShared6.cs" />
+    <Compile Include="Migrations\201703120619039_SeedShared6.Designer.cs">
+      <DependentUpon>201703120619039_SeedShared6.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181030153_Logbook-1.cs" />
-    <Compile Include="Migrations\201702181030153_Logbook-1.Designer.cs">
-      <DependentUpon>201702181030153_Logbook-1.cs</DependentUpon>
+    <Compile Include="Migrations\201703120625365_AddShared7.cs" />
+    <Compile Include="Migrations\201703120625365_AddShared7.Designer.cs">
+      <DependentUpon>201703120625365_AddShared7.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702181030460_Logbook-2.cs" />
-    <Compile Include="Migrations\201702181030460_Logbook-2.Designer.cs">
-      <DependentUpon>201702181030460_Logbook-2.cs</DependentUpon>
+    <Compile Include="Migrations\201703120628310_SeedShared61.cs" />
+    <Compile Include="Migrations\201703120628310_SeedShared61.Designer.cs">
+      <DependentUpon>201703120628310_SeedShared61.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702231659317_populate-logbook-types.cs" />
-    <Compile Include="Migrations\201702231659317_populate-logbook-types.Designer.cs">
-      <DependentUpon>201702231659317_populate-logbook-types.cs</DependentUpon>
+    <Compile Include="Migrations\201703120635214_AddMaintenance1.cs" />
+    <Compile Include="Migrations\201703120635214_AddMaintenance1.Designer.cs">
+      <DependentUpon>201703120635214_AddMaintenance1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702231721093_MaintenancePopulateClassOfIssue.cs" />
-    <Compile Include="Migrations\201702231721093_MaintenancePopulateClassOfIssue.Designer.cs">
-      <DependentUpon>201702231721093_MaintenancePopulateClassOfIssue.cs</DependentUpon>
+    <Compile Include="Migrations\201703120635372_SeedMaintenance1.cs" />
+    <Compile Include="Migrations\201703120635372_SeedMaintenance1.Designer.cs">
+      <DependentUpon>201703120635372_SeedMaintenance1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702231735161_addIssueIndex.cs" />
-    <Compile Include="Migrations\201702231735161_addIssueIndex.Designer.cs">
-      <DependentUpon>201702231735161_addIssueIndex.cs</DependentUpon>
+    <Compile Include="Migrations\201703120640373_AddMaintenance2.cs" />
+    <Compile Include="Migrations\201703120640373_AddMaintenance2.Designer.cs">
+      <DependentUpon>201703120640373_AddMaintenance2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702251816408_PopulateIssue.cs" />
-    <Compile Include="Migrations\201702251816408_PopulateIssue.Designer.cs">
-      <DependentUpon>201702251816408_PopulateIssue.cs</DependentUpon>
+    <Compile Include="Migrations\201703120640583_SeedMaintenance2.cs" />
+    <Compile Include="Migrations\201703120640583_SeedMaintenance2.Designer.cs">
+      <DependentUpon>201703120640583_SeedMaintenance2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252200446_VariousFixes.cs" />
-    <Compile Include="Migrations\201702252200446_VariousFixes.Designer.cs">
-      <DependentUpon>201702252200446_VariousFixes.cs</DependentUpon>
+    <Compile Include="Migrations\201703120646129_AddMaintenance3.cs" />
+    <Compile Include="Migrations\201703120646129_AddMaintenance3.Designer.cs">
+      <DependentUpon>201703120646129_AddMaintenance3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252201320_PopulateIssueIndex.cs" />
-    <Compile Include="Migrations\201702252201320_PopulateIssueIndex.Designer.cs">
-      <DependentUpon>201702252201320_PopulateIssueIndex.cs</DependentUpon>
+    <Compile Include="Migrations\201703120647332_SeedMaintenance3.cs" />
+    <Compile Include="Migrations\201703120647332_SeedMaintenance3.Designer.cs">
+      <DependentUpon>201703120647332_SeedMaintenance3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252206301_MoreModelFixes.cs" />
-    <Compile Include="Migrations\201702252206301_MoreModelFixes.Designer.cs">
-      <DependentUpon>201702252206301_MoreModelFixes.cs</DependentUpon>
+    <Compile Include="Migrations\201703120651502_AddMaintenance4.cs" />
+    <Compile Include="Migrations\201703120651502_AddMaintenance4.Designer.cs">
+      <DependentUpon>201703120651502_AddMaintenance4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252207281_PopulateMaintenanceStatus.cs" />
-    <Compile Include="Migrations\201702252207281_PopulateMaintenanceStatus.Designer.cs">
-      <DependentUpon>201702252207281_PopulateMaintenanceStatus.cs</DependentUpon>
+    <Compile Include="Migrations\201703120653556_SeedMaintenance4.cs" />
+    <Compile Include="Migrations\201703120653556_SeedMaintenance4.Designer.cs">
+      <DependentUpon>201703120653556_SeedMaintenance4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252208297_PopulateMaintenanceType.cs" />
-    <Compile Include="Migrations\201702252208297_PopulateMaintenanceType.Designer.cs">
-      <DependentUpon>201702252208297_PopulateMaintenanceType.cs</DependentUpon>
+    <Compile Include="Migrations\201703120701224_AddStockroom1.cs" />
+    <Compile Include="Migrations\201703120701224_AddStockroom1.Designer.cs">
+      <DependentUpon>201703120701224_AddStockroom1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252209397_PopulateOrderStatus.cs" />
-    <Compile Include="Migrations\201702252209397_PopulateOrderStatus.Designer.cs">
-      <DependentUpon>201702252209397_PopulateOrderStatus.cs</DependentUpon>
+    <Compile Include="Migrations\201703120701377_SeedStockroom1.cs" />
+    <Compile Include="Migrations\201703120701377_SeedStockroom1.Designer.cs">
+      <DependentUpon>201703120701377_SeedStockroom1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252211344_PopulateSupplier.cs" />
-    <Compile Include="Migrations\201702252211344_PopulateSupplier.Designer.cs">
-      <DependentUpon>201702252211344_PopulateSupplier.cs</DependentUpon>
+    <Compile Include="Migrations\201703120713104_AddStockroom2.cs" />
+    <Compile Include="Migrations\201703120713104_AddStockroom2.Designer.cs">
+      <DependentUpon>201703120713104_AddStockroom2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252213273_PopulateSupplierContacts.cs" />
-    <Compile Include="Migrations\201702252213273_PopulateSupplierContacts.Designer.cs">
-      <DependentUpon>201702252213273_PopulateSupplierContacts.cs</DependentUpon>
+    <Compile Include="Migrations\201703120714441_SeedStockroom2.cs" />
+    <Compile Include="Migrations\201703120714441_SeedStockroom2.Designer.cs">
+      <DependentUpon>201703120714441_SeedStockroom2.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252214009_PopulateManufacturer.cs" />
-    <Compile Include="Migrations\201702252214009_PopulateManufacturer.Designer.cs">
-      <DependentUpon>201702252214009_PopulateManufacturer.cs</DependentUpon>
+    <Compile Include="Migrations\201703120803265_AddStockroom3.cs" />
+    <Compile Include="Migrations\201703120803265_AddStockroom3.Designer.cs">
+      <DependentUpon>201703120803265_AddStockroom3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252217386_PopulateManufacturerContacts.cs" />
-    <Compile Include="Migrations\201702252217386_PopulateManufacturerContacts.Designer.cs">
-      <DependentUpon>201702252217386_PopulateManufacturerContacts.cs</DependentUpon>
+    <Compile Include="Migrations\201703120805052_SeedStockroom3.cs" />
+    <Compile Include="Migrations\201703120805052_SeedStockroom3.Designer.cs">
+      <DependentUpon>201703120805052_SeedStockroom3.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252218551_PopulateAssetTypes.cs" />
-    <Compile Include="Migrations\201702252218551_PopulateAssetTypes.Designer.cs">
-      <DependentUpon>201702252218551_PopulateAssetTypes.cs</DependentUpon>
+    <Compile Include="Migrations\201703120812483_AddStockroom4.cs" />
+    <Compile Include="Migrations\201703120812483_AddStockroom4.Designer.cs">
+      <DependentUpon>201703120812483_AddStockroom4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252221121_PopulateMaps.cs" />
-    <Compile Include="Migrations\201702252221121_PopulateMaps.Designer.cs">
-      <DependentUpon>201702252221121_PopulateMaps.cs</DependentUpon>
+    <Compile Include="Migrations\201703120813252_SeedStockroom4.cs" />
+    <Compile Include="Migrations\201703120813252_SeedStockroom4.Designer.cs">
+      <DependentUpon>201703120813252_SeedStockroom4.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252221503_PopulatePartTypes.cs" />
-    <Compile Include="Migrations\201702252221503_PopulatePartTypes.Designer.cs">
-      <DependentUpon>201702252221503_PopulatePartTypes.cs</DependentUpon>
+    <Compile Include="Migrations\201703120816390_AddStockroom5.cs" />
+    <Compile Include="Migrations\201703120816390_AddStockroom5.Designer.cs">
+      <DependentUpon>201703120816390_AddStockroom5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252222296_PopulateVariants.cs" />
-    <Compile Include="Migrations\201702252222296_PopulateVariants.Designer.cs">
-      <DependentUpon>201702252222296_PopulateVariants.cs</DependentUpon>
+    <Compile Include="Migrations\201703120817148_SeedStockroom5.cs" />
+    <Compile Include="Migrations\201703120817148_SeedStockroom5.Designer.cs">
+      <DependentUpon>201703120817148_SeedStockroom5.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252232342_PopulateWorkGroup.cs" />
-    <Compile Include="Migrations\201702252232342_PopulateWorkGroup.Designer.cs">
-      <DependentUpon>201702252232342_PopulateWorkGroup.cs</DependentUpon>
+    <Compile Include="Migrations\201703120826288_AddLogbook1.cs" />
+    <Compile Include="Migrations\201703120826288_AddLogbook1.Designer.cs">
+      <DependentUpon>201703120826288_AddLogbook1.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201702252238297_UpdateWorker.cs" />
-    <Compile Include="Migrations\201702252238297_UpdateWorker.Designer.cs">
-      <DependentUpon>201702252238297_UpdateWorker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702252238531_PopulateWorker.cs" />
-    <Compile Include="Migrations\201702252238531_PopulateWorker.Designer.cs">
-      <DependentUpon>201702252238531_PopulateWorker.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702252248529_PopulateSupervisors.cs" />
-    <Compile Include="Migrations\201702252248529_PopulateSupervisors.Designer.cs">
-      <DependentUpon>201702252248529_PopulateSupervisors.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702252316327_AdjustAssetInventories.cs" />
-    <Compile Include="Migrations\201702252316327_AdjustAssetInventories.Designer.cs">
-      <DependentUpon>201702252316327_AdjustAssetInventories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702252320551_PopulateAssetInventories.cs" />
-    <Compile Include="Migrations\201702252320551_PopulateAssetInventories.Designer.cs">
-      <DependentUpon>201702252320551_PopulateAssetInventories.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702252327133_PopulateJobPlan.cs" />
-    <Compile Include="Migrations\201702252327133_PopulateJobPlan.Designer.cs">
-      <DependentUpon>201702252327133_PopulateJobPlan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702252330424_PopulateJobPlanDocuments.cs" />
-    <Compile Include="Migrations\201702252330424_PopulateJobPlanDocuments.Designer.cs">
-      <DependentUpon>201702252330424_PopulateJobPlanDocuments.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260204357_PopulateParts.cs" />
-    <Compile Include="Migrations\201702260204357_PopulateParts.Designer.cs">
-      <DependentUpon>201702260204357_PopulateParts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260218147_adjust-StockroomInventory.cs" />
-    <Compile Include="Migrations\201702260218147_adjust-StockroomInventory.Designer.cs">
-      <DependentUpon>201702260218147_adjust-StockroomInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260220303_PopulatePartsListIndexes.cs" />
-    <Compile Include="Migrations\201702260220303_PopulatePartsListIndexes.Designer.cs">
-      <DependentUpon>201702260220303_PopulatePartsListIndexes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260228481_PopulateJobPlanParts.cs" />
-    <Compile Include="Migrations\201702260228481_PopulateJobPlanParts.Designer.cs">
-      <DependentUpon>201702260228481_PopulateJobPlanParts.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260305158_Adjust-WorkOrders.cs" />
-    <Compile Include="Migrations\201702260305158_Adjust-WorkOrders.Designer.cs">
-      <DependentUpon>201702260305158_Adjust-WorkOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260309207_PopulateWorkOrders.cs" />
-    <Compile Include="Migrations\201702260309207_PopulateWorkOrders.Designer.cs">
-      <DependentUpon>201702260309207_PopulateWorkOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260327220_PopulatePartIndexes.cs" />
-    <Compile Include="Migrations\201702260327220_PopulatePartIndexes.Designer.cs">
-      <DependentUpon>201702260327220_PopulatePartIndexes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260358560_PopulateWorkTimes.cs" />
-    <Compile Include="Migrations\201702260358560_PopulateWorkTimes.Designer.cs">
-      <DependentUpon>201702260358560_PopulateWorkTimes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260500527_AdjustOrders.cs" />
-    <Compile Include="Migrations\201702260500527_AdjustOrders.Designer.cs">
-      <DependentUpon>201702260500527_AdjustOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260504306_PopulateOrders.cs" />
-    <Compile Include="Migrations\201702260504306_PopulateOrders.Designer.cs">
-      <DependentUpon>201702260504306_PopulateOrders.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260526381_AdjustStockroomInventory-AddLocation.cs" />
-    <Compile Include="Migrations\201702260526381_AdjustStockroomInventory-AddLocation.Designer.cs">
-      <DependentUpon>201702260526381_AdjustStockroomInventory-AddLocation.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.cs" />
-    <Compile Include="Migrations\201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.Designer.cs">
-      <DependentUpon>201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260534546_PopulateStockroomInventory.cs" />
-    <Compile Include="Migrations\201702260534546_PopulateStockroomInventory.Designer.cs">
-      <DependentUpon>201702260534546_PopulateStockroomInventory.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260553043_RefactorStockroomModels.cs" />
-    <Compile Include="Migrations\201702260553043_RefactorStockroomModels.Designer.cs">
-      <DependentUpon>201702260553043_RefactorStockroomModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260600085_AdjustSupplierPartIndex.cs" />
-    <Compile Include="Migrations\201702260600085_AdjustSupplierPartIndex.Designer.cs">
-      <DependentUpon>201702260600085_AdjustSupplierPartIndex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260600212_PopulateSupplierPartIndex.cs" />
-    <Compile Include="Migrations\201702260600212_PopulateSupplierPartIndex.Designer.cs">
-      <DependentUpon>201702260600212_PopulateSupplierPartIndex.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260623389_AdjustOrderLine.cs" />
-    <Compile Include="Migrations\201702260623389_AdjustOrderLine.Designer.cs">
-      <DependentUpon>201702260623389_AdjustOrderLine.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260629523_PopulateOrderLines.cs" />
-    <Compile Include="Migrations\201702260629523_PopulateOrderLines.Designer.cs">
-      <DependentUpon>201702260629523_PopulateOrderLines.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260640228_PopulateOrderNotes.cs" />
-    <Compile Include="Migrations\201702260640228_PopulateOrderNotes.Designer.cs">
-      <DependentUpon>201702260640228_PopulateOrderNotes.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260648049_PopulateRequests.cs" />
-    <Compile Include="Migrations\201702260648049_PopulateRequests.Designer.cs">
-      <DependentUpon>201702260648049_PopulateRequests.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260655033_PopulateRequestLines.cs" />
-    <Compile Include="Migrations\201702260655033_PopulateRequestLines.Designer.cs">
-      <DependentUpon>201702260655033_PopulateRequestLines.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201702260714575_PopulateLogbookRecord.cs" />
-    <Compile Include="Migrations\201702260714575_PopulateLogbookRecord.Designer.cs">
-      <DependentUpon>201702260714575_PopulateLogbookRecord.cs</DependentUpon>
+    <Compile Include="Migrations\201703120828026_SeedLogbook1.cs" />
+    <Compile Include="Migrations\201703120828026_SeedLogbook1.Designer.cs">
+      <DependentUpon>201703120828026_SeedLogbook1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Logbook\LogbookRecord.cs" />
-    <Compile Include="Models\Logbook\LogbookStatus.cs" />
-    <Compile Include="Models\Logbook\LogbookType.cs" />
+    <Compile Include="Models\Logbook\LogbookGeneralStatus.cs" />
+    <Compile Include="Models\Logbook\LogbookBase.cs" />
+    <Compile Include="Models\Logbook\LogbookGeneral.cs" />
+    <Compile Include="Models\Logbook\LogbookStockroomOrder.cs" />
+    <Compile Include="Models\Logbook\LogbookStockroomRequest.cs" />
+    <Compile Include="Models\Logbook\LogbookWorkOrder.cs" />
     <Compile Include="Models\Maintenance\ClassOfIssue.cs" />
     <Compile Include="Models\Maintenance\Issue.cs" />
     <Compile Include="Models\Maintenance\IssueIndex.cs" />
@@ -496,12 +387,14 @@
     <Compile Include="Models\StockRoom\OrderStatus.cs" />
     <Compile Include="Models\StockRoom\Request.cs" />
     <Compile Include="Models\StockRoom\RequestLine.cs" />
+    <Compile Include="Models\StockRoom\StockroomRequestStatus.cs" />
     <Compile Include="Models\StockRoom\StockroomInventory.cs" />
     <Compile Include="Models\StockRoom\Supplier.cs" />
     <Compile Include="Models\StockRoom\SupplierContact.cs" />
     <Compile Include="Models\StockRoom\SupplierPartIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
+    <Compile Include="ViewModels\Logbook\EntryViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\OrderRequestViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -595,15 +488,16 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\Logbook\Maintenance.cshtml" />
-    <Content Include="Views\Logbook\General.cshtml" />
-    <Content Include="Views\Logbook\GeneralEntry.cshtml" />
-    <Content Include="Views\Logbook\Stockroom.cshtml" />
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\StockRoom\Inventory.cshtml" />
     <Content Include="Views\StockRoom\OrderRequest.cshtml" />
     <Content Include="Views\Maintenance\CurrentWorkOrder.cshtml" />
     <Content Include="Views\Admin\PendingWorkOrders.cshtml" />
+    <Content Include="Views\Logbook\_LogbookLeftNavBar.cshtml" />
+    <Content Include="Views\Logbook\Entry.cshtml" />
+    <Content Include="Views\Logbook\StockroomOrderRequests.cshtml" />
+    <Content Include="Views\Logbook\StockroomOrders.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -616,191 +510,107 @@
     <EmbeddedResource Include="Migrations\201702180853430_Initial.resx">
       <DependentUpon>201702180853430_Initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702180902110_Shared-1.resx">
-      <DependentUpon>201702180902110_Shared-1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120522490_AddShared1.resx">
+      <DependentUpon>201703120522490_AddShared1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702180907373_Shared-2.resx">
-      <DependentUpon>201702180907373_Shared-2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120523221_SeedShared1.resx">
+      <DependentUpon>201703120523221_SeedShared1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702180911373_Shared-3.resx">
-      <DependentUpon>201702180911373_Shared-3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120530452_AddShared2.resx">
+      <DependentUpon>201703120530452_AddShared2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702180930045_Shared-4.resx">
-      <DependentUpon>201702180930045_Shared-4.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120531158_SeedShared2.resx">
+      <DependentUpon>201703120531158_SeedShared2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702180933000_Shared-5.resx">
-      <DependentUpon>201702180933000_Shared-5.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120540097_AddShared3.resx">
+      <DependentUpon>201703120540097_AddShared3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702180936061_Shared-6.resx">
-      <DependentUpon>201702180936061_Shared-6.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120540333_SeedShared3.resx">
+      <DependentUpon>201703120540333_SeedShared3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181021129_Maintenance-1.resx">
-      <DependentUpon>201702181021129_Maintenance-1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120601137_AddShared4.resx">
+      <DependentUpon>201703120601137_AddShared4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181021411_Maintenance-2.resx">
-      <DependentUpon>201702181021411_Maintenance-2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120602266_SeedShared4.resx">
+      <DependentUpon>201703120602266_SeedShared4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181022170_Maintenance-3.resx">
-      <DependentUpon>201702181022170_Maintenance-3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120604230_AddShared5.resx">
+      <DependentUpon>201703120604230_AddShared5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181023448_Stockroom-1.resx">
-      <DependentUpon>201702181023448_Stockroom-1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120612469_SeedShared5.resx">
+      <DependentUpon>201703120612469_SeedShared5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181026231_Stockroom-2.resx">
-      <DependentUpon>201702181026231_Stockroom-2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120618053_AddShared6.resx">
+      <DependentUpon>201703120618053_AddShared6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181027571_Stockroom-3.resx">
-      <DependentUpon>201702181027571_Stockroom-3.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120619039_SeedShared6.resx">
+      <DependentUpon>201703120619039_SeedShared6.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181030153_Logbook-1.resx">
-      <DependentUpon>201702181030153_Logbook-1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120625365_AddShared7.resx">
+      <DependentUpon>201703120625365_AddShared7.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702181030460_Logbook-2.resx">
-      <DependentUpon>201702181030460_Logbook-2.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120628310_SeedShared61.resx">
+      <DependentUpon>201703120628310_SeedShared61.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702231659317_populate-logbook-types.resx">
-      <DependentUpon>201702231659317_populate-logbook-types.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120635214_AddMaintenance1.resx">
+      <DependentUpon>201703120635214_AddMaintenance1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702231721093_MaintenancePopulateClassOfIssue.resx">
-      <DependentUpon>201702231721093_MaintenancePopulateClassOfIssue.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120635372_SeedMaintenance1.resx">
+      <DependentUpon>201703120635372_SeedMaintenance1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702231735161_addIssueIndex.resx">
-      <DependentUpon>201702231735161_addIssueIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120640373_AddMaintenance2.resx">
+      <DependentUpon>201703120640373_AddMaintenance2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702251816408_PopulateIssue.resx">
-      <DependentUpon>201702251816408_PopulateIssue.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120640583_SeedMaintenance2.resx">
+      <DependentUpon>201703120640583_SeedMaintenance2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252200446_VariousFixes.resx">
-      <DependentUpon>201702252200446_VariousFixes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120646129_AddMaintenance3.resx">
+      <DependentUpon>201703120646129_AddMaintenance3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252201320_PopulateIssueIndex.resx">
-      <DependentUpon>201702252201320_PopulateIssueIndex.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120647332_SeedMaintenance3.resx">
+      <DependentUpon>201703120647332_SeedMaintenance3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252206301_MoreModelFixes.resx">
-      <DependentUpon>201702252206301_MoreModelFixes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120651502_AddMaintenance4.resx">
+      <DependentUpon>201703120651502_AddMaintenance4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252207281_PopulateMaintenanceStatus.resx">
-      <DependentUpon>201702252207281_PopulateMaintenanceStatus.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120653556_SeedMaintenance4.resx">
+      <DependentUpon>201703120653556_SeedMaintenance4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252208297_PopulateMaintenanceType.resx">
-      <DependentUpon>201702252208297_PopulateMaintenanceType.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120701224_AddStockroom1.resx">
+      <DependentUpon>201703120701224_AddStockroom1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252209397_PopulateOrderStatus.resx">
-      <DependentUpon>201702252209397_PopulateOrderStatus.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120701377_SeedStockroom1.resx">
+      <DependentUpon>201703120701377_SeedStockroom1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252211344_PopulateSupplier.resx">
-      <DependentUpon>201702252211344_PopulateSupplier.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120713104_AddStockroom2.resx">
+      <DependentUpon>201703120713104_AddStockroom2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252213273_PopulateSupplierContacts.resx">
-      <DependentUpon>201702252213273_PopulateSupplierContacts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120714441_SeedStockroom2.resx">
+      <DependentUpon>201703120714441_SeedStockroom2.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252214009_PopulateManufacturer.resx">
-      <DependentUpon>201702252214009_PopulateManufacturer.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120803265_AddStockroom3.resx">
+      <DependentUpon>201703120803265_AddStockroom3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252217386_PopulateManufacturerContacts.resx">
-      <DependentUpon>201702252217386_PopulateManufacturerContacts.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120805052_SeedStockroom3.resx">
+      <DependentUpon>201703120805052_SeedStockroom3.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252218551_PopulateAssetTypes.resx">
-      <DependentUpon>201702252218551_PopulateAssetTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120812483_AddStockroom4.resx">
+      <DependentUpon>201703120812483_AddStockroom4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252221121_PopulateMaps.resx">
-      <DependentUpon>201702252221121_PopulateMaps.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120813252_SeedStockroom4.resx">
+      <DependentUpon>201703120813252_SeedStockroom4.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252221503_PopulatePartTypes.resx">
-      <DependentUpon>201702252221503_PopulatePartTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120816390_AddStockroom5.resx">
+      <DependentUpon>201703120816390_AddStockroom5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252222296_PopulateVariants.resx">
-      <DependentUpon>201702252222296_PopulateVariants.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120817148_SeedStockroom5.resx">
+      <DependentUpon>201703120817148_SeedStockroom5.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252232342_PopulateWorkGroup.resx">
-      <DependentUpon>201702252232342_PopulateWorkGroup.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120826288_AddLogbook1.resx">
+      <DependentUpon>201703120826288_AddLogbook1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252238297_UpdateWorker.resx">
-      <DependentUpon>201702252238297_UpdateWorker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252238531_PopulateWorker.resx">
-      <DependentUpon>201702252238531_PopulateWorker.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252248529_PopulateSupervisors.resx">
-      <DependentUpon>201702252248529_PopulateSupervisors.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252316327_AdjustAssetInventories.resx">
-      <DependentUpon>201702252316327_AdjustAssetInventories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252320551_PopulateAssetInventories.resx">
-      <DependentUpon>201702252320551_PopulateAssetInventories.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252327133_PopulateJobPlan.resx">
-      <DependentUpon>201702252327133_PopulateJobPlan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702252330424_PopulateJobPlanDocuments.resx">
-      <DependentUpon>201702252330424_PopulateJobPlanDocuments.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260204357_PopulateParts.resx">
-      <DependentUpon>201702260204357_PopulateParts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260218147_adjust-StockroomInventory.resx">
-      <DependentUpon>201702260218147_adjust-StockroomInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260220303_PopulatePartsListIndexes.resx">
-      <DependentUpon>201702260220303_PopulatePartsListIndexes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260228481_PopulateJobPlanParts.resx">
-      <DependentUpon>201702260228481_PopulateJobPlanParts.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260305158_Adjust-WorkOrders.resx">
-      <DependentUpon>201702260305158_Adjust-WorkOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260309207_PopulateWorkOrders.resx">
-      <DependentUpon>201702260309207_PopulateWorkOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260327220_PopulatePartIndexes.resx">
-      <DependentUpon>201702260327220_PopulatePartIndexes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260358560_PopulateWorkTimes.resx">
-      <DependentUpon>201702260358560_PopulateWorkTimes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260500527_AdjustOrders.resx">
-      <DependentUpon>201702260500527_AdjustOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260504306_PopulateOrders.resx">
-      <DependentUpon>201702260504306_PopulateOrders.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260526381_AdjustStockroomInventory-AddLocation.resx">
-      <DependentUpon>201702260526381_AdjustStockroomInventory-AddLocation.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.resx">
-      <DependentUpon>201702260534394_AdjustStockroomInventory-RemoveDuplicatePartInfo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260534546_PopulateStockroomInventory.resx">
-      <DependentUpon>201702260534546_PopulateStockroomInventory.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260553043_RefactorStockroomModels.resx">
-      <DependentUpon>201702260553043_RefactorStockroomModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260600085_AdjustSupplierPartIndex.resx">
-      <DependentUpon>201702260600085_AdjustSupplierPartIndex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260600212_PopulateSupplierPartIndex.resx">
-      <DependentUpon>201702260600212_PopulateSupplierPartIndex.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260623389_AdjustOrderLine.resx">
-      <DependentUpon>201702260623389_AdjustOrderLine.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260629523_PopulateOrderLines.resx">
-      <DependentUpon>201702260629523_PopulateOrderLines.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260640228_PopulateOrderNotes.resx">
-      <DependentUpon>201702260640228_PopulateOrderNotes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260648049_PopulateRequests.resx">
-      <DependentUpon>201702260648049_PopulateRequests.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260655033_PopulateRequestLines.resx">
-      <DependentUpon>201702260655033_PopulateRequestLines.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201702260714575_PopulateLogbookRecord.resx">
-      <DependentUpon>201702260714575_PopulateLogbookRecord.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201703120828026_SeedLogbook1.resx">
+      <DependentUpon>201703120828026_SeedLogbook1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

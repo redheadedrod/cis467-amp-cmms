@@ -11,7 +11,9 @@
     {
         public int Id { get; set; }
         public JobPlan JobPlan { get; set; }
+        public int JobPlanId { get; set; }
         public Part Part { get; set; }
+        public int PartId { get; set; }
 
     }
 }
