@@ -59,7 +59,7 @@
                         {
                             button = "btn btn-danger";
                         }
-                        @Html.ActionLink("Order", "OrderRequest", new { StockId = item.StockId, PartId = item.Part.Id }, new { @class = button });
+                        @Html.ActionLink("Order", "PrebuiltOrderRequest", new { StockId = item.StockId, PartId = item.Part.Id }, new { @class = button });
                     }
                 </td>
             </tr>

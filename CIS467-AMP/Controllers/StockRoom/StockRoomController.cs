@@ -1,9 +1,10 @@
 ﻿using System.Data.Entity;
 using System.Web.Mvc;
 using System.Linq;
+using System;
+using System.Collections.Generic;
 using CIS467_AMP.Models;
 using CIS467_AMP.Models.Shared;
-using CIS467_AMP.ViewModels;
 using CIS467_AMP.Models.StockRoom;
 using Microsoft.Ajax.Utilities;
 using CIS467_AMP.ViewModels.StockRoom;
@@ -53,52 +54,106 @@ namespace CIS467_AMP.Controllers.StockRoom
         /// </summary>
         /// <param name="inventory">Current inventory item selected for order</param>
         /// <returns>viewmodel with all associated data required</returns>
-        public ActionResult OrderRequest(string StockId, int PartId)
+        public ActionResult PrebuiltOrderRequest(string StockId, int? PartId)
         {
-            var orderRequest = new OrderRequestViewModel();
-            var suppliers = _context.StockroomSupplierPartIndices.Where(x => x.StockRoom.StockId == StockId).Include(s => s.Supplier);
-            var order = new Order();
-            var status = new OrderStatus();
-            var part = new Part();
 
-            part = _context.Parts.FirstOrDefault(x => x.Id == PartId);
-            
-            //set defaults
-            order.OrderNumber = "TEST999";
-            order.OrderPlaced = new System.DateTime();
-            order.OrderExpected = new System.DateTime();
-            order.StatusLastUpDate = new System.DateTime();
-            order.OrderApproved = true;
+            var currentInventory = _context.StockroomInventories.FirstOrDefault(x => x.StockId == StockId);
+            var partsIndices = _context.StockroomSupplierPartIndices.Where(x => x.StockRoom.StockId == StockId).Include(x => x.Supplier).ToList();
+            var part = _context.Parts.FirstOrDefault(x => x.Id == PartId);
 
-            //Load status id into order
-            status.Id = 0;
-            order.OrderStatus = status;
+            Random random = new Random();
 
-            //Insert a default order into db
-            _context.StockroomOrders.Add(order);
+            //Generate random string for order number
+            var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var orderNumber = new string(
+                Enumerable.Repeat(chars, 20)
+                          .Select(s => s[random.Next(s.Length)])
+                          .ToArray());
 
-            //Query the for the current entry to retrieve the ID of the Order (This is not ideal)
-            order = _context.StockroomOrders.FirstOrDefault(x => x.OrderPlaced == order.OrderPlaced);
+            //Iterate through Parts Indices to grab supplier objects
+            var suppliers = new List<Supplier>();
+            var cost = new Double();
+            foreach (var supplier in partsIndices)
+            {
+                suppliers.Add(supplier.Supplier);
+                cost = supplier.Price;
+            }
 
-            //Load suppleirs into viewmodel
-            orderRequest.Suppliers = suppliers;
-            //Load part into viewmodel
-            orderRequest.Part = part;
-            //Load order defaults into view model
-            orderRequest.Order = order;
+            //Create generic order
+            var order = new Order()
+            {
+                OrderNumber = orderNumber
+            };
 
+            //Append all objects to order request form
+            var orderRequest = new PrebuiltOrderRequestViewModel()
+            {
+                CurrentInventory = currentInventory,
+                Suppliers = suppliers,
+                Part = part,
+                Order = order,
+                Cost = cost
+            };
 
             //Send data to view for 
             return View(orderRequest);
+           
+        }
+
+        public ActionResult NewOrderRequest()
+        {
+            var parts = _context.Parts;
+            return View();
+
         }
 
 
-        ////NOT DONE YET
-        //public ActionResult OrderRequest()
-        //{
-        //    var orderRequest = _context.StockroomOrders;
-        //    return View(orderRequest);
-        //}
+        [HttpPost]
+        public ActionResult CreatePreBuiltOrder(FormCollection collection)
+        {
+            DateTime createdDate = DateTime.Now;
+         
+            //Used for dummy orders
+            DateTime expectedDate = createdDate.AddDays(5);
+            var stockId = collection[0];
+            var partName = collection[2];
+            var partNumber = collection[3];
+            var units = Convert.ToInt32(collection[4]);
+            var supplierId = Convert.ToInt32(collection[5]);
+
+            Order order = new Order
+            {
+                OrderNumber = collection[1],
+                OrderPlaced = createdDate,
+                OrderExpected = expectedDate,
+                StatusLastUpDate = createdDate,
+                OrderApproved = true,
+                OrderStatus = _context.StockroomOrderStatuses.FirstOrDefault(x => x.Id == 0),
+                Supplier = _context.StockroomSuppliers.FirstOrDefault(x => x.Id == supplierId),
+                SupplierContact = _context.StockroomSupplierContacts.FirstOrDefault(x => x.SupplierId.Id == supplierId),
+                WorkOrder = null
+            };
+            Part part = _context.Parts.FirstOrDefault(x => x.Number == partNumber);
+          
+
+            _context.StockroomOrders.Add(order);
+            _context.SaveChanges();
+
+            OrderLine orderLine = new OrderLine
+            {
+                NumberOfItemsOrdered = units,
+                Order = _context.StockroomOrders.FirstOrDefault(x => x.OrderNumber == order.OrderNumber),
+                SupplierPartIndex = _context.StockroomSupplierPartIndices.FirstOrDefault(x => x.StockRoom.StockId == stockId)
+            };
+            //orderLine.SupplierPartIndex.StockRoom = _context.StockroomInventories.FirstOrDefault(x => x.StockId == stockId);
+            //orderLine.SupplierPartIndex.StockRoom.Variant = _context.Variants.FirstOrDefault(x => x.Id == 0);
+            //orderLine.SupplierPartIndex.StockRoom.Variant = _context.StockroomInventories
+
+            _context.StockroomOrderLines.Add(orderLine);
+            _context.SaveChanges();
+
+            return RedirectToAction("Inventory");
+        }
 
         [HttpPost]
         public ActionResult CreateOrder(Order order)
