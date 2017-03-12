@@ -11,6 +11,8 @@
     {
         public int Id { get; set; }
         public Part Part { get; set; }
+        public int PartId { get; set; }
         public Variant Variant { get; set; }
+        public int VariantId { get; set; }
     }
 }

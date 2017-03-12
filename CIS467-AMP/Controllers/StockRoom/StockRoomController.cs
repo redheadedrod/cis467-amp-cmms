@@ -31,14 +31,14 @@ namespace CIS467_AMP.Controllers.StockRoom
         {
             return View();
         }
-
+        
         public ActionResult Inventory()
         {
             var inventory = _context.StockroomInventories;   
             return View(inventory);
         }
 
-
+        
         //NOT DONE YET
         public ActionResult OrderRequest()
         {
@@ -53,6 +53,6 @@ namespace CIS467_AMP.Controllers.StockRoom
             _context.SaveChanges();
             
             return RedirectToAction("Index");
-        }
+        } 
     }
 }

@@ -9,5 +9,6 @@ namespace CIS467_AMP.Models.Logbook
     public class LogbookStockroomOrder : LogbookBase
     {
         public Order Order { get; set; }
+        public int OrderId { get; set; }
     }
 }

@@ -15,6 +15,8 @@
         public string Number { get; set;  } 
         public string Name { get; set; } 
         public Manufacturer Manufacturer { get; set; }
+        public int ManufacturerId { get; set; }
         public PartType PartType { get; set; }
+        public int PartTypeId { get; set; }
     }
 }

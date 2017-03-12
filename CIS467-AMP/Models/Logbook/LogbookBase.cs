@@ -20,8 +20,10 @@ namespace CIS467_AMP.Models.Logbook
     {
         public int Id { get; set; }
         public AssetInventory AssetInventory { get; set; }
+        public int AssetInventoryId { get; set; }
         public DateTime EnteredDateTime { get; set; }
         public Worker Worker { get; set; }
-        public string Entry { get; set; }
+        public int WorkerId { get; set; }
+        
     }
 }

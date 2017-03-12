@@ -15,6 +15,8 @@ namespace CIS467_AMP.Models.Maintenance
     {
         public int Id { get; set; }
         public ClassOfIssue ClassOfissue { get; set; }
+        public int ClassOfissueId { get; set; }
         public Issue Issue { get; set; }
+        public int IssueId { get; set; }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using CIS467_AMP.Models.Shared;
 
 namespace CIS467_AMP.Models.StockRoom
 {
@@ -19,10 +20,14 @@ namespace CIS467_AMP.Models.StockRoom
     {
         public int Id { get; set; }
         public Request Request { get; set; }
-        public StockroomInventory  Stockroom { get; set; }
+        public int RequestId { get; set; }
+        public StockroomInventory StockroomInventory { get; set; }
+        public int StockroomInventoryId { get; set; }
         public int Number { get; set; }
         public Supplier Supplier { get; set; }
+        public int SupplierId { get; set; }
         public SupplierPartIndex SupplierPart { get; set; }
+        public int SupplierPartId { get; set; }
         public string Description { get; set; }
     }
 }

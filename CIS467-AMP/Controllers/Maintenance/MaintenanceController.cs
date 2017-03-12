@@ -27,11 +27,11 @@ namespace CIS467_AMP.Controllers.Maintenance
         {
             return View();
         }
-
+        
         public ActionResult CurrentWorkOrder()
         {
             var workOrders = _context.MaintenanceWorkOrders;
             return View(workOrders);
-        }
+        } 
     }
 }

@@ -14,9 +14,10 @@
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public AssetType AssetType { get; set; } /// This field needs to be removed but having issues doing it right now.
         public Variant Variant { get; set; }
+        public int VariantId { get; set; }
         public Map Map { get; set; }
+        public int MapId { get; set; }
         public bool Active { get; set; }
     }
 }

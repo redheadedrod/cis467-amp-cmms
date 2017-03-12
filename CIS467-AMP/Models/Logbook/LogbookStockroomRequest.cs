@@ -9,5 +9,6 @@ namespace CIS467_AMP.Models.Logbook
     public class LogbookStockroomRequest : LogbookBase
     {
         public Request Request { get; set; }
+        public int RequestId { get; set; }
     }
 }

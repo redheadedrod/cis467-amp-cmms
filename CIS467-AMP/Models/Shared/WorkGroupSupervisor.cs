@@ -11,6 +11,8 @@
     {
         public int Id { get; set; }
         public Worker Worker { get; set; }
+        public int WorkerId { get; set; }
         public WorkGroup WorkGroup { get; set; }
+        public int WorkGroupId { get; set; }
     }
 }
