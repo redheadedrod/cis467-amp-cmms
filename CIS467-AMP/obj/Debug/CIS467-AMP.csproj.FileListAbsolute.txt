@@ -489,3 +489,4 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedStockroom5.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddLogbook1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedLogbook1.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddSpecialOrderList.resources
