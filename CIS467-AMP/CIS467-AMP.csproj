@@ -347,11 +347,7 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookGeneralStatus.cs" />
-    <Compile Include="Models\Logbook\LogbookBase.cs" />
     <Compile Include="Models\Logbook\LogbookGeneral.cs" />
-    <Compile Include="Models\Logbook\LogbookStockroomOrder.cs" />
-    <Compile Include="Models\Logbook\LogbookStockroomRequest.cs" />
-    <Compile Include="Models\Logbook\LogbookWorkOrder.cs" />
     <Compile Include="Models\Maintenance\ClassOfIssue.cs" />
     <Compile Include="Models\Maintenance\Issue.cs" />
     <Compile Include="Models\Maintenance\IssueIndex.cs" />
