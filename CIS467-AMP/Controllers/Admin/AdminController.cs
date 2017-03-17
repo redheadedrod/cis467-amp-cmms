@@ -26,13 +26,13 @@ namespace CIS467_AMP.Controllers.Admin
         {
             return View();
         }
-
+        /*
 
         //Not finished using temp model until data is in db
         public ActionResult PendingWorkOrders()
         {
             var workOrders = _context.MaintenanceWorkOrders;
             return View(workOrders);
-        }
+        } */
     }
 }

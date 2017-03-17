@@ -28,48 +28,45 @@ namespace CIS467_AMP.Models
     {
         // Databases are in order of dependencies. Initial model migrations take this into account
         // Shared databases - Must be done in this order due to dependencies
-        public DbSet<Manufacturer> Manufacturers { get; set; }
-        public DbSet<Map> Maps { get; set; }
-        public DbSet<WorkGroup> WorkGroups { get; set; }
-        public DbSet<ManufacturerContact> ManufacturerContacts { get; set; }
-        public DbSet<PartType> PartTypes { get; set; } 
-        public DbSet<Part> Parts { get; set; }
-        public DbSet<Worker> Workers { get; set; }
-        public DbSet<AssetType> AssetTypes { get; set; }
-        public DbSet<Variant> Variants { get; set; }
-        public DbSet<WorkGroupSupervisor> WorkGroupSupervisors { get; set; }
-        public DbSet<PartsListIndex> PartsListIndices { get; set; }
-        public DbSet<AssetInventory> AssetInventories { get; set; }
-        public DbSet<JobPlan> JobPlans { get; set; }
-        public DbSet<JobPlanDocument> JobPlanDocuments { get; set; }
-        public DbSet<JobPlanPart> JobPlanParts { get; set; }
+        //public DbSet<Manufacturer> Manufacturers { get; set; }
+        //public DbSet<Map> Maps { get; set; }
+        //public DbSet<WorkGroup> WorkGroups { get; set; }
+        //public DbSet<ManufacturerContact> ManufacturerContacts { get; set; }
+        //public DbSet<PartType> PartTypes { get; set; } 
+        //public DbSet<Part> Parts { get; set; }
+        //public DbSet<Worker> Workers { get; set; }
+        //public DbSet<AssetType> AssetTypes { get; set; }
+        //public DbSet<Variant> Variants { get; set; }
+        //public DbSet<WorkGroupSupervisor> WorkGroupSupervisors { get; set; }
+        //public DbSet<PartsListIndex> PartsListIndices { get; set; }
+        //public DbSet<AssetInventory> AssetInventories { get; set; }
+        //public DbSet<JobPlan> JobPlans { get; set; }
+        //public DbSet<JobPlanDocument> JobPlanDocuments { get; set; }
+        //public DbSet<JobPlanPart> JobPlanParts { get; set; }
         //Maintenance databases
-        public DbSet<ClassOfIssue> MaintenanceClassOfIssues { get; set; }
-        public DbSet<Issue> MaintenanceIssues { get; set; }
-        public DbSet<MaintenanceStatus> MaintenanceStatuses { get; set; }
-        public DbSet<MaintenanceType> MaintenanceTypes { get; set; }
-        public DbSet<IssueIndex> IssueIndexes { get; set; }
-        public DbSet<WorkOrder> MaintenanceWorkOrders { get; set; }
-        public DbSet<PartIndex> MaintenancePartIndices { get; set; }
-        public DbSet<WorkTime> MaintenanceWorkTimes { get; set; }
+        //public DbSet<ClassOfIssue> MaintenanceClassOfIssues { get; set; }
+        //public DbSet<Issue> MaintenanceIssues { get; set; }
+        //public DbSet<MaintenanceStatus> MaintenanceStatuses { get; set; }
+        //public DbSet<MaintenanceType> MaintenanceTypes { get; set; }
+        //public DbSet<IssueIndex> IssueIndexes { get; set; }
+        //public DbSet<WorkOrder> MaintenanceWorkOrders { get; set; }
+        //public DbSet<PartIndex> MaintenancePartIndices { get; set; }
+        //public DbSet<WorkTime> MaintenanceWorkTimes { get; set; }
         //stockroom databases
-        public DbSet<OrderStatus> StockroomOrderStatuses { get; set; }
-        public DbSet<StockroomRequestStatus> StockroomRequestStatuses { get; set; }
-        public DbSet<Supplier> StockroomSuppliers { get; set; }
-        public DbSet<Request> StockroomRequests { get; set; }
-        public DbSet<StockroomInventory> StockroomInventories { get; set; }
-        public DbSet<SupplierContact> StockroomSupplierContacts { get; set; }
-        public DbSet<SupplierPartIndex> StockroomSupplierPartIndices { get; set; }
-        public DbSet<RequestLine> StockroomRequestLines { get; set; }
-        public DbSet<Order> StockroomOrders { get; set; }
-        public DbSet<OrderLine> StockroomOrderLines { get; set; }
-        public DbSet<OrderNote> StockroomOrderNotes { get; set; }
+        //public DbSet<OrderStatus> StockroomOrderStatuses { get; set; }
+        //public DbSet<StockroomRequestStatus> StockroomRequestStatuses { get; set; }
+        //public DbSet<Supplier> StockroomSuppliers { get; set; }
+        //public DbSet<Request> StockroomRequests { get; set; }
+        //public DbSet<StockroomInventory> StockroomInventories { get; set; }
+        //public DbSet<SupplierContact> StockroomSupplierContacts { get; set; }
+        //public DbSet<SupplierPartIndex> StockroomSupplierPartIndices { get; set; }
+        //public DbSet<RequestLine> StockroomRequestLines { get; set; }
+        //public DbSet<Order> StockroomOrders { get; set; }
+        //public DbSet<OrderLine> StockroomOrderLines { get; set; }
+        //public DbSet<OrderNote> StockroomOrderNotes { get; set; }
         //logbook databases
-         public DbSet<LogbookGeneralStatus> LogbookGeneralStatuses { get; set; }
-         public DbSet<LogbookGeneral> LogbookGeneral { get; set; }
-         public DbSet<LogbookStockroomOrder> LogbookStockroomOrders { get; set; }
-         public DbSet<LogbookStockroomRequest> LogbookStockroomRequests { get; set; }
-         public DbSet<LogbookWorkOrder> LogbookWorkOrders { get; set; } 
+         //public DbSet<LogbookGeneralStatus> LogbookGeneralStatuses { get; set; }
+         //public DbSet<LogbookGeneral> LogbookGeneral { get; set; }
         //admin databases (Settings, Permissions, defaults)
         //todo
         public ApplicationDbContext()

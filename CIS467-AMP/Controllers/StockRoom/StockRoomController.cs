@@ -36,7 +36,7 @@ namespace CIS467_AMP.Controllers.StockRoom
         {
             return View();
         }
-
+        /*
         /// <summary>
         /// Retrieves Inventory.cshtml
         /// </summary>
@@ -162,6 +162,6 @@ namespace CIS467_AMP.Controllers.StockRoom
             _context.SaveChanges();
             
             return RedirectToAction("Index");
-        }
+        } */
     }
 }

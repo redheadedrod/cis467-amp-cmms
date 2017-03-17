@@ -31,16 +31,17 @@ namespace CIS467_AMP.Controllers.Logbook
         // GET: Logbook
         public ActionResult Index()
         {
-            var logbook = _context.LogbookGeneral
+           /* var logbook = _context.LogbookGeneral
                 .Include(a => a.AssetInventory)
                 .Include(w => w.Worker)
                 .Include(s => s.LogbookGeneralStatus)
                 ;
-            return View(logbook);
+            return View(logbook); */
+            return View();
 
         }
 
-        public ActionResult Entry()
+        /*public ActionResult Entry()
         {
             var status = _context.LogbookGeneralStatuses;
             var index = _context.AssetInventories;
@@ -95,7 +96,7 @@ namespace CIS467_AMP.Controllers.Logbook
                 ;
 
             return View(logbook);
-        }
+        }*/
 
 
     }
