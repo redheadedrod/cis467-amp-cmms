@@ -11,10 +11,10 @@ namespace CIS467_AMP.ViewModels.StockRoom
 {
     public class PrebuiltOrderRequestViewModel
     {
-        public IEnumerable<Supplier> Suppliers { get; set; }
+        public IEnumerable<StockRoomSupplier> StockRoomSuppliers { get; set; }
         public double Cost { get; set; }
-        public StockroomInventory CurrentInventory { get; set; }
+        public StockRoomInventory CurrentInventory { get; set; }
         public Order Order { get; set; }
-        public Part Part { get; set; }
+        public ManufacturerPart Part { get; set; }
     }
 }

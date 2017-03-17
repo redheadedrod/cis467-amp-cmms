@@ -19,13 +19,13 @@ namespace CIS467_AMP.Models.StockRoom
     public class RequestLine
     {
         public int Id { get; set; }
-        public Request Request { get; set; }
+        public StockRoomRequest Request { get; set; }
         public int RequestId { get; set; }
-        public StockroomInventory StockroomInventory { get; set; }
+        public StockRoomInventory StockroomInventory { get; set; }
         public int StockroomInventoryId { get; set; }
         public int Number { get; set; }
-        public Supplier Supplier { get; set; }
-        public int SupplierId { get; set; }
+        public StockRoomSupplier StockRoomSupplier { get; set; }
+        public int StockRoomSupplierId { get; set; }
         public SupplierPartIndex SupplierPart { get; set; }
         public int SupplierPartId { get; set; }
         public string Description { get; set; }

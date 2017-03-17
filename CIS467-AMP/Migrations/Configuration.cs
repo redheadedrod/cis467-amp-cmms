@@ -9,8 +9,8 @@ namespace CIS467_AMP.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            //AutomaticMigrationDataLossAllowed = true;
+            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationDataLossAllowed = true;
         }
 
         protected override void Seed(CIS467_AMP.Models.ApplicationDbContext context)

@@ -9,12 +9,15 @@ namespace CIS467_AMP.Models.Logbook
     /// <summary>
     /// This class is the Base model for logbooks. Extend this class for actual models
     /// Id - record ID 
-    /// AssetId - ID of asset (Will need to figure out way to have generic assets)
+    /// AssetInventory - link to asset
+    /// AssetInventoryId - link to asset - for forms
     /// EnteredDateTime - Time entry was entered
-    /// WorkerId - Worker that entered the logbook entry
-    /// StatusId - ID of the status we associate with this entry
-    /// TypeID - Type of entry for this entry
+    /// Worker - Link to Worker that entered the logbook entry
+    /// WorkerId - Link to Worker that entered the logbook entry - for forms (probably not needed since will be entered automatically)
     /// Entry - Entry text for the record
+    /// LogbookGeneralStatus - Status that we are logging
+    /// LogbookGeneralStatusId - Status that we are logging - for forms
+
     /// </summary>
     public class LogbookGeneral
     {

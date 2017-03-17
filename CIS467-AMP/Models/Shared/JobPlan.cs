@@ -1,17 +1,18 @@
 ﻿namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
-    /// Job plan listings
+    /// Job plan listings - Job plans are linked to Variants
     /// 
-    /// JobPlanID - ID of this jobplan
+    /// Id - Record Id
     /// JobPlanName - Name of plan "example - Inbound Seal replacement"
-    /// VariantID - ID of asset type variant that plan is related to
+    /// ManufacturerVariant - Link to variant type this is related to
+    /// ManufacturerVariantId - Link to variant type this is related to - Used in Forms
     ///  </summary>
     public class JobPlan
     {
         public int Id { get; set; }
         public string JobPlanName { get; set; }
-        public Variant Variant { get; set; }
-        public int VariantId { get; set; }
+        public ManufacturerVariant ManufacturerVariant { get; set; }
+        public int ManufacturerVariantId { get; set; }
     }
 }

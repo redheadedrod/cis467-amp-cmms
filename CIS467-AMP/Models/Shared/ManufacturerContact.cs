@@ -3,8 +3,9 @@
     /// <summary>
     /// This class is simply a listing of contacts
     /// 
-    /// Id - Id for entry
-    /// ManufacturerId - Id of Manufacturer
+    /// Id - Record Id
+    /// Manufacturer - Link to Manufacturer
+    /// ManufacturerId - Link to Manufacturer - Used in forms
     /// Name - full name of contact
     /// PhoneNumber - Phone number of contact
     /// FaxNumber - fax number for contact

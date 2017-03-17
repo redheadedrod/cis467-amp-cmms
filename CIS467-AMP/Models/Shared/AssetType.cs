@@ -2,11 +2,12 @@
 {
     /// <summary>
     /// This class will hold asset types
+    /// Variants will branch off from this Model. This Model should not be used directly
     /// 
-    /// Additional classes that will link to this to define type totally include:
-    /// variant - will be a list of variations (could be size, updates or special purpose items)
-    /// jobplan - will list job plans if available
-    /// partslist - will list parts lists for this type - parts lists will access the variants list and not this list directly
+    /// Id - Record ID
+    /// Name - Name of Asset Type 
+    /// Manufacturer - Link to Manufacturer
+    /// Manufacturer - Link to Manufacturer - used for forms
     /// </summary>
     public class AssetType
     {

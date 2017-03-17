@@ -133,7 +133,7 @@ namespace CIS467_AMP.Controllers.StockRoom
                 SupplierContact = _context.StockroomSupplierContacts.FirstOrDefault(x => x.Supplier.Id == supplierId),
                 WorkOrder = null
             };
-            Part part = _context.Parts.FirstOrDefault(x => x.Number == partNumber);
+            ManufacturerPart part = _context.Parts.FirstOrDefault(x => x.Number == partNumber);
           
 
             _context.StockroomOrders.Add(order);

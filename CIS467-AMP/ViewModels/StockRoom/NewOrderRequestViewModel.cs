@@ -8,6 +8,6 @@ namespace CIS467_AMP.ViewModels.StockRoom
 {
     public class NewOrderRequestViewModel
     {
-        public IEnumerable<Part> Parts { get; set; }
+        public IEnumerable<ManufacturerPart> Parts { get; set; }
     }
 }

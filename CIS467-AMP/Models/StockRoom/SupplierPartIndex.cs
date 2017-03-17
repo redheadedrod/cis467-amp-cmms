@@ -18,10 +18,10 @@ namespace CIS467_AMP.Models.StockRoom
     public class SupplierPartIndex
     {
         public int Id { get; set; }
-        public StockroomInventory StockRoomInventory { get; set; }
+        public StockRoomInventory StockRoomInventory { get; set; }
         public int StockRoomInventoryId { get; set; }
-        public Supplier Supplier { get; set; }
-        public int SupplierId { get; set; }
+        public StockRoomSupplier StockRoomSupplier { get; set; }
+        public int StockRoomSupplierId { get; set; }
         public float Price { get; set; }
         public DateTime DateTimeOfLastPrice { get; set; }
         public DateTime DateTimePriceGoodUntil { get; set; }
