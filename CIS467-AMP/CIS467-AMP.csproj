@@ -205,6 +205,142 @@
     <Compile Include="Migrations\201703171722357_Initial.Designer.cs">
       <DependentUpon>201703171722357_Initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703180030151_Add-Shared-1.cs" />
+    <Compile Include="Migrations\201703180030151_Add-Shared-1.Designer.cs">
+      <DependentUpon>201703180030151_Add-Shared-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180143069_Seed-Shared-1.cs" />
+    <Compile Include="Migrations\201703180143069_Seed-Shared-1.Designer.cs">
+      <DependentUpon>201703180143069_Seed-Shared-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180145495_Add-Shared-2.cs" />
+    <Compile Include="Migrations\201703180145495_Add-Shared-2.Designer.cs">
+      <DependentUpon>201703180145495_Add-Shared-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180146065_Seed-Shared-2.cs" />
+    <Compile Include="Migrations\201703180146065_Seed-Shared-2.Designer.cs">
+      <DependentUpon>201703180146065_Seed-Shared-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180153145_Add-Shared-3.cs" />
+    <Compile Include="Migrations\201703180153145_Add-Shared-3.Designer.cs">
+      <DependentUpon>201703180153145_Add-Shared-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180153410_Seed-Shared-3.cs" />
+    <Compile Include="Migrations\201703180153410_Seed-Shared-3.Designer.cs">
+      <DependentUpon>201703180153410_Seed-Shared-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180210432_Add-Shared-4.cs" />
+    <Compile Include="Migrations\201703180210432_Add-Shared-4.Designer.cs">
+      <DependentUpon>201703180210432_Add-Shared-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180211265_Seed-Shared-4.cs" />
+    <Compile Include="Migrations\201703180211265_Seed-Shared-4.Designer.cs">
+      <DependentUpon>201703180211265_Seed-Shared-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180219448_Add-Shared-5.cs" />
+    <Compile Include="Migrations\201703180219448_Add-Shared-5.Designer.cs">
+      <DependentUpon>201703180219448_Add-Shared-5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180220063_Seed-Shared-5.cs" />
+    <Compile Include="Migrations\201703180220063_Seed-Shared-5.Designer.cs">
+      <DependentUpon>201703180220063_Seed-Shared-5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180226200_Add-Shared-6.cs" />
+    <Compile Include="Migrations\201703180226200_Add-Shared-6.Designer.cs">
+      <DependentUpon>201703180226200_Add-Shared-6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180226567_Seed-Shared-6.cs" />
+    <Compile Include="Migrations\201703180226567_Seed-Shared-6.Designer.cs">
+      <DependentUpon>201703180226567_Seed-Shared-6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180232168_Add-Logbook.cs" />
+    <Compile Include="Migrations\201703180232168_Add-Logbook.Designer.cs">
+      <DependentUpon>201703180232168_Add-Logbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180233038_Seed-Logbook.cs" />
+    <Compile Include="Migrations\201703180233038_Seed-Logbook.Designer.cs">
+      <DependentUpon>201703180233038_Seed-Logbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180235155_Add-Maintenance-1.cs" />
+    <Compile Include="Migrations\201703180235155_Add-Maintenance-1.Designer.cs">
+      <DependentUpon>201703180235155_Add-Maintenance-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180236046_Seed-Maintenance-1.cs" />
+    <Compile Include="Migrations\201703180236046_Seed-Maintenance-1.Designer.cs">
+      <DependentUpon>201703180236046_Seed-Maintenance-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180236594_Add-Maintenance-2.cs" />
+    <Compile Include="Migrations\201703180236594_Add-Maintenance-2.Designer.cs">
+      <DependentUpon>201703180236594_Add-Maintenance-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180237290_Seed-Maintenance-2.cs" />
+    <Compile Include="Migrations\201703180237290_Seed-Maintenance-2.Designer.cs">
+      <DependentUpon>201703180237290_Seed-Maintenance-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180238287_Add-Maintenance-3.cs" />
+    <Compile Include="Migrations\201703180238287_Add-Maintenance-3.Designer.cs">
+      <DependentUpon>201703180238287_Add-Maintenance-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180240557_Seed-Maintenance-3.cs" />
+    <Compile Include="Migrations\201703180240557_Seed-Maintenance-3.Designer.cs">
+      <DependentUpon>201703180240557_Seed-Maintenance-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180243361_Add-Maintenance-4.cs" />
+    <Compile Include="Migrations\201703180243361_Add-Maintenance-4.Designer.cs">
+      <DependentUpon>201703180243361_Add-Maintenance-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180244274_Seed-Maintenance-4.cs" />
+    <Compile Include="Migrations\201703180244274_Seed-Maintenance-4.Designer.cs">
+      <DependentUpon>201703180244274_Seed-Maintenance-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180248598_Add-StockRoom-1.cs" />
+    <Compile Include="Migrations\201703180248598_Add-StockRoom-1.Designer.cs">
+      <DependentUpon>201703180248598_Add-StockRoom-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180249238_Seed-StockRoom-1.cs" />
+    <Compile Include="Migrations\201703180249238_Seed-StockRoom-1.Designer.cs">
+      <DependentUpon>201703180249238_Seed-StockRoom-1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180255105_Add-StockRoom-2.cs" />
+    <Compile Include="Migrations\201703180255105_Add-StockRoom-2.Designer.cs">
+      <DependentUpon>201703180255105_Add-StockRoom-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180255433_Seed-StockRoom-2.cs" />
+    <Compile Include="Migrations\201703180255433_Seed-StockRoom-2.Designer.cs">
+      <DependentUpon>201703180255433_Seed-StockRoom-2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180326151_Add-StockRoom-3.cs" />
+    <Compile Include="Migrations\201703180326151_Add-StockRoom-3.Designer.cs">
+      <DependentUpon>201703180326151_Add-StockRoom-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180326316_Seed-StockRoom-3.cs" />
+    <Compile Include="Migrations\201703180326316_Seed-StockRoom-3.Designer.cs">
+      <DependentUpon>201703180326316_Seed-StockRoom-3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180333319_Add-StockRoom-4.cs" />
+    <Compile Include="Migrations\201703180333319_Add-StockRoom-4.Designer.cs">
+      <DependentUpon>201703180333319_Add-StockRoom-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180334341_Seed-StockRoom-4.cs" />
+    <Compile Include="Migrations\201703180334341_Seed-StockRoom-4.Designer.cs">
+      <DependentUpon>201703180334341_Seed-StockRoom-4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180357422_Add-StockRoom-5.cs" />
+    <Compile Include="Migrations\201703180357422_Add-StockRoom-5.Designer.cs">
+      <DependentUpon>201703180357422_Add-StockRoom-5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180358125_Seed-StockRoom-5.cs" />
+    <Compile Include="Migrations\201703180358125_Seed-StockRoom-5.Designer.cs">
+      <DependentUpon>201703180358125_Seed-StockRoom-5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180434251_Add-StockRoom-6.cs" />
+    <Compile Include="Migrations\201703180434251_Add-StockRoom-6.Designer.cs">
+      <DependentUpon>201703180434251_Add-StockRoom-6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703180434411_Seed-StockRoom-6.cs" />
+    <Compile Include="Migrations\201703180434411_Seed-StockRoom-6.Designer.cs">
+      <DependentUpon>201703180434411_Seed-StockRoom-6.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookGeneralStatus.cs" />
     <Compile Include="Models\Logbook\LogbookGeneral.cs" />
@@ -223,8 +359,8 @@
     <Compile Include="Models\Shared\JobPlanPart.cs" />
     <Compile Include="Models\Shared\Manufacturer.cs" />
     <Compile Include="Models\Shared\ManufacturerContact.cs" />
-    <Compile Include="Models\Shared\ManufacturerPartToVariantIndex.cs" />
-    <Compile Include="Models\Shared\ManufacturerVariant.cs" />
+    <Compile Include="Models\Shared\ManufacturerPartParentIndex.cs" />
+    <Compile Include="Models\Shared\ManufacturerPart.cs" />
     <Compile Include="Models\Shared\Map.cs" />
     <Compile Include="Models\Shared\Worker.cs" />
     <Compile Include="Models\Shared\WorkGroup.cs" />
@@ -239,18 +375,18 @@
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
-    <Compile Include="Models\StockRoom\Order.cs" />
-    <Compile Include="Models\StockRoom\OrderLine.cs" />
-    <Compile Include="Models\StockRoom\OrderNote.cs" />
-    <Compile Include="Models\StockRoom\RequestLine.cs" />
-    <Compile Include="Models\StockRoom\SpecialOrderList.cs" />
+    <Compile Include="Models\StockRoom\StockRoomOrder.cs" />
+    <Compile Include="Models\StockRoom\StockRoomOrderLine.cs" />
+    <Compile Include="Models\StockRoom\StockRoomOrderNote.cs" />
+    <Compile Include="Models\StockRoom\StockRoomRequestLine.cs" />
+    <Compile Include="Models\StockRoom\StockRoomSpecialOrderLine.cs" />
     <Compile Include="Models\StockRoom\StockRoomOrderStatus.cs" />
     <Compile Include="Models\StockRoom\StockRoomRequest.cs" />
     <Compile Include="Models\StockRoom\StockroomRequestStatus.cs" />
-    <Compile Include="Models\StockRoom\StockroomInventory.cs" />
+    <Compile Include="Models\StockRoom\StockRoomInventory.cs" />
     <Compile Include="Models\StockRoom\StockRoomSupplier.cs" />
-    <Compile Include="Models\StockRoom\SupplierContact.cs" />
-    <Compile Include="Models\StockRoom\SupplierPartIndex.cs" />
+    <Compile Include="Models\StockRoom\StockRoomSupplierContact.cs" />
+    <Compile Include="Models\StockRoom\StockRoomSupplierPartIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Logbook\EntryViewModel.cs" />
@@ -372,6 +508,108 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201703171722357_Initial.resx">
       <DependentUpon>201703171722357_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180030151_Add-Shared-1.resx">
+      <DependentUpon>201703180030151_Add-Shared-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180143069_Seed-Shared-1.resx">
+      <DependentUpon>201703180143069_Seed-Shared-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180145495_Add-Shared-2.resx">
+      <DependentUpon>201703180145495_Add-Shared-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180146065_Seed-Shared-2.resx">
+      <DependentUpon>201703180146065_Seed-Shared-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180153145_Add-Shared-3.resx">
+      <DependentUpon>201703180153145_Add-Shared-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180153410_Seed-Shared-3.resx">
+      <DependentUpon>201703180153410_Seed-Shared-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180210432_Add-Shared-4.resx">
+      <DependentUpon>201703180210432_Add-Shared-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180211265_Seed-Shared-4.resx">
+      <DependentUpon>201703180211265_Seed-Shared-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180219448_Add-Shared-5.resx">
+      <DependentUpon>201703180219448_Add-Shared-5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180220063_Seed-Shared-5.resx">
+      <DependentUpon>201703180220063_Seed-Shared-5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180226200_Add-Shared-6.resx">
+      <DependentUpon>201703180226200_Add-Shared-6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180226567_Seed-Shared-6.resx">
+      <DependentUpon>201703180226567_Seed-Shared-6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180232168_Add-Logbook.resx">
+      <DependentUpon>201703180232168_Add-Logbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180233038_Seed-Logbook.resx">
+      <DependentUpon>201703180233038_Seed-Logbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180235155_Add-Maintenance-1.resx">
+      <DependentUpon>201703180235155_Add-Maintenance-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180236046_Seed-Maintenance-1.resx">
+      <DependentUpon>201703180236046_Seed-Maintenance-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180236594_Add-Maintenance-2.resx">
+      <DependentUpon>201703180236594_Add-Maintenance-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180237290_Seed-Maintenance-2.resx">
+      <DependentUpon>201703180237290_Seed-Maintenance-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180238287_Add-Maintenance-3.resx">
+      <DependentUpon>201703180238287_Add-Maintenance-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180240557_Seed-Maintenance-3.resx">
+      <DependentUpon>201703180240557_Seed-Maintenance-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180243361_Add-Maintenance-4.resx">
+      <DependentUpon>201703180243361_Add-Maintenance-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180244274_Seed-Maintenance-4.resx">
+      <DependentUpon>201703180244274_Seed-Maintenance-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180248598_Add-StockRoom-1.resx">
+      <DependentUpon>201703180248598_Add-StockRoom-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180249238_Seed-StockRoom-1.resx">
+      <DependentUpon>201703180249238_Seed-StockRoom-1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180255105_Add-StockRoom-2.resx">
+      <DependentUpon>201703180255105_Add-StockRoom-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180255433_Seed-StockRoom-2.resx">
+      <DependentUpon>201703180255433_Seed-StockRoom-2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180326151_Add-StockRoom-3.resx">
+      <DependentUpon>201703180326151_Add-StockRoom-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180326316_Seed-StockRoom-3.resx">
+      <DependentUpon>201703180326316_Seed-StockRoom-3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180333319_Add-StockRoom-4.resx">
+      <DependentUpon>201703180333319_Add-StockRoom-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180334341_Seed-StockRoom-4.resx">
+      <DependentUpon>201703180334341_Seed-StockRoom-4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180357422_Add-StockRoom-5.resx">
+      <DependentUpon>201703180357422_Add-StockRoom-5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180358125_Seed-StockRoom-5.resx">
+      <DependentUpon>201703180358125_Seed-StockRoom-5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180434251_Add-StockRoom-6.resx">
+      <DependentUpon>201703180434251_Add-StockRoom-6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703180434411_Seed-StockRoom-6.resx">
+      <DependentUpon>201703180434411_Seed-StockRoom-6.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

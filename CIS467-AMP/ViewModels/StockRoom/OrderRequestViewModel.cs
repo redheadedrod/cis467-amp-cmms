@@ -9,8 +9,8 @@ namespace CIS467_AMP.ViewModels.StockRoom
 {
     public class OrderRequestViewModel
     {
-        public IQueryable<SupplierPartIndex> Suppliers { get; set; }
-        public Order Order { get; set; }
+        public IQueryable<StockRoomSupplierPartIndex> Suppliers { get; set; }
+        public StockRoomOrder Order { get; set; }
         //public ManufacturerPart Part { get; set; }
     }
 }

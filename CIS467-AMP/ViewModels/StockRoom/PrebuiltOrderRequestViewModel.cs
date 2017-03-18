@@ -14,7 +14,7 @@ namespace CIS467_AMP.ViewModels.StockRoom
         public IEnumerable<StockRoomSupplier> StockRoomSuppliers { get; set; }
         public double Cost { get; set; }
         public StockRoomInventory CurrentInventory { get; set; }
-        public Order Order { get; set; }
+        public StockRoomOrder Order { get; set; }
         //public ManufacturerPart Part { get; set; }
     }
 }

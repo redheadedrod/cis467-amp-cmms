@@ -11,8 +11,8 @@ namespace CIS467_AMP.Models.Maintenance
     /// Id - record id
     /// MaintenanceWorkOrder - Link to work order
     /// MaintenanceWorkOrderId - Link to work order - for forms
-    /// ManufacturerToVariantPartIndex - Link to Manufacturer part number of variant
-    /// ManufacturerToVariantPartIndexId - Link to Manufacturer part number of variant - for forms
+    /// ManufacturerPart - Link to Manufacturer part number of variant
+    /// ManufacturerPartId - Link to Manufacturer part number of variant - for forms
     /// Number - number of items used
     /// </summary>
     public class MaintenanceWorkOrderPartIndex
@@ -20,8 +20,8 @@ namespace CIS467_AMP.Models.Maintenance
         public int Id { get; set; }
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
         public int MaintenanceWorkOrderId { get; set; }
-        public ManufacturerToVariantPartIndex PManufacturerToVariantPartIndex { get; set; }
-        public int ManufacturerToVariantPartIndexId { get; set; }
+        public ManufacturerPart ManufacturerPart { get; set; }
+        public int ManufacturerPartId { get; set; }
         public int Number { get; set; }
     }
 }
