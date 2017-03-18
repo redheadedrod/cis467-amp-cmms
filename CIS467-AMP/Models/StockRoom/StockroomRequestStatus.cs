@@ -10,7 +10,7 @@ namespace CIS467_AMP.Models.StockRoom
     /// Id - Record Id
     /// Name - Text for name of status
     /// </summary>
-    public class StockroomRequestStatus
+    public class StockRoomRequestStatus
     {
         public int Id { get; set; }
         public string Name { get; set; }

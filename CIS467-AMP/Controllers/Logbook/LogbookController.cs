@@ -36,7 +36,8 @@ namespace CIS467_AMP.Controllers.Logbook
                 .Include(w => w.Worker)
                 .Include(s => s.LogbookGeneralStatus)
                 ;
-            return View(logbook);
+            return View(logbook); 
+            //return View();
 
         }
 
@@ -45,14 +46,6 @@ namespace CIS467_AMP.Controllers.Logbook
             var status = _context.LogbookGeneralStatuses;
             var index = _context.AssetInventories;
             var workers = _context.Workers;
-            // Make amends for not having Name field at first. To be removed when db is fixed
-            foreach (Worker worker in workers)
-            {
-                if (worker.Name == null)
-                {
-                    worker.Name = worker.LastName + ", " + worker.FirstName;
-                }
-            }
 
 
             var viewModel = new EntryViewModel
@@ -75,22 +68,19 @@ namespace CIS467_AMP.Controllers.Logbook
 
         public ActionResult Maintenance()
         {
-            var logbook = _context.LogbookWorkOrders
+            var logbook = _context.MaintenanceWorkOrders
                 .Include(a => a.AssetInventory)
-                .Include(o => o.WorkOrder)
-                .Include(w => w.Worker)
-                .Include(s => s.WorkOrder.MaintenanceStatus)
+                .Include(w => w.Creator)
+                .Include(s => s.MaintenanceStatus)
                 ;
             return View(logbook);
         }
 
         public ActionResult StockroomOrders()
         {
-            var logbook = _context.LogbookStockroomOrders
-                .Include(a => a.AssetInventory)
-                .Include(o => o.Order)
-                .Include(w => w.Worker)
-                .Include(s => s.Order.OrderStatus)
+            var logbook = _context.StockroomOrders
+                .Include(a => a.StockRoomSupplier)
+                .Include(s => s.StockRoomOrderStatus)
                 ;
 
             return View(logbook);
@@ -98,11 +88,10 @@ namespace CIS467_AMP.Controllers.Logbook
 
         public ActionResult StockroomOrderRequests()
         {
-            var logbook = _context.LogbookStockroomRequests
-                .Include(a => a.AssetInventory)
-                .Include(o => o.Request)
+            var logbook = _context.StockRoomRequests.Include(a => a.AssetInventory)
                 .Include(w => w.Worker)
-                .Include(s => s.Request.StockroomRequestStatus)
+                .Include(o => o.MaintenanceWorkOrder)
+                .Include(s => s.StockRoomRequestStatus)
                 ;
 
             return View(logbook);

@@ -3,7 +3,7 @@
     /// <summary>
     /// Work Group listing
     /// 
-    /// WorkGroupID - Id of entry
+    /// Id - Record Id
     /// Name - name of workgroup
     /// </summary>
     public class WorkGroup

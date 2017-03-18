@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CIS467_AMP.Models.Logbook.LogbookStockroomOrder>
+﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.Order>
 @{
     /**
      * Author: Rodney Fulk
@@ -36,22 +36,18 @@
         <div class="col col-md-10">
             <table class="table">
                 <tr>
-                    <th>Date Ordered</th>
-                    <th>Orderd by</th>
-                    <th>Asset</th>
                     <th>Order Number</th>
+                    <th>Date Ordered</th>
                     <th>Order Status</th>
                     <th>Status Updated</th>
                 </tr>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.EnteredDateTime)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Worker.LastName), @Html.DisplayFor(modelItem => item.Worker.FirstName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Order.OrderNumber)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Order.OrderStatus.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Order.StatusLastUpDate)</td>
+                        <td>@Html.DisplayFor(modelItem => item.OrderNumber)</td>
+                        <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
+                        <td>@Html.DisplayFor(modelItem => item.OrderStatus.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
                     </tr>
                 }
             </table>

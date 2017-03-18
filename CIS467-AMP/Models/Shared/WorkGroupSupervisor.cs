@@ -3,9 +3,11 @@
     /// <summary>
     /// Work group supervisor listings - can have more than one supervisor in a work group
     /// 
-    /// WorkGroupSupervisorsID - ID of entry
-    /// WorkerID - Id of supervisor
-    /// WorkGroupID - Id of group supervising
+    /// Id - Record Id
+    /// Worker - Link to worker
+    /// WorkerId - Link to worker - used in forms
+    /// WorkGroup - Group worker is supervisor of
+    /// WorkGroupId - Group worker is supervisor of - used in forms
     /// </summary>
     public class WorkGroupSupervisor
     {

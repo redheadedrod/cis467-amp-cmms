@@ -1,7 +1,5 @@
-﻿@model IEnumerable<CIS467_AMP.Models.Logbook.LogbookStockroomRequest>
-@{
-    /**
-     * Author: Rodney Fulk
+﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.Request>
+     @* Author: Rodney Fulk
      * Logbook for Parts Request
      */
 
@@ -11,7 +9,7 @@
     //Uses this scaffolding as main layout --
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
-}
+} *@
 
 <div class="row">
     @Html.Partial("_LogbookLeftNavBar") @*Could put a model as second argument*@
@@ -21,20 +19,20 @@
     <div class="col col-md-10">
         <table class="table">
             <tr>
+                <th>Order Number</th>
                 <th>Date Requested</th>
                 <th>Requested by</th>
                 <th>Asset</th>
-                <th>Order Number</th>
                 <th>Order Status</th>
             </tr>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@Html.DisplayFor(modelItem => item.EnteredDateTime)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Worker.LastName), @Html.DisplayFor(modelItem => item.Worker.FirstName)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Requested)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Worker.Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Request.Id)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Request.StockroomRequestStatus.Name)</td>
+                    <td>@Html.DisplayFor(modelItem => item.StockroomRequestStatus.Name)</td>
                 </tr>
             }
         </table>

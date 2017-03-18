@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CIS467_AMP.Models.Logbook.LogbookWorkOrder>
+﻿@model IEnumerable<CIS467_AMP.Models.Maintenance.WorkOrder>
 @{
     /**
      * Author: Rodney Fulk
@@ -23,22 +23,22 @@
         <div class="col col-md-10">
             <table class="table">
                 <tr>
+                    <th>Work Order Number</th>
                     <th>Date Requested</th>
                     <th>Requested by</th>
                     <th>Asset</th>
-                    <th>Work Order Number</th>
                     <th>Work Order Status</th>
                     <th>Status Updated</th>
                 </tr>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.WorkOrder.CreatedDateTime)</td>
-                        <td>@Html.DisplayFor(modelItem => item.WorkOrder.Creator.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.WorkOrder.AssetInventory.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.WorkOrder.Id)</td>
-                        <td>@Html.DisplayFor(modelItem => item.WorkOrder.MaintenanceStatus.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.WorkOrder.LastStatusDateTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedDateTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Creator.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MaintenanceStatus.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LastStatusDateTime)</td>
                     </tr>
                 }
             </table>
