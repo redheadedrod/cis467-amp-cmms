@@ -36,7 +36,19 @@ namespace CIS467_AMP.Controllers.StockRoom
         {
             return View();
         }
-        
+
+        // stub called from logbook
+        public ActionResult Order(int id)
+        {
+            return View();
+        }
+
+        //Stub for use with logbook
+        public ActionResult Request(int id)
+        {
+            return View();
+        }
+
         /// <summary>
         /// Retrieves Inventory.cshtml
         /// </summary>
