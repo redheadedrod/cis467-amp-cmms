@@ -1,10 +1,16 @@
 ﻿using System;
+using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Antlr.Runtime;
 using CIS467_AMP.Models;
+using CIS467_AMP.Models.Maintenance;
+using CIS467_AMP.Models.StockRoom;
+using CIS467_AMP.Models.Shared;
+using CIS467_AMP.ViewModels.Maintenance;
 
 namespace CIS467_AMP.Controllers.Maintenance
 {
@@ -26,19 +32,61 @@ namespace CIS467_AMP.Controllers.Maintenance
         // GET: Maintenance
         public ActionResult Index()
         {
-            return View();
-        }
-        
-        public ActionResult CurrentWorkOrder()
-        {
-            var workOrders = _context.MaintenanceWorkOrders;
-            return View(workOrders);
+            var workOrder = _context.MaintenanceWorkOrders
+                .Include(a => a.AssetInventory)
+                .Include(w => w.Creator)
+                .Include(s => s.MaintenanceStatus)
+                .Include(s => s.LeadWorker)
+            ;
+            return View(workOrder);
         }
 
-        public ActionResult Edit(int Id)
+        private WorkOrderViewModel CreateViewModel(int? Id)
         {
+            var workers = _context.Workers;
+            var inventory = _context.AssetInventories;
+            var status = _context.MaintenanceStatuses;
+            var issues = _context.MaintenanceIssues;
+            var plan = _context.JobPlans;
 
-            return View();
+            var viewModel = new WorkOrderViewModel()
+            {
+                Workers = workers,
+                AssetInventories = inventory,
+                MaintenanceStatuses = status,
+                MaintenanceIssue = issues,
+                JobPlan = plan
+
+            };
+            return (viewModel);
+        }
+
+        public ActionResult NewWorkOrder()
+        {
+            return View(CreateViewModel(null));
+        }
+
+        public ActionResult EditWorkOrder(int? Id)
+        {
+            return View(CreateViewModel(Id));
+        }
+
+        [HttpPost]
+        public ActionResult Create(MaintenanceWorkOrder workOrder)
+        {
+            /*logbookGeneral.EnteredDateTime = DateTime.Now;
+            _context.LogbookGeneral.Add(logbookGeneral);
+            _context.SaveChanges(); */
+            return RedirectToAction("Index", "Maintenance");
+        }
+
+        [HttpPost]
+        public ActionResult Edit(MaintenanceWorkOrder workOrder)
+        {
+            /*logbookGeneral.EnteredDateTime = DateTime.Now;
+            _context.LogbookGeneral.Add(logbookGeneral);
+            _context.SaveChanges(); */
+            return RedirectToAction("Index", "Maintenance");
         }
     }
 }

@@ -1,0 +1,20 @@
+﻿
+@model CIS467_AMP.ViewModels.Maintenance.WorkOrderViewModel
+
+                @*<div class="form-group">
+                    @Html.LabelFor(f => f.LogbookGeneral.WorkerId, "Pick Worker (Note for testing purposes only. Normally is logged in person)")
+                    @Html.DropDownListFor(f => f.LogbookGeneral.WorkerId, new SelectList(Model.Workers, "Id", "Name"), "", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(f => f.LogbookGeneral.AssetInventoryId, "Pick Asset")
+                    @Html.DropDownListFor(f => f.LogbookGeneral.AssetInventoryId, new SelectList(Model.AssetInventories, "Id", "Name"), "", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(f => f.LogbookGeneral.LogbookGeneralStatusId, "Pick Topic")
+                    @Html.DropDownListFor(f => f.LogbookGeneral.LogbookGeneralStatusId, new SelectList(Model.LogbookGeneralStatuses, "Id", "Name"), "", new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(f => f.LogbookGeneral.Entry)
+                    @Html.TextAreaFor(f => f.LogbookGeneral.Entry, new { @class = "form-control" })
+                </div>
+                *@

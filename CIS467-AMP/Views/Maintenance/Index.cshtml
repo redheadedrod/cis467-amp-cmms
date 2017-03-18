@@ -1,7 +1,8 @@
-﻿@{
+﻿@model IEnumerable<CIS467_AMP.Models.Maintenance.MaintenanceWorkOrder>
+@{
     /**
-     * Author: Jason Bensel
-     * Stockroom main page
+     * Author: Rodney Fulk
+     * Stockroom orders logbook
      */
 
     //Sets tab bar title
@@ -13,14 +14,41 @@
 }
 
 <div class="row">
-    <div class="col col-md-2">
-        <ul class="nav nav-pills nav-stacked">
-            <li>@Html.ActionLink("Maintenance Home", "Index")</li>
-            <li>@Html.ActionLink("Current Work Orders", "CurrentWorkOrder")</li>
-            <li>@Html.ActionLink("Create Work Order", "WorkOrder")</li>
-        </ul>
-    </div>
+    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
     <div class="col-md-10">
-        <h1 id="title">@ViewBag.Title</h1>
+        <h1 id="titleS">@ViewBag.Title</h1>
+    </div>
+    <div>
+
+        <div class="col col-md-10">
+            <table class="table">
+                <tr>
+                    <th>Work Order</th>
+                    <th>Requested</th>
+                    <th>Requested by</th>
+                    <th>Asset</th>
+                    <th>Status</th>
+                    <th>Status Updated</th>
+                    <th>Lead Worker</th>
+
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(item.Id.ToString(), "EditWorkOrder", "Maintenance", new { id = item.Id }, null)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedDateTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Creator.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MaintenanceStatus.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LastStatusDateTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LeadWorker.Name)</td>
+                    </tr>
+                }
+            </table>
+            @using (Html.BeginForm("NewWorkOrder", "Maintenance"))
+            {
+                <button type="submit" class="btn btn-primary">Make New Work Order</button>
+            }
+        </div>
     </div>
 </div>
