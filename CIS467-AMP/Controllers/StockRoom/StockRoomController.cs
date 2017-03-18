@@ -36,7 +36,7 @@ namespace CIS467_AMP.Controllers.StockRoom
         {
             return View();
         }
-        /*
+        
         /// <summary>
         /// Retrieves Inventory.cshtml
         /// </summary>
@@ -44,11 +44,10 @@ namespace CIS467_AMP.Controllers.StockRoom
         public ActionResult Inventory()
         {
             //Include allows the variant and part object to be loaded with the stockroom inventory
-            var inventory = _context.StockroomInventories.Include(i => i.Variant)
-                                                         .Include(p => p.Part);   
+            var inventory = _context.StockRoomInventories.Include(i => i.ManufacturerPart);   
             return View(inventory);
         }
-
+        /*
         /// <summary>
         /// Grabs all of the data required for an order and constructs defaults
         /// </summary>
@@ -57,8 +56,8 @@ namespace CIS467_AMP.Controllers.StockRoom
         public ActionResult PrebuiltOrderRequest(string StockId, int? PartId)
         {
 
-            var currentInventory = _context.StockroomInventories.FirstOrDefault(x => x.StockId == StockId);
-            var partsIndices = _context.StockroomSupplierPartIndices.Where(x => x.StockRoomInventory.StockId == StockId).Include(x => x.Supplier).ToList();
+            var currentInventory = _context.StockRoomInventories.FirstOrDefault(x => x.StockId == StockId);
+            var partsIndices = _context.StockroomSupplierPartIndexes.Where(x => x.StockRoomInventory.StockId == StockId).Include(x => x.Supplier).ToList();
             var part = _context.Parts.FirstOrDefault(x => x.Id == PartId);
 
             Random random = new Random();
@@ -71,7 +70,7 @@ namespace CIS467_AMP.Controllers.StockRoom
                           .ToArray());
 
             //Iterate through Parts Indices to grab supplier objects
-            var suppliers = new List<Supplier>();
+            var suppliers = new List<StockRoomSupplier>();
             var cost = new Double();
             foreach (var supplier in partsIndices)
             {
@@ -80,7 +79,7 @@ namespace CIS467_AMP.Controllers.StockRoom
             }
 
             //Create generic order
-            var order = new Order()
+            var order = new StockRoomOrder()
             {
                 OrderNumber = orderNumber
             };
