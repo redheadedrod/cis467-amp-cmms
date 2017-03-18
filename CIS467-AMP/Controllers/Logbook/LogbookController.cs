@@ -31,17 +31,17 @@ namespace CIS467_AMP.Controllers.Logbook
         // GET: Logbook
         public ActionResult Index()
         {
-           /* var logbook = _context.LogbookGeneral
+            var logbook = _context.LogbookGeneral
                 .Include(a => a.AssetInventory)
                 .Include(w => w.Worker)
                 .Include(s => s.LogbookGeneralStatus)
                 ;
-            return View(logbook); */
-            return View();
+            return View(logbook); 
+            //return View();
 
         }
 
-        /*public ActionResult Entry()
+        public ActionResult Entry()
         {
             var status = _context.LogbookGeneralStatuses;
             var index = _context.AssetInventories;
@@ -79,8 +79,8 @@ namespace CIS467_AMP.Controllers.Logbook
         public ActionResult StockroomOrders()
         {
             var logbook = _context.StockroomOrders
-                .Include(a => a.Supplier)
-                .Include(s => s.OrderStatus)
+                .Include(a => a.StockRoomSupplier)
+                .Include(s => s.StockRoomOrderStatus)
                 ;
 
             return View(logbook);
@@ -88,15 +88,14 @@ namespace CIS467_AMP.Controllers.Logbook
 
         public ActionResult StockroomOrderRequests()
         {
-            var logbook = _context.StockroomRequests
-                .Include(a => a.AssetInventory)
+            var logbook = _context.StockRoomRequests.Include(a => a.AssetInventory)
                 .Include(w => w.Worker)
-                .Include(o => o.WorkOrder)
-                .Include(s => s.StockroomRequestStatus)
+                .Include(o => o.MaintenanceWorkOrder)
+                .Include(s => s.StockRoomRequestStatus)
                 ;
 
             return View(logbook);
-        }*/
+        }
 
 
     }
