@@ -1,20 +1,32 @@
 ﻿
 @model CIS467_AMP.ViewModels.Maintenance.WorkOrderViewModel
 
-                @*<div class="form-group">
-                    @Html.LabelFor(f => f.LogbookGeneral.WorkerId, "Pick Worker (Note for testing purposes only. Normally is logged in person)")
-                    @Html.DropDownListFor(f => f.LogbookGeneral.WorkerId, new SelectList(Model.Workers, "Id", "Name"), "", new { @class = "form-control" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(f => f.LogbookGeneral.AssetInventoryId, "Pick Asset")
-                    @Html.DropDownListFor(f => f.LogbookGeneral.AssetInventoryId, new SelectList(Model.AssetInventories, "Id", "Name"), "", new { @class = "form-control" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(f => f.LogbookGeneral.LogbookGeneralStatusId, "Pick Topic")
-                    @Html.DropDownListFor(f => f.LogbookGeneral.LogbookGeneralStatusId, new SelectList(Model.LogbookGeneralStatuses, "Id", "Name"), "", new { @class = "form-control" })
-                </div>
-                <div class="form-group">
-                    @Html.LabelFor(f => f.LogbookGeneral.Entry)
-                    @Html.TextAreaFor(f => f.LogbookGeneral.Entry, new { @class = "form-control" })
-                </div>
-                *@
+
+<div class="form-group">
+    @Html.LabelFor(f => f.MaintenanceWorkOrder.Creator, "Pick Worker as Creator (Note for testing purposes only. Normally is logged in person)")
+    @Html.DropDownListFor(f => f.MaintenanceWorkOrder.Creator, new SelectList(Model.Workers, "Id", "Name"), "", new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(f => f.MaintenanceWorkOrder.AssetInventoryId, "Pick Asset")
+    @Html.DropDownListFor(f => f.MaintenanceWorkOrder.AssetInventoryId, new SelectList(Model.AssetInventories, "Id", "Name"), "", new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(f => f.MaintenanceWorkOrder.Creator, "Pick Priority (1 is highest)")
+    @Html.DropDownListFor(f => f.MaintenanceWorkOrder.Priority, Enumerable.Range(1, 10).Select(i => new SelectListItem { Text = i.ToString(), Value = i.ToString()}), Model.Priority.ToString(),new {@class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(f => f.MaintenanceWorkOrder.SupervisorId, "Pick Supervisor")
+    @Html.DropDownListFor(f => f.MaintenanceWorkOrder.SupervisorId, new SelectList(Model.Workers, "Id", "Name"), "", new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(f => f.MaintenanceWorkOrder.MaintenanceIssueId, "Pick Issue")
+    @Html.DropDownListFor(f => f.MaintenanceWorkOrder.MaintenanceIssueId, new SelectList(Model.MaintenanceIssue, "Id", "Name"), "", new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(f => f.MaintenanceWorkOrder.ShortDesc)
+    @Html.TextBoxFor(f => f.MaintenanceWorkOrder.ShortDesc, new { @class = "form-control" })
+</div>
+<div class="form-group">
+    @Html.LabelFor(f => f.MaintenanceWorkOrder.LongDesc)
+    @Html.TextAreaFor(f => f.MaintenanceWorkOrder.LongDesc, new { @class = "form-control" })
+</div>

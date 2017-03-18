@@ -48,16 +48,21 @@ namespace CIS467_AMP.Controllers.Maintenance
             var status = _context.MaintenanceStatuses;
             var issues = _context.MaintenanceIssues;
             var plan = _context.JobPlans;
-
+            int priority = 5;
             var viewModel = new WorkOrderViewModel()
             {
                 Workers = workers,
                 AssetInventories = inventory,
                 MaintenanceStatuses = status,
                 MaintenanceIssue = issues,
-                JobPlan = plan
+                JobPlan = plan,
+                Priority = priority
 
             };
+            if (Id != null)
+            {
+                viewModel.Priority = 3;
+            }
             return (viewModel);
         }
 

@@ -17,5 +17,6 @@ namespace CIS467_AMP.ViewModels.Maintenance
         public DbSet<MaintenanceIssue> MaintenanceIssue { get; set; }
         public DbSet<JobPlan> JobPlan { get; set; }
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
+        public int Priority { get; set; }
     }
 }
