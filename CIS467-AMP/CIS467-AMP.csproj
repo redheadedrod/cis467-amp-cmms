@@ -205,6 +205,7 @@
     <Compile Include="Migrations\201703171722357_Initial.Designer.cs">
       <DependentUpon>201703171722357_Initial.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Migrations\201703180030151_Add-Shared-1.cs" />
     <Compile Include="Migrations\201703180030151_Add-Shared-1.Designer.cs">
       <DependentUpon>201703180030151_Add-Shared-1.cs</DependentUpon>
@@ -340,6 +341,103 @@
     <Compile Include="Migrations\201703180434411_Seed-StockRoom-6.cs" />
     <Compile Include="Migrations\201703180434411_Seed-StockRoom-6.Designer.cs">
       <DependentUpon>201703180434411_Seed-StockRoom-6.cs</DependentUpon>
+=======
+    <Compile Include="Migrations\201703171739400_Add-Shared1.cs" />
+    <Compile Include="Migrations\201703171739400_Add-Shared1.Designer.cs">
+      <DependentUpon>201703171739400_Add-Shared1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171740025_Seed-Shared1.cs" />
+    <Compile Include="Migrations\201703171740025_Seed-Shared1.Designer.cs">
+      <DependentUpon>201703171740025_Seed-Shared1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171741371_Add-Shared2.cs" />
+    <Compile Include="Migrations\201703171741371_Add-Shared2.Designer.cs">
+      <DependentUpon>201703171741371_Add-Shared2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171741500_Seed-Shared2.cs" />
+    <Compile Include="Migrations\201703171741500_Seed-Shared2.Designer.cs">
+      <DependentUpon>201703171741500_Seed-Shared2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171744004_Add-Shared3.cs" />
+    <Compile Include="Migrations\201703171744004_Add-Shared3.Designer.cs">
+      <DependentUpon>201703171744004_Add-Shared3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171744134_Seed-Shared3.cs" />
+    <Compile Include="Migrations\201703171744134_Seed-Shared3.Designer.cs">
+      <DependentUpon>201703171744134_Seed-Shared3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171747401_Add-Shared4.cs" />
+    <Compile Include="Migrations\201703171747401_Add-Shared4.Designer.cs">
+      <DependentUpon>201703171747401_Add-Shared4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171748015_Seed-Shared4.cs" />
+    <Compile Include="Migrations\201703171748015_Seed-Shared4.Designer.cs">
+      <DependentUpon>201703171748015_Seed-Shared4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171752129_Add-Shared5.cs" />
+    <Compile Include="Migrations\201703171752129_Add-Shared5.Designer.cs">
+      <DependentUpon>201703171752129_Add-Shared5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171753145_Seed-Shared5.cs" />
+    <Compile Include="Migrations\201703171753145_Seed-Shared5.Designer.cs">
+      <DependentUpon>201703171753145_Seed-Shared5.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171811080_Add-Shared6.cs" />
+    <Compile Include="Migrations\201703171811080_Add-Shared6.Designer.cs">
+      <DependentUpon>201703171811080_Add-Shared6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171811575_Seed-Shared6.cs" />
+    <Compile Include="Migrations\201703171811575_Seed-Shared6.Designer.cs">
+      <DependentUpon>201703171811575_Seed-Shared6.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171816093_Add-Shared7.cs" />
+    <Compile Include="Migrations\201703171816093_Add-Shared7.Designer.cs">
+      <DependentUpon>201703171816093_Add-Shared7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171817433_Seed-Shared7.cs" />
+    <Compile Include="Migrations\201703171817433_Seed-Shared7.Designer.cs">
+      <DependentUpon>201703171817433_Seed-Shared7.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171826353_Add-Maintenance1.cs" />
+    <Compile Include="Migrations\201703171826353_Add-Maintenance1.Designer.cs">
+      <DependentUpon>201703171826353_Add-Maintenance1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171828553_Seed-Maintenance1.cs" />
+    <Compile Include="Migrations\201703171828553_Seed-Maintenance1.Designer.cs">
+      <DependentUpon>201703171828553_Seed-Maintenance1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171834552_Add-Maintenance2.cs" />
+    <Compile Include="Migrations\201703171834552_Add-Maintenance2.Designer.cs">
+      <DependentUpon>201703171834552_Add-Maintenance2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171835249_Seed-Maintenance2.cs" />
+    <Compile Include="Migrations\201703171835249_Seed-Maintenance2.Designer.cs">
+      <DependentUpon>201703171835249_Seed-Maintenance2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171848142_Add-Maintenance3.cs" />
+    <Compile Include="Migrations\201703171848142_Add-Maintenance3.Designer.cs">
+      <DependentUpon>201703171848142_Add-Maintenance3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171849416_Seed-Maintenance3.cs" />
+    <Compile Include="Migrations\201703171849416_Seed-Maintenance3.Designer.cs">
+      <DependentUpon>201703171849416_Seed-Maintenance3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171903505_Add-Maintenance4.cs" />
+    <Compile Include="Migrations\201703171903505_Add-Maintenance4.Designer.cs">
+      <DependentUpon>201703171903505_Add-Maintenance4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171904567_Seed-Maintenance4.cs" />
+    <Compile Include="Migrations\201703171904567_Seed-Maintenance4.Designer.cs">
+      <DependentUpon>201703171904567_Seed-Maintenance4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171915354_Add-Logbook.cs" />
+    <Compile Include="Migrations\201703171915354_Add-Logbook.Designer.cs">
+      <DependentUpon>201703171915354_Add-Logbook.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703171915598_Seed-Logbook.cs" />
+    <Compile Include="Migrations\201703171915598_Seed-Logbook.Designer.cs">
+      <DependentUpon>201703171915598_Seed-Logbook.cs</DependentUpon>
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookGeneralStatus.cs" />
@@ -347,11 +445,19 @@
     <Compile Include="Models\Maintenance\MaintenanceClassOfIssue.cs" />
     <Compile Include="Models\Maintenance\MaintenanceIssue.cs" />
     <Compile Include="Models\Maintenance\MaintenanceIssueIndex.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Maintenance\MaintenanceWorkOrder.cs" />
     <Compile Include="Models\Maintenance\MaintenanceWorkOrderPartIndex.cs" />
     <Compile Include="Models\Maintenance\MaintenanceWorkOrderWorkTime.cs" />
     <Compile Include="Models\Maintenance\MaintenanceStatus.cs" />
     <Compile Include="Models\Maintenance\MaintenanceType.cs" />
+=======
+    <Compile Include="Models\Maintenance\MaintenanceWorkOrderPartIndex.cs" />
+    <Compile Include="Models\Maintenance\MaintenanceStatus.cs" />
+    <Compile Include="Models\Maintenance\MaintenanceType.cs" />
+    <Compile Include="Models\Maintenance\MaintenanceWorkOrder.cs" />
+    <Compile Include="Models\Maintenance\MaintenanceWorkOrderWorkTime.cs" />
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
     <Compile Include="Models\Shared\AssetInventory.cs" />
     <Compile Include="Models\Shared\AssetType.cs" />
     <Compile Include="Models\Shared\JobPlan.cs" />
@@ -359,8 +465,15 @@
     <Compile Include="Models\Shared\JobPlanPart.cs" />
     <Compile Include="Models\Shared\Manufacturer.cs" />
     <Compile Include="Models\Shared\ManufacturerContact.cs" />
+<<<<<<< HEAD
     <Compile Include="Models\Shared\ManufacturerPartParentIndex.cs" />
     <Compile Include="Models\Shared\ManufacturerPart.cs" />
+=======
+    <Compile Include="Models\Shared\ManufacturerPart.cs" />
+    <Compile Include="Models\Shared\ManufacturerPartType.cs" />
+    <Compile Include="Models\Shared\ManufacturerToVariantPartIndex.cs" />
+    <Compile Include="Models\Shared\ManufacturerVariant.cs" />
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
     <Compile Include="Models\Shared\Map.cs" />
     <Compile Include="Models\Shared\Worker.cs" />
     <Compile Include="Models\Shared\WorkGroup.cs" />
@@ -509,6 +622,7 @@
     <EmbeddedResource Include="Migrations\201703171722357_Initial.resx">
       <DependentUpon>201703171722357_Initial.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Migrations\201703180030151_Add-Shared-1.resx">
       <DependentUpon>201703180030151_Add-Shared-1.cs</DependentUpon>
     </EmbeddedResource>
@@ -610,6 +724,79 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703180434411_Seed-StockRoom-6.resx">
       <DependentUpon>201703180434411_Seed-StockRoom-6.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Migrations\201703171739400_Add-Shared1.resx">
+      <DependentUpon>201703171739400_Add-Shared1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171740025_Seed-Shared1.resx">
+      <DependentUpon>201703171740025_Seed-Shared1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171741371_Add-Shared2.resx">
+      <DependentUpon>201703171741371_Add-Shared2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171741500_Seed-Shared2.resx">
+      <DependentUpon>201703171741500_Seed-Shared2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171744004_Add-Shared3.resx">
+      <DependentUpon>201703171744004_Add-Shared3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171744134_Seed-Shared3.resx">
+      <DependentUpon>201703171744134_Seed-Shared3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171747401_Add-Shared4.resx">
+      <DependentUpon>201703171747401_Add-Shared4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171748015_Seed-Shared4.resx">
+      <DependentUpon>201703171748015_Seed-Shared4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171752129_Add-Shared5.resx">
+      <DependentUpon>201703171752129_Add-Shared5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171753145_Seed-Shared5.resx">
+      <DependentUpon>201703171753145_Seed-Shared5.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171811080_Add-Shared6.resx">
+      <DependentUpon>201703171811080_Add-Shared6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171811575_Seed-Shared6.resx">
+      <DependentUpon>201703171811575_Seed-Shared6.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171816093_Add-Shared7.resx">
+      <DependentUpon>201703171816093_Add-Shared7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171817433_Seed-Shared7.resx">
+      <DependentUpon>201703171817433_Seed-Shared7.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171826353_Add-Maintenance1.resx">
+      <DependentUpon>201703171826353_Add-Maintenance1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171828553_Seed-Maintenance1.resx">
+      <DependentUpon>201703171828553_Seed-Maintenance1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171834552_Add-Maintenance2.resx">
+      <DependentUpon>201703171834552_Add-Maintenance2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171835249_Seed-Maintenance2.resx">
+      <DependentUpon>201703171835249_Seed-Maintenance2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171848142_Add-Maintenance3.resx">
+      <DependentUpon>201703171848142_Add-Maintenance3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171849416_Seed-Maintenance3.resx">
+      <DependentUpon>201703171849416_Seed-Maintenance3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171903505_Add-Maintenance4.resx">
+      <DependentUpon>201703171903505_Add-Maintenance4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171904567_Seed-Maintenance4.resx">
+      <DependentUpon>201703171904567_Seed-Maintenance4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171915354_Add-Logbook.resx">
+      <DependentUpon>201703171915354_Add-Logbook.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703171915598_Seed-Logbook.resx">
+      <DependentUpon>201703171915598_Seed-Logbook.cs</DependentUpon>
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

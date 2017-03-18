@@ -24,8 +24,13 @@ namespace CIS467_AMP.Models.StockRoom
         public int Id { get; set; }
         public Worker Worker { get; set; }
         public int WorkerId { get; set; }
+<<<<<<< HEAD:CIS467-AMP/Models/StockRoom/StockRoomRequest.cs
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
         public int MaintenanceWorkOrderId { get; set; }
+=======
+        public MaintenanceWorkOrder WorkOrder { get; set; }
+        public int WorkOrderId { get; set; }
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a:CIS467-AMP/Models/StockRoom/Request.cs
         public AssetInventory AssetInventory { get; set; }
         public int AssetInventoryId { get; set; }
         public DateTime Requested { get; set; }
