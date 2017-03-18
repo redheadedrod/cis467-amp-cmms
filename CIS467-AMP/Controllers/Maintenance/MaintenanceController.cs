@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using Antlr.Runtime;
 using CIS467_AMP.Models;
 
 namespace CIS467_AMP.Controllers.Maintenance
@@ -32,6 +33,12 @@ namespace CIS467_AMP.Controllers.Maintenance
         {
             var workOrders = _context.MaintenanceWorkOrders;
             return View(workOrders);
-        } 
+        }
+
+        public ActionResult Edit(int Id)
+        {
+
+            return View();
+        }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CIS467_AMP.Models.Maintenance.WorkOrder>
+﻿@model IEnumerable<CIS467_AMP.Models.Maintenance.MaintenanceWorkOrder>
 @{
     /**
      * Author: Rodney Fulk
@@ -33,7 +33,7 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td>@Html.ActionLink(item.Id.ToString(), "Edit", "Maintenance", new {id = item.Id}, null)</td>
                         <td>@Html.DisplayFor(modelItem => item.CreatedDateTime)</td>
                         <td>@Html.DisplayFor(modelItem => item.Creator.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
