@@ -425,6 +425,7 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.WebPages.Deploy
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.WebPages.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\System.Web.WebPages.Razor.dll
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\WebGrease.dll
+<<<<<<< HEAD
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Antlr3.Runtime.pdb
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.DependencyCollector.xml
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.AI.ServerTelemetryChannel.xml
@@ -455,6 +456,10 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.Go
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.pdb
+=======
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.Initial.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.csproj.GenerateResource.Cache
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddShared1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedShared1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddShared2.resources
@@ -467,8 +472,13 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedShared5.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddShared6.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedShared6.resources
+<<<<<<< HEAD
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddLogbook.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedLogbook.resources
+=======
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddShared7.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedShared7.resources
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddMaintenance1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedMaintenance1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddMaintenance2.resources
@@ -477,6 +487,7 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedMaintenance3.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddMaintenance4.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedMaintenance4.resources
+<<<<<<< HEAD
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddStockRoom1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedStockRoom1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddStockRoom2.resources
@@ -489,3 +500,7 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedStockRoom5.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddStockRoom6.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedStockRoom6.resources
+=======
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddLogbook.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedLogbook.resources
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a

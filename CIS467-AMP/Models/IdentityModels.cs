@@ -32,11 +32,21 @@ namespace CIS467_AMP.Models
         public DbSet<Map> Maps { get; set; }
         public DbSet<WorkGroup> WorkGroups { get; set; }
         public DbSet<ManufacturerContact> ManufacturerContacts { get; set; }
+<<<<<<< HEAD
         public DbSet<Worker> Workers { get; set; }
         public DbSet<AssetType> AssetTypes { get; set; }
         public DbSet<ManufacturerPart> ManufacturerParts { get; set; }
         public DbSet<WorkGroupSupervisor> WorkGroupSupervisors { get; set; }
         public DbSet<ManufacturerPartParentIndex> ManufacturerPartParentIndexes { get; set; }
+=======
+        public DbSet<ManufacturerPartType> ManufacturerPartTypes { get; set; } 
+        public DbSet<ManufacturerPart> ManufacturerParts { get; set; }
+        public DbSet<Worker> Workers { get; set; }
+        public DbSet<AssetType> AssetTypes { get; set; }
+        public DbSet<ManufacturerVariant> ManufacturerVariants { get; set; }
+        public DbSet<WorkGroupSupervisor> WorkGroupSupervisors { get; set; }
+        public DbSet<ManufacturerToVariantPartIndex> ManufacturerToVariantPartIndexes { get; set; }
+>>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
         public DbSet<AssetInventory> AssetInventories { get; set; }
         public DbSet<JobPlan> JobPlans { get; set; }
         public DbSet<JobPlanDocument> JobPlanDocuments { get; set; }
