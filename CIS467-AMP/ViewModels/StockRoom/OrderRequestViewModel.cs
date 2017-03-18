@@ -11,6 +11,6 @@ namespace CIS467_AMP.ViewModels.StockRoom
     {
         public IQueryable<SupplierPartIndex> Suppliers { get; set; }
         public Order Order { get; set; }
-        public ManufacturerPart Part { get; set; }
+        //public ManufacturerPart Part { get; set; }
     }
 }

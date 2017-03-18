@@ -14,7 +14,7 @@
         public int Id { get; set; }
         public JobPlan JobPlan { get; set; }
         public int JobPlanId { get; set; }
-        public ManufacturerPart ManufacturerPart { get; set; }
+        //public ManufacturerPart ManufacturerPart { get; set; }
         public int ManufacturerPartId { get; set; }
     }
 }

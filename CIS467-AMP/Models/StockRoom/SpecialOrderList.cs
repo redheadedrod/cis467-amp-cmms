@@ -22,7 +22,7 @@ namespace CIS467_AMP.Models.StockRoom
         public int Id { get; set; }
         public ManufacturerVariant Variant { get; set; }
         public int VariantId { get; set; }
-        public ManufacturerPart Part { get; set; }
+        //public ManufacturerPart Part { get; set; }
         public int PartId { get; set; }
     }
 }
