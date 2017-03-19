@@ -146,5 +146,12 @@ namespace CIS467_AMP.Controllers.StockRoom
 
             return RedirectToAction("OrderRequest");
         }
+
+        public ActionResult LowOrderRequest()
+        {
+            var inventory = _context.StockRoomInventories.Where(x => x.OnHand < x.MinRequired || x.OnHand - x.Reserved < x.MinRequired).Include(x => x.ManufacturerPart);
+
+            return View(inventory);
+        }
     }
 }

@@ -496,7 +496,7 @@
     <Content Include="Views\Logbook\StockroomOrders.cshtml" />
     <Content Include="Views\StockRoom\PreBuiltOrderRequest.cshtml" />
     <Content Include="Views\StockRoom\OrderRequest.cshtml" />
-    <Content Include="Views\StockRoom\PartRequest.cshtml" />
+    <Content Include="Views\StockRoom\LowOrderRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
