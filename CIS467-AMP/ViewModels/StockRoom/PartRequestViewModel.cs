@@ -11,7 +11,7 @@ namespace CIS467_AMP.ViewModels.StockRoom
     /// <summary>
     /// 
     /// </summary>
-    public class OrderRequestViewModel
+    public class PartRequestViewModel
     {
         public List<RequestSuppliersViewModel> RequestSupplier { get; set; }
         public List<StockRoomSupplier> Suppliers { get; set; }
