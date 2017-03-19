@@ -390,9 +390,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Logbook\EntryViewModel.cs" />
-    <Compile Include="ViewModels\StockRoom\NewOrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\OrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\PrebuiltOrderRequestViewModel.cs" />
+    <Compile Include="ViewModels\StockRoom\RequestSuppliersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -488,15 +488,15 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\StockRoom\Inventory.cshtml" />
-    <Content Include="Views\StockRoom\OrderRequest.cshtml" />
     <Content Include="Views\Maintenance\CurrentWorkOrder.cshtml" />
     <Content Include="Views\Admin\PendingWorkOrders.cshtml" />
     <Content Include="Views\Logbook\_LogbookLeftNavBar.cshtml" />
     <Content Include="Views\Logbook\Entry.cshtml" />
     <Content Include="Views\Logbook\StockroomOrderRequests.cshtml" />
     <Content Include="Views\Logbook\StockroomOrders.cshtml" />
-    <Content Include="Views\StockRoom\NewOrderRequest.cshtml" />
     <Content Include="Views\StockRoom\PreBuiltOrderRequest.cshtml" />
+    <Content Include="Views\StockRoom\OrderRequest.cshtml" />
+    <Content Include="Views\StockRoom\PartRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
