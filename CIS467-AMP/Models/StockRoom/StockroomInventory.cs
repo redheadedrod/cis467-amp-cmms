@@ -21,15 +21,8 @@ namespace CIS467_AMP.Models.StockRoom
     {
         public int Id { get; set; }
         public string StockId { get; set; }
-<<<<<<< HEAD
         public ManufacturerPart ManufacturerPart { get; set; }
         public int ManufacturerPartId { get; set; }
-=======
-        public ManufacturerVariant Variant { get; set; }
-        public int VariantId { get; set; }
-        public ManufacturerPart Part { get; set; }
-        public int PartId { get; set; }
->>>>>>> 4d04ce757e5de3c3f7ba312936954e2f28b6e28a
         public int OnHand { get; set; }
         public int MinRequired { get; set; }
         public int Reserved { get; set; }

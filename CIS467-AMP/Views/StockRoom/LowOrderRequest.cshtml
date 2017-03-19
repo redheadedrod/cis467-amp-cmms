@@ -1,0 +1,77 @@
+﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.StockRoomInventory>
+
+@{
+    /**
+     * Author: Jason Bensel
+     * Queries current inventory
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "LowQuantaty";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" id="content">
+    <div class="col col-md-12">
+        <h1 id="title">@ViewBag.Title</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="navbar col-md-2" id="sideLinks">
+        <ul class="nav nav-pills nav-stacked">
+            <li>@Html.ActionLink("Inventory", "Inventory")</li>
+            <li>@Html.ActionLink("Order Request", "OrderRequest")</li>
+            <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest")</li>
+        </ul>
+    </div>
+
+    <div class="col col-md-10">
+        @using (Html.BeginForm("CreateLowOrder", "StockRoom"))
+        {
+            <table class="table">
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.StockId)</th>
+                    <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Name)</th>
+                    <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Number)</th>
+                    <th>@Html.DisplayNameFor(m => m.MinRequired)</th>
+                    <th>@Html.DisplayNameFor(m => m.OnHand)</th>
+                    <th>@Html.DisplayNameFor(m => m.Reserved)</th>
+                    <th>Place Order</th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(model => item.StockId)</td>
+                        <td>@Html.DisplayFor(model => item.ManufacturerPart.Name)</td>
+                        <td>@Html.DisplayFor(model => item.ManufacturerPart.Number)</td>
+                        <td>@Html.DisplayFor(model => item.MinRequired)</td>
+                        <td>@Html.DisplayFor(model => item.OnHand)</td>
+                        <td>@Html.DisplayFor(model => item.Reserved)</td>
+                        <td>
+                            <div class="form-group">
+                                @Html.DisplayName("Quanty")
+                                @Html.TextBoxFor(model => item.MinRequired, new {@class ="form-control", @type = "number" })
+                            </div>
+
+                        </td>
+                        <td>
+                    </tr>
+                }
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
+                </tr>
+            </table>
+        }
+
+
+        </div>
+
+</div>
