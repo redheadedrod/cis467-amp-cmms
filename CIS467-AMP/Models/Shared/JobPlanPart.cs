@@ -1,17 +1,22 @@
-﻿namespace CIS467_AMP.Models.Shared
+﻿using System;
+
+namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// Listing of parts for specific job plan
     /// 
-    /// JobPlanIndexID - ID for entry
-    /// JobPlanID - id of job plan
-    /// PartID - part ID for part required
+    /// id - Record ID
+    /// JobPlan - Link to Job plan
+    /// JobPlanId - Link to Job plan - used in Forms
+    /// ManufacturerVariant - Link to Manufacturer part
+    /// ManufacturerVariantId - Link to Manufacturer part - used in forms
     /// </summary>
     public class JobPlanPart
     {
         public int Id { get; set; }
         public JobPlan JobPlan { get; set; }
-        public Part Part { get; set; }
-
+        public int JobPlanId { get; set; }
+        public Predicate<ManufacturerPart> ManufacturerPart { get; set; }
+        public int ManufacturerPartId { get; set; }
     }
 }
