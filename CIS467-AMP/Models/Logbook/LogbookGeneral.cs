@@ -1,6 +1,7 @@
 ﻿using CIS467_AMP.Models.Shared;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -24,6 +25,7 @@ namespace CIS467_AMP.Models.Logbook
         public int Id { get; set; }
         public AssetInventory AssetInventory { get; set; }
         public int AssetInventoryId { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy H:mm}")]
         public DateTime EnteredDateTime { get; set; }
         public Worker Worker { get; set; }
         public int WorkerId { get; set; }

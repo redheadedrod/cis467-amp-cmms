@@ -1,4 +1,6 @@
-﻿namespace CIS467_AMP.Models.Shared
+﻿using System;
+
+namespace CIS467_AMP.Models.Shared
 {
     /// <summary>
     /// Listing of parts for specific job plan
@@ -19,7 +21,7 @@
         public int Id { get; set; }
         public JobPlan JobPlan { get; set; }
         public int JobPlanId { get; set; }
-        public ManufacturerPart ManufacturerPart { get; set; }
+        public Predicate<ManufacturerPart> ManufacturerPart { get; set; }
         public int ManufacturerPartId { get; set; }
     }
 }

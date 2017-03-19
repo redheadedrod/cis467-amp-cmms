@@ -1,4 +1,4 @@
-﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.Order>
+﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.StockRoomOrder>
 @{
     /**
      * Author: Rodney Fulk
@@ -44,9 +44,9 @@
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.OrderNumber)</td>
+                        <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new { id = item.Id }, null)</td>
                         <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
-                        <td>@Html.DisplayFor(modelItem => item.OrderStatus.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
                     </tr>
                 }

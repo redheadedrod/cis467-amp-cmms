@@ -503,6 +503,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Logbook\EntryViewModel.cs" />
+    <Compile Include="ViewModels\Maintenance\JobPlanViewModel.cs" />
+    <Compile Include="ViewModels\Maintenance\WorkOrderViewModel.cs" />
+    <Compile Include="ViewModels\Maintenance\WorkTimeViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\NewOrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\OrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\PrebuiltOrderRequestViewModel.cs" />
@@ -541,13 +544,8 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="JobPlanDocuments\demo.pdf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
-    <None Include="Scripts\jquery-3.1.1-vsdoc.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.js" />
-    <Content Include="Scripts\jquery-3.1.1.min.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.js" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -555,8 +553,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.js" />
-    <Content Include="Scripts\respond.matchmedia.addListener.min.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
@@ -598,11 +594,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\Logbook\Maintenance.cshtml" />
-    <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\StockRoom\Inventory.cshtml" />
     <Content Include="Views\StockRoom\OrderRequest.cshtml" />
-    <Content Include="Views\Maintenance\CurrentWorkOrder.cshtml" />
     <Content Include="Views\Admin\PendingWorkOrders.cshtml" />
     <Content Include="Views\Logbook\_LogbookLeftNavBar.cshtml" />
     <Content Include="Views\Logbook\Entry.cshtml" />
@@ -610,6 +603,13 @@
     <Content Include="Views\Logbook\StockroomOrders.cshtml" />
     <Content Include="Views\StockRoom\NewOrderRequest.cshtml" />
     <Content Include="Views\StockRoom\PreBuiltOrderRequest.cshtml" />
+    <Content Include="Views\Maintenance\_MaintenanceLeftNavBar.cshtml" />
+    <Content Include="Views\Maintenance\WorkOrder.cshtml" />
+    <Content Include="Views\Maintenance\NewWorkOrder.cshtml" />
+    <Content Include="Views\Maintenance\EditWorkOrder.cshtml" />
+    <Content Include="Views\Maintenance\WorkTime.cshtml" />
+    <Content Include="Views\Maintenance\JobPlan.cshtml" />
+    <Content Include="Views\Maintenance\PartsRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

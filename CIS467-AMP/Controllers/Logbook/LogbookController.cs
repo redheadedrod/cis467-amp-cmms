@@ -37,21 +37,20 @@ namespace CIS467_AMP.Controllers.Logbook
                 .Include(s => s.LogbookGeneralStatus)
                 ;
             return View(logbook); 
-            //return View();
 
         }
 
         public ActionResult Entry()
         {
             var status = _context.LogbookGeneralStatuses;
-            var index = _context.AssetInventories;
+            var inventory = _context.AssetInventories;
             var workers = _context.Workers;
 
 
             var viewModel = new EntryViewModel
             {
                 LogbookGeneralStatuses = status,
-                AssetInventories = index,
+                AssetInventories = inventory,
                 Workers = workers
             };
             return View(viewModel);
