@@ -19,6 +19,5 @@ namespace CIS467_AMP.ViewModels.Maintenance
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
         public int Priority { get; set; }
         public bool Edit { get; set; }
-        public int? OldStatus { get; set; }
     }
 }

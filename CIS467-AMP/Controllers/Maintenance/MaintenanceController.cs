@@ -59,8 +59,6 @@ namespace CIS467_AMP.Controllers.Maintenance
                 JobPlan = plan,
                 Priority = priority,
                 Edit = false,
-                OldStatus = null
-
             };
             if (Id != null)
             {
@@ -70,7 +68,6 @@ namespace CIS467_AMP.Controllers.Maintenance
                     viewModel.MaintenanceWorkOrder = workOrder;
                     viewModel.Edit = true;
                     viewModel.Priority = workOrder.Priority;
-                    viewModel.OldStatus = workOrder.MaintenanceStatusId;
                 }
             }
             return (viewModel);
@@ -96,19 +93,38 @@ namespace CIS467_AMP.Controllers.Maintenance
             _context.SaveChanges(); 
             return RedirectToAction("Index", "Maintenance");
         }
+
         [HttpPost]
         public ActionResult Edit(WorkOrderViewModel viewModel)
         {
-            if (viewModel.OldStatus != viewModel.MaintenanceWorkOrder.MaintenanceStatusId)
+            var workOrder = _context.MaintenanceWorkOrders.Single(w => w.Id == viewModel.MaintenanceWorkOrder.Id);
+            if (workOrder.MaintenanceStatusId != viewModel.MaintenanceWorkOrder.MaintenanceStatusId)
             {
-                viewModel.MaintenanceWorkOrder.LastStatusDateTime = DateTime.Now;
+                workOrder.LastStatusDateTime = DateTime.Now;
+                workOrder.MaintenanceStatusId = viewModel.MaintenanceWorkOrder.MaintenanceStatusId;
             }
+            else
+            {
+                if (viewModel.MaintenanceWorkOrder.LastStatusDateTime < SqlDateTime.MinValue.Value)
+                    viewModel.MaintenanceWorkOrder.LastStatusDateTime = SqlDateTime.MinValue.Value;
+            }
+            workOrder.AssetInventoryId = viewModel.MaintenanceWorkOrder.AssetInventoryId;
             if (viewModel.MaintenanceWorkOrder.CreatedDateTime < SqlDateTime.MinValue.Value)
+            {
                 viewModel.MaintenanceWorkOrder.CreatedDateTime = SqlDateTime.MinValue.Value;
-            if (viewModel.MaintenanceWorkOrder.LastStatusDateTime < SqlDateTime.MinValue.Value)
-                viewModel.MaintenanceWorkOrder.LastStatusDateTime = SqlDateTime.MinValue.Value;
-
-            _context.Entry(viewModel.MaintenanceWorkOrder).State= EntityState.Modified;
+            }
+            else
+            {
+                workOrder.CreatedDateTime = viewModel.MaintenanceWorkOrder.CreatedDateTime;
+            }
+            workOrder.CreatorId = viewModel.MaintenanceWorkOrder.CreatorId;
+            workOrder.JobPlanId = viewModel.MaintenanceWorkOrder.JobPlanId;
+            workOrder.LeadWorkerId = viewModel.MaintenanceWorkOrder.LeadWorkerId;
+            workOrder.MaintenanceIssueId = viewModel.MaintenanceWorkOrder.MaintenanceIssueId;
+            workOrder.LongDesc = viewModel.MaintenanceWorkOrder.LongDesc;
+            workOrder.ShortDesc = viewModel.MaintenanceWorkOrder.ShortDesc;
+            workOrder.Priority = viewModel.MaintenanceWorkOrder.Priority;
+            workOrder.SupervisorId = viewModel.MaintenanceWorkOrder.SupervisorId;
             _context.SaveChanges(); 
             return RedirectToAction("Index", "Maintenance");
         }
