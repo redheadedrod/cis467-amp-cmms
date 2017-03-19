@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using CIS467_AMP.Models.Shared;
@@ -33,9 +34,11 @@ namespace CIS467_AMP.Models.Maintenance
         public int Id { get; set; }
         public Worker Creator { get; set; }
         public int CreatorId { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime CreatedDateTime { get; set; }
         public MaintenanceStatus MaintenanceStatus { get; set; }
         public int MaintenanceStatusId { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime LastStatusDateTime { get; set; }
         public int Priority { get; set; }
         public Worker Supervisor { get; set; }

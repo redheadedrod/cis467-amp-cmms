@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using CIS467_AMP.Models.Maintenance;
@@ -40,8 +41,11 @@ namespace CIS467_AMP.Models.StockRoom
         public int? MaintenanceWorkOrderId { get; set; }
         public StockRoomSupplierContact StockRoomSupplierContact { get; set; }
         public int StockRoomSupplierContactId { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime OrderPlaced { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime OrderExpected { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime StatusLastUpDate { get; set; }
         public StockRoomOrderStatus StockRoomOrderStatus { get; set; }
         public int StockRoomOrderStatusId { get; set; }
