@@ -5,12 +5,15 @@ using System.Web;
 using CIS467_AMP.Models.Shared;
 using CIS467_AMP.Models.StockRoom;
 
+
 namespace CIS467_AMP.ViewModels.StockRoom
 {
+    /// <summary>
+    /// 
+    /// </summary>
     public class OrderRequestViewModel
     {
-        public IQueryable<StockRoomSupplierPartIndex> Suppliers { get; set; }
-        public StockRoomOrder Order { get; set; }
-        //public ManufacturerPart Part { get; set; }
+        public List<RequestSuppliersViewModel> RequestSupplier { get; set; }
+        public List<StockRoomSupplier> Suppliers { get; set; }
     }
 }
