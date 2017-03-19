@@ -396,6 +396,7 @@
     <Compile Include="ViewModels\StockRoom\NewOrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\OrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\PrebuiltOrderRequestViewModel.cs" />
+    <Compile Include="ViewModels\StockRoom\RequestSuppliersViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />

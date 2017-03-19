@@ -36,19 +36,7 @@ namespace CIS467_AMP.Controllers.StockRoom
         {
             return View();
         }
-
-        // stub called from logbook
-        public ActionResult Order(int id)
-        {
-            return View();
-        }
-
-        //Stub for use with logbook
-        public ActionResult Request(int id)
-        {
-            return View();
-        }
-
+        
         /// <summary>
         /// Retrieves Inventory.cshtml
         /// </summary>
@@ -59,120 +47,111 @@ namespace CIS467_AMP.Controllers.StockRoom
             var inventory = _context.StockRoomInventories.Include(i => i.ManufacturerPart);   
             return View(inventory);
         }
-        /*
+
         /// <summary>
-        /// Grabs all of the data required for an order and constructs defaults
+        /// Queries all order requests
+        /// Allows for selection of requests to be ordered
         /// </summary>
-        /// <param name="inventory">Current inventory item selected for order</param>
-        /// <returns>viewmodel with all associated data required</returns>
-        public ActionResult PrebuiltOrderRequest(string StockId, int? PartId)
+        /// <returns></returns>
+        public ActionResult OrderRequest()
         {
+            var suppliers = _context.StockRoomSuppliers.ToList();
+            var requests = _context.StockroomRequestLines.Include(x => x.ManufacturerPart).ToList();
+            var indexes = _context.StockroomSupplierPartIndexes;
+            var requestSuppliers = new List<RequestSuppliersViewModel>();
+            foreach(var request in requests)
+            {
+                RequestSuppliersViewModel rs = new RequestSuppliersViewModel();
+                var supplierId = indexes.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).StockRoomSupplierId;
+                rs.Supplier = _context.StockRoomSuppliers.FirstOrDefault(x => x.Id == supplierId);
+                rs.Request = request;
 
-            var currentInventory = _context.StockRoomInventories.FirstOrDefault(x => x.StockId == StockId);
-            var partsIndices = _context.StockroomSupplierPartIndexes.Where(x => x.StockRoomInventory.StockId == StockId).Include(x => x.Supplier).ToList();
-            var part = _context.Parts.FirstOrDefault(x => x.Id == PartId);
+                requestSuppliers.Add(rs); 
+                
+            }
+            OrderRequestViewModel viewModel = new OrderRequestViewModel()
+            {
+                Suppliers = suppliers,
+                RequestSupplier = requestSuppliers
+            };
+            return View(viewModel);
+        }
 
-            Random random = new Random();
+        /// <summary>
+        /// Creates orders and all associated order lines
+        /// </summary>
+        /// <param name="collection">chosen request lines to order</param>
+        /// <returns>returns to orderrequest</returns>
+        [HttpPost]
+        public ActionResult CreateOrder(FormCollection collection)
+        {
+            var count = collection.Count;
+            var supplier = collection["Supplier"];
+            var requestLineIds = new List<int>();
+            for(int i = 0; i < count -1; i++)
+            {
+                var requestLineId = collection[i];
+                if(requestLineId.Contains("true"))
+                {
+                    requestLineIds.Add(Convert.ToInt32(collection.Keys[i]));
+                }
+            }
 
             //Generate random string for order number
+            Random random = new Random();
             var chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var orderNumber = new string(
                 Enumerable.Repeat(chars, 20)
                           .Select(s => s[random.Next(s.Length)])
                           .ToArray());
 
-            //Iterate through Parts Indices to grab supplier objects
-            var suppliers = new List<StockRoomSupplier>();
-            var cost = new Double();
-            foreach (var supplier in partsIndices)
-            {
-                suppliers.Add(supplier.Supplier);
-                cost = supplier.Price;
-            }
-
-            //Create generic order
-            var order = new StockRoomOrder()
-            {
-                OrderNumber = orderNumber
-            };
-
-            //Append all objects to order request form
-            var orderRequest = new PrebuiltOrderRequestViewModel()
-            {
-                CurrentInventory = currentInventory,
-                Suppliers = suppliers,
-                Part = part,
-                Order = order,
-                Cost = cost
-            };
-
-            //Send data to view for 
-            return View(orderRequest);
-           
-        }
-
-        public ActionResult NewOrderRequest()
-        {
-            var parts = _context.Parts;
-            return View();
-
-        }
-
-
-        [HttpPost]
-        public ActionResult CreatePreBuiltOrder(FormCollection collection)
-        {
             DateTime createdDate = DateTime.Now;
-         
+
             //Used for dummy orders
             DateTime expectedDate = createdDate.AddDays(5);
-            var stockId = collection[0];
-            var partName = collection[2];
-            var partNumber = collection[3];
-            var units = Convert.ToInt32(collection[4]);
-            var supplierId = Convert.ToInt32(collection[5]);
 
-            Order order = new Order
+            var supplierId = _context.StockRoomSuppliers.FirstOrDefault(x => x.Name == supplier).Id;
+            var suplierContactId = _context.StockroomSupplierContacts.FirstOrDefault(x => x.StockRoomSupplierId == supplierId).Id;
+            StockRoomOrder order = new StockRoomOrder()
             {
-                OrderNumber = collection[1],
+                OrderNumber = orderNumber,
+                StockRoomSupplierId = supplierId,
+                StockRoomSupplierContactId = suplierContactId,
                 OrderPlaced = createdDate,
                 OrderExpected = expectedDate,
                 StatusLastUpDate = createdDate,
-                OrderApproved = true,
-                OrderStatus = _context.StockroomOrderStatuses.FirstOrDefault(x => x.Id == 0),
-                Supplier = _context.StockroomSuppliers.FirstOrDefault(x => x.Id == supplierId),
-                SupplierContact = _context.StockroomSupplierContacts.FirstOrDefault(x => x.Supplier.Id == supplierId),
-                WorkOrder = null
+                StockRoomOrderStatusId = 0,
+                OrderApproved = true
             };
-            ManufacturerPart part = _context.Parts.FirstOrDefault(x => x.Number == partNumber);
-          
 
             _context.StockroomOrders.Add(order);
             _context.SaveChanges();
 
-            OrderLine orderLine = new OrderLine
+            var requestLines = new List<StockRoomRequestLine>();
+            foreach(var requestlineId in requestLineIds)
             {
-                NumberOfItemsOrdered = units,
-                Order = _context.StockroomOrders.FirstOrDefault(x => x.OrderNumber == order.OrderNumber),
-                SupplierPartIndex = _context.StockroomSupplierPartIndices.FirstOrDefault(x => x.StockRoomInventory.StockId == stockId)
-            };
-            //orderLine.SupplierPartIndex.StockRoom = _context.StockroomInventories.FirstOrDefault(x => x.StockId == stockId);
-            //orderLine.SupplierPartIndex.StockRoom.Variant = _context.Variants.FirstOrDefault(x => x.Id == 0);
-            //orderLine.SupplierPartIndex.StockRoom.Variant = _context.StockroomInventories
-
-            _context.StockroomOrderLines.Add(orderLine);
+                var line = _context.StockroomRequestLines.FirstOrDefault(x => x.Id == requestlineId);
+                var orderId = _context.StockroomOrders.FirstOrDefault(x => x.OrderNumber == orderNumber).Id;
+                var indexId = +_context.StockroomSupplierPartIndexes.FirstOrDefault(x => x.ManufacturerPartId == line.ManufacturerPartId).Id;
+                StockRoomOrderLine orderLine = new StockRoomOrderLine()
+                {
+                    StockRoomOrderId = orderId,
+                    StockRoomSupplierPartIndexId = indexId,
+                    NumberOfItemsOrdered = line.Number,
+                    Approved = true
+                };
+                _context.StockroomOrderLines.Add(orderLine);
+            }
             _context.SaveChanges();
 
-            return RedirectToAction("Inventory");
+            return RedirectToAction("OrderRequest");
         }
 
-        [HttpPost]
-        public ActionResult CreateOrder(Order order)
+        public ActionResult LowOrderRequest()
         {
-            _context.StockroomOrders.Add(order);
-            _context.SaveChanges();
-            
-            return RedirectToAction("Index");
-        } */
+            var inventory = _context.StockRoomInventories.Where(x => x.OnHand < x.MinRequired || x.OnHand - x.Reserved < x.MinRequired).Include(x => x.ManufacturerPart);
+
+            return View(inventory);
+        }
     }
 }
