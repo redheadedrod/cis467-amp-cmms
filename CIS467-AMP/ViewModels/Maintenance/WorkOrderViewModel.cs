@@ -10,7 +10,7 @@ namespace CIS467_AMP.ViewModels.Maintenance
 {
     public class WorkOrderViewModel
     {
-        
+        public string Message { get; set; }
         public IEnumerable<Worker> Workers { get; set; }
         public IEnumerable<AssetInventory> AssetInventories { get; set; }
         public IEnumerable<MaintenanceStatus> MaintenanceStatuses { get; set; }

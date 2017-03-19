@@ -1,0 +1,53 @@
+﻿@model CIS467_AMP.ViewModels.Maintenance.JobPlanViewModel
+@{
+    /**
+     * Author: Rodney Fulk
+     * Logbook entry page
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Job Plan";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
+    <div class="col-md-10">
+        <h1 id="titleS">@ViewBag.Title</h1>
+    </div>
+    <div>
+        <div class="col col-md-10">
+            <table class="table">
+                <tr>
+                    <th>Job Plan</th>
+                    <th>Document</th>
+                </tr>
+                <tr>
+                    <td>@Html.DisplayFor(j => j.JobPlan.JobPlanName)</td>
+                    <td>@Html.DisplayFor(f => f.JobPlanDocument.Filename)</td>
+                </tr>
+            </table>
+            <table class="table">
+                <tr>
+                    <th>Job Plan Parts</th>
+                </tr>
+                @foreach (var item in Model.ManufacturerParts)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+                    </tr>
+                }
+            </table>
+            @using (Html.BeginForm("PartsRequest", "Maintenance", Model.ManufacturerParts))
+            {
+                <button type="submit" class="btn btn-primary">Make Parts Request</button>
+            }
+        </div>
+    </div>
+</div>
+
+
+

@@ -27,15 +27,9 @@
             {
                 @Html.Partial("WorkOrder", Model)
                 @Html.HiddenFor(i => i.MaintenanceWorkOrder.Id)
-                <button type="submit" class="btn btn-primary">Save Entry</button>
-            }
-            @using (Html.BeginForm("Time", "Maintenance"))
-            {
-                <button type="submit" class="btn btn-primary">Add Time</button>
-            }
-            @using (Html.BeginForm("JobPlan", "Maintenance"))
-            {
-                <button type="submit" class="btn btn-primary">See JobPlan (If there is one)</button>
+                <button type="submit" class="btn btn-primary" name ="save" value="save">Save Entry</button>
+                <button type="submit" class="btn btn-primary" name ="time" value="time">Add Time</button>
+                <button type="submit" class="btn btn-primary" name ="plan" value="plan">See JobPlan (If there is one)</button>
             }
         </div>
     </div>
