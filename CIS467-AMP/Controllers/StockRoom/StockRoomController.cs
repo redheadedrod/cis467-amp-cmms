@@ -65,7 +65,7 @@ namespace CIS467_AMP.Controllers.StockRoom
         /// Allows for selection of requests to be ordered
         /// </summary>
         /// <returns></returns>
-        public ActionResult OrderRequest()
+        public ActionResult PartRequest()
         {
             var suppliers = _context.StockRoomSuppliers.ToList();
             var requests = _context.StockroomRequestLines.Include(x => x.ManufacturerPart).ToList();
@@ -81,7 +81,7 @@ namespace CIS467_AMP.Controllers.StockRoom
                 requestSuppliers.Add(rs); 
                 
             }
-            OrderRequestViewModel viewModel = new OrderRequestViewModel()
+            PartRequestViewModel viewModel = new PartRequestViewModel()
             {
                 Suppliers = suppliers,
                 RequestSupplier = requestSuppliers
@@ -156,7 +156,7 @@ namespace CIS467_AMP.Controllers.StockRoom
             }
             _context.SaveChanges();
 
-            return RedirectToAction("OrderRequest");
+            return RedirectToAction("PartRequest");
         }
 
         public ActionResult LowOrderRequest()
@@ -165,5 +165,6 @@ namespace CIS467_AMP.Controllers.StockRoom
 
             return View(inventory);
         }
+
     }
 }
