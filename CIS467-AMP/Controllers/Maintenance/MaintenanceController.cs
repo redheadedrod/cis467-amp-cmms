@@ -2,6 +2,7 @@
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -56,12 +57,21 @@ namespace CIS467_AMP.Controllers.Maintenance
                 MaintenanceStatuses = status,
                 MaintenanceIssue = issues,
                 JobPlan = plan,
-                Priority = priority
+                Priority = priority,
+                Edit = false,
+                OldStatus = null
 
             };
             if (Id != null)
             {
-                viewModel.Priority = 3;
+                var workOrder = _context.MaintenanceWorkOrders.FirstOrDefault(x => x.Id == Id);
+                if (workOrder != null)
+                {
+                    viewModel.MaintenanceWorkOrder = workOrder;
+                    viewModel.Edit = true;
+                    viewModel.Priority = workOrder.Priority;
+                    viewModel.OldStatus = workOrder.MaintenanceStatusId;
+                }
             }
             return (viewModel);
         }
@@ -79,18 +89,27 @@ namespace CIS467_AMP.Controllers.Maintenance
         [HttpPost]
         public ActionResult Create(MaintenanceWorkOrder workOrder)
         {
-            /*logbookGeneral.EnteredDateTime = DateTime.Now;
-            _context.LogbookGeneral.Add(logbookGeneral);
-            _context.SaveChanges(); */
+            workOrder.CreatedDateTime = DateTime.Now;
+            workOrder.LastStatusDateTime = DateTime.Now;
+            workOrder.MaintenanceStatusId = 0;
+            _context.MaintenanceWorkOrders.Add(workOrder);
+            _context.SaveChanges(); 
             return RedirectToAction("Index", "Maintenance");
         }
-
         [HttpPost]
-        public ActionResult Edit(MaintenanceWorkOrder workOrder)
+        public ActionResult Edit(WorkOrderViewModel viewModel)
         {
-            /*logbookGeneral.EnteredDateTime = DateTime.Now;
-            _context.LogbookGeneral.Add(logbookGeneral);
-            _context.SaveChanges(); */
+            if (viewModel.OldStatus != viewModel.MaintenanceWorkOrder.MaintenanceStatusId)
+            {
+                viewModel.MaintenanceWorkOrder.LastStatusDateTime = DateTime.Now;
+            }
+            if (viewModel.MaintenanceWorkOrder.CreatedDateTime < SqlDateTime.MinValue.Value)
+                viewModel.MaintenanceWorkOrder.CreatedDateTime = SqlDateTime.MinValue.Value;
+            if (viewModel.MaintenanceWorkOrder.LastStatusDateTime < SqlDateTime.MinValue.Value)
+                viewModel.MaintenanceWorkOrder.LastStatusDateTime = SqlDateTime.MinValue.Value;
+
+            _context.Entry(viewModel.MaintenanceWorkOrder).State= EntityState.Modified;
+            _context.SaveChanges(); 
             return RedirectToAction("Index", "Maintenance");
         }
     }

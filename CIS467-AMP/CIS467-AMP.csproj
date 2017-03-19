@@ -490,7 +490,6 @@
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\StockRoom\Inventory.cshtml" />
     <Content Include="Views\StockRoom\OrderRequest.cshtml" />
-    <Content Include="Views\Maintenance\Blah.cshtml" />
     <Content Include="Views\Admin\PendingWorkOrders.cshtml" />
     <Content Include="Views\Logbook\_LogbookLeftNavBar.cshtml" />
     <Content Include="Views\Logbook\Entry.cshtml" />

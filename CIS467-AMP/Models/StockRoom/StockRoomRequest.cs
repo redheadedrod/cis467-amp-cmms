@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using CIS467_AMP.Models.Maintenance;
@@ -28,7 +29,9 @@ namespace CIS467_AMP.Models.StockRoom
         public int MaintenanceWorkOrderId { get; set; }
         public AssetInventory AssetInventory { get; set; }
         public int AssetInventoryId { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime Requested { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime Required { get; set; }
         public bool Approval { get; set; }
         public StockRoomRequestStatus StockRoomRequestStatus { get; set; }
