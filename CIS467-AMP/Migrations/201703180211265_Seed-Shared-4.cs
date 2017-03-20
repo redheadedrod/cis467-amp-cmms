@@ -7,6 +7,7 @@ namespace CIS467_AMP.Migrations
     {
         public override void Up()
         {
+            
             Sql("SET IDENTITY_INSERT ManufacturerPartParentIndexes ON");
             Sql("INSERT INTO ManufacturerPartParentIndexes (Id, ManufacturerPartId, ManufacturerPartParentId ) VALUES (0,  6, 0)");
             Sql("INSERT INTO ManufacturerPartParentIndexes (Id, ManufacturerPartId, ManufacturerPartParentId ) VALUES (1,  7, 0)");

@@ -621,3 +621,5 @@ C:\Users\Jason\Source\Repos\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migr
 C:\Users\Jason\Source\Repos\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.csproj.GenerateResource.Cache
 C:\Users\Jason\Source\Repos\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.dll
 C:\Users\Jason\Source\Repos\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.pdb
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddFieldtoJobPlanParts.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.ChangeHoursWorkedToFloat.resources

@@ -1,8 +1,71 @@
-﻿
+﻿@model CIS467_AMP.ViewModels.Maintenance.PartsRequestViewModel
 @{
-    ViewBag.Title = "Parts Request";
+    /**
+     * Author: Rodney Fulk
+     * Logbook entry page
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Parts Request for Work Order : " + Model.WorkOrderNumber;
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Parts Request</h2>
-
+<div class="row">
+    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
+    <div class="col-md-10">
+        <h1 id="titleS">@ViewBag.Title</h1>
+    </div>
+    <div class="col-md-10">
+        @using (Html.BeginForm("MakeRequest", "Maintenance"))
+        {
+            <h2>Parts Requested</h2>
+            <table class="table">
+                <tr>
+                    <th>Manufacturer</th>
+                    <th>Part Number</th>
+                    <th>Part Name</th>
+                    <th>Number Requesting</th>
+                    <th>Notes</th>
+                </tr>
+                @foreach (var item in Model.RequestLines)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.ManufacturerPart.Manufacturer.Name)</td>
+                        <td>@Html.DisplayFor(m => item.ManufacturerPart.Number)</td>
+                        <td>@Html.DisplayFor(m => item.ManufacturerPart.Name)</td>
+                        <td>@Html.TextBox("RequestLine." + item.Id, "RequestLine." + item.Id, new { @class = "form-control", @type = "number", @min = "0", @Value = item.Number })</td>
+                        <td>@Html.TextBox("Note." + item.Id, "0", new { @class = "form-control", @Value = "None" })</td>
+                    </tr>
+                }
+            </table>
+            @Html.HiddenFor(i => i.WorkOrderNumber)
+            @Html.HiddenFor(l => l.Lines)
+            @Html.HiddenFor(n => n.Notes)
+            @Html.HiddenFor(j => j.JobPlanNumber)
+            <button type="submit" class="btn btn-primary" name="refresh" value="refresh">Refresh Parts Listing</button>
+            <button type="submit" class="btn btn-primary" name="place" value="place">Make Request</button>
+            <br />
+            <h2>Parts Listing</h2>
+            <table class="table">
+                <tr>
+                    <th>Manufacturer</th>
+                    <th>Part Number</th>
+                    <th>Part Name</th>
+                    <th>Number To Request</th>
+                </tr>
+                @foreach (var item in Model.ManufacturerParts)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(m => item.Manufacturer.Name)</td>
+                        <td>@Html.DisplayFor(m => item.Number)</td>
+                        <td>@Html.DisplayFor(m => item.Name)</td>
+                        <td>@Html.TextBox("Part." + item.Id, "0", new { @class = "form-control", @type = "number", @Value = "0", @min = "0" })</td>
+                    </tr>
+                }
+            </table>
+        }
+    </div>
+</div>

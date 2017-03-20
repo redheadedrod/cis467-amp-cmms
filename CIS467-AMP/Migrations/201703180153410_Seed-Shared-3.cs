@@ -7,6 +7,7 @@ namespace CIS467_AMP.Migrations
     {
         public override void Up()
         {
+            
             Sql("SET IDENTITY_INSERT WorkGroupSupervisors ON");
             Sql("INSERT INTO WorkGroupSupervisors (Id, WorkerId, WorkGroupId ) VALUES (0,  4,  0)");
             Sql("INSERT INTO WorkGroupSupervisors (Id, WorkerId, WorkGroupId ) VALUES (1,  4,  1)");

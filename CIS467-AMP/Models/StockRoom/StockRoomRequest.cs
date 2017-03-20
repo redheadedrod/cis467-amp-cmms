@@ -27,8 +27,6 @@ namespace CIS467_AMP.Models.StockRoom
         public int WorkerId { get; set; }
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
         public int MaintenanceWorkOrderId { get; set; }
-        public MaintenanceWorkOrder WorkOrder { get; set; }
-        public int WorkOrderId { get; set; }
         public AssetInventory AssetInventory { get; set; }
         public int AssetInventoryId { get; set; }
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]

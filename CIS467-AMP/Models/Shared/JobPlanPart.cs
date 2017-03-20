@@ -20,5 +20,6 @@ namespace CIS467_AMP.Models.Shared
         public int JobPlanId { get; set; }
         public Predicate<ManufacturerPart> ManufacturerPart { get; set; }
         public int ManufacturerPartId { get; set; }
+        public int Number { get; set; }
     }
 }
