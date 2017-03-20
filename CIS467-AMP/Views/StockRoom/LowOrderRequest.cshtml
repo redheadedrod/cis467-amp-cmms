@@ -22,7 +22,7 @@
     <div class="navbar col-md-2" id="sideLinks">
         <ul class="nav nav-pills nav-stacked">
             <li>@Html.ActionLink("Inventory", "Inventory")</li>
-            <li>@Html.ActionLink("Order Request", "OrderRequest")</li>
+            <li>@Html.ActionLink("Part Requests", "PartRequest")</li>
             <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest")</li>
         </ul>
     </div>
@@ -38,13 +38,20 @@
                     <th>@Html.DisplayNameFor(m => m.MinRequired)</th>
                     <th>@Html.DisplayNameFor(m => m.OnHand)</th>
                     <th>@Html.DisplayNameFor(m => m.Reserved)</th>
-                    <th>Place Order</th>
+                    <th>Place Order (Quantity)</th>
                 </tr>
-
+                @{ 
+                    var count = 0;
+                }
                 @foreach (var item in Model)
                 {
+                    count++;
                     <tr>
-                        <td>@Html.DisplayFor(model => item.StockId)</td>
+                        <td>
+                        <div class="form-group">
+                            @Html.TextBoxFor(model => item.StockId, new { @class = "form-control", @readonly = "readonly", @id = count})
+                           </div>
+                        </td>
                         <td>@Html.DisplayFor(model => item.ManufacturerPart.Name)</td>
                         <td>@Html.DisplayFor(model => item.ManufacturerPart.Number)</td>
                         <td>@Html.DisplayFor(model => item.MinRequired)</td>
@@ -52,7 +59,6 @@
                         <td>@Html.DisplayFor(model => item.Reserved)</td>
                         <td>
                             <div class="form-group">
-                                @Html.DisplayName("Quanty")
                                 @Html.TextBoxFor(model => item.MinRequired, new {@class ="form-control", @type = "number" })
                             </div>
 
