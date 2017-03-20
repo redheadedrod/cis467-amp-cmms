@@ -1,27 +1,47 @@
-﻿
+﻿@model IEnumerable<CIS467_AMP.Models.Maintenance.MaintenanceWorkOrder>
 @{
     /**
-     * Author: Jason Bensel
-     * Stockroom main page
+     * Author: Rodney Fulk
+     * Stockroom orders logbook
      */
 
     //Sets tab bar title
-    ViewBag.Title = "Maintenance Log Book";
+    ViewBag.Title = "Maintenance";
 
     //Uses this scaffolding as main layout --
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
 <div class="row">
-    <div class="col col-md-2">
-        <ul class="nav nav-pills nav-stacked">
-            <li>@Html.ActionLink("Stockroom Logbook", "Stockroom")</li>
-            <li>@Html.ActionLink("Maintenance Logbook", "Maintenance")</li>
-            <li>@Html.ActionLink("General Logbook", "General")</li>
-            <li>@Html.ActionLink("General Entry Logbook", "GeneralEntry")</li>
-        </ul>
-    </div>
+    @Html.Partial("_LogbookLeftNavBar") @*Could put a model as second argument*@
     <div class="col-md-10">
-        <h1 id="title">@ViewBag.Title</h1>
+        <h1 id="titleS">@ViewBag.Title</h1>
+    </div>
+    <div>
+
+        <div class="col col-md-10">
+            <table class="table">
+                <tr>
+                    <th>Work Order</th>
+                    <th>Requested</th>
+                    <th>Requested by</th>
+                    <th>Asset</th>
+                    <th>Status</th>
+                    <th>Status Updated</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(item.Id.ToString(), "EditWorkOrder", "Maintenance", new {id = item.Id}, null)</td>
+                        <td>@Html.DisplayFor(modelItem => item.CreatedDateTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Creator.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.MaintenanceStatus.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LastStatusDateTime)</td>
+                    </tr>
+                }
+            </table>
+        </div>
     </div>
 </div>

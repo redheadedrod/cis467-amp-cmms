@@ -4,7 +4,7 @@
     /// This class is simply a manufacturer listing 
     /// Contacts will be associated through the Manufacturer Contact Index 
     ///
-    /// ManId - Id for this entry
+    /// Id - Id for this entry
     /// Name - Name of manufacturer
     /// Address - Address of home office
     /// City - city of home office
