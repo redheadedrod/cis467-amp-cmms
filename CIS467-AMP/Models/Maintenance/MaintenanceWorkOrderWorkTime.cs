@@ -22,7 +22,7 @@ namespace CIS467_AMP.Models.Maintenance
         public Worker Worker { get; set; }
         public int WorkerId { get; set; }
         public DateTime StartTime { get; set; }
-        public int HoursWorked { get; set; }
+        public float HoursWorked { get; set; }
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
         public int MaintenanceWorkOrderId { get; set; }
     }

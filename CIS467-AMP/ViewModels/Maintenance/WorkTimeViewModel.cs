@@ -11,7 +11,8 @@ namespace CIS467_AMP.ViewModels.Maintenance
     {
         public IEnumerable<MaintenanceWorkOrderWorkTime> MaintenanceWorkOrderWorkTimes { get; set; }
         public IEnumerable<Worker> Worker { get; set; }
-        public IEnumerable<MaintenanceWorkOrder> MaintenanceWorkOrder { get; set; }
+       // public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
         public MaintenanceWorkOrderWorkTime MaintenanceWorkOrderWorkTime { get; set; }
+        public int Id { get; set; }
     }
 }

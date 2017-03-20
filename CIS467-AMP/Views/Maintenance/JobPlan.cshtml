@@ -6,7 +6,7 @@
      */
 
     //Sets tab bar title
-    ViewBag.Title = "Job Plan";
+    ViewBag.Title = "Job Plan : "+Model.JobPlan.JobPlanName;
 
     //Uses this scaffolding as main layout --
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
@@ -20,29 +20,26 @@
     </div>
     <div>
         <div class="col col-md-10">
+            <div><br/>Todo: Display PDF instead of file name here:  @Html.DisplayFor(f => f.JobPlanDocument.Filename)</div>
+            <div><br /><br /><br /><br /><br /></div>
             <table class="table">
                 <tr>
-                    <th>Job Plan</th>
-                    <th>Document</th>
-                </tr>
-                <tr>
-                    <td>@Html.DisplayFor(j => j.JobPlan.JobPlanName)</td>
-                    <td>@Html.DisplayFor(f => f.JobPlanDocument.Filename)</td>
-                </tr>
-            </table>
-            <table class="table">
-                <tr>
-                    <th>Job Plan Parts</th>
+                    <th>Suggested Parts</th>
                 </tr>
                 @foreach (var item in Model.ManufacturerParts)
                 {
                     <tr>
                         <td>@Html.DisplayFor(modelItem => item.Name)</td>
+
                     </tr>
                 }
-            </table>
-            @using (Html.BeginForm("PartsRequest", "Maintenance", Model.ManufacturerParts))
+            </table><br /><br /><br />
+            @using (Html.BeginForm("PartsRequest", "Maintenance"))
             {
+                @Html.HiddenFor(i => i.JobPlanId)
+                @Html.HiddenFor(m=>m.PartsIdList)
+                @Html.HiddenFor(w => w.WorkOrderNumber)
+                @Html.HiddenFor(n => n.PartNotesList)
                 <button type="submit" class="btn btn-primary">Make Parts Request</button>
             }
         </div>
