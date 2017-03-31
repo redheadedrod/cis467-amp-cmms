@@ -1,0 +1,85 @@
+﻿@model CIS467_AMP.ViewModels.StockRoom.PartRequestViewModel
+@{
+    /**
+     * Author: Jason Bensel
+     * Order Requests
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Part Requests";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row" id="content">
+    <div class="col col-md-12">
+        <h1 id="title">@ViewBag.Title</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="navbar col-md-2" id="sideLinks">
+        <ul class="nav nav-pills nav-stacked">
+            <li>@Html.ActionLink("Inventory", "Inventory")</li>
+            <li>@Html.ActionLink("Order Request", "OrderRequest")</li>
+            <li>@Html.ActionLink("Part Requests", "PartRequest")</li>
+            <li>@Html.ActionLink("Low Quantity Inventory", "LowOrderRequest")</li>
+        </ul>
+    </div>
+
+    <div class="col col-md-10">
+        @foreach (var supplier in Model.Suppliers)
+        {
+            using (Html.BeginForm("CreateOrder", "StockRoom"))
+            {
+                <div class="row">
+                    <table class="table">
+                            <tr>
+                                <th>Manufacturer</th>
+                                <th>Part Name</th>
+                                <th>Part Number</th>
+                                <th>Qty Requested</th>
+                                <th>Supplier</th>
+                                <th>Place Order</th>
+
+                            </tr>
+                            @foreach (var request in Model.RequestSupplier)
+                            {
+                                if (supplier.Id == request.Supplier.Id)
+                                {
+                                    <tr>
+                                        <td>@request.Request.ManufacturerPart.Name</td>
+                                        <td>@request.Request.ManufacturerPart.Name</td>
+                                        <td>@request.Request.ManufacturerPart.Number</td>
+                                        <td>@request.Request.Number</td>
+                                        <td>@request.Supplier.Name</td>
+                                        <td id="@request.Request.ManufacturerPart.Number">
+                                            @Html.CheckBox(""+request.Request.Id)
+                                        </td>
+                                    </tr>
+                                }
+
+
+                            }
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>@Html.TextBox("Supplier", supplier.Name, new { @class = "form-control", @readonly = "readonly" })</td>
+                                <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
+                            </tr>
+                    </table>
+                </div>
+            }
+        }
+
+
+
+
+    </div>
+
+</div>
+<script>
+    
+</script>

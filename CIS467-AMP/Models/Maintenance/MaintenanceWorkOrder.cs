@@ -22,7 +22,7 @@ namespace CIS467_AMP.Models.Maintenance
     /// LeadworkerId - link to Worker assigned the job originally - for forms
     /// AssetInventory - link to Id of asset being worked on
     /// AssetInventoryId - link to Id of asset being worked on - for forms
-    /// ShortDesc - short (80 chars) header describing work tobe done
+    /// ShortDesc - short (40 chars) header describing work tobe done
     /// LongDesc - additional information about work to be done if necissary. 
     /// JobPlan - Link to job plan if one is available
     /// JobPlanId - Link to job plan if one is available - for forms
@@ -32,26 +32,50 @@ namespace CIS467_AMP.Models.Maintenance
     public class MaintenanceWorkOrder
     {
         public int Id { get; set; }
+
+
         public Worker Creator { get; set; }
+        [Required]
         public int CreatorId { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime CreatedDateTime { get; set; }
+
         public MaintenanceStatus MaintenanceStatus { get; set; }
         public int MaintenanceStatusId { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime LastStatusDateTime { get; set; }
+
+        [Required(ErrorMessage = "Please select Priority!")]
+        [Range(1,10)]
         public int Priority { get; set; }
+
         public Worker Supervisor { get; set; }
+        [Required(ErrorMessage = "Please select Supervisor!")]
         public int SupervisorId { get; set; }
+
         public Worker LeadWorker { get; set; }
-        public int LeadWorkerId { get; set; }
+        public int? LeadWorkerId { get; set; }
+
         public AssetInventory AssetInventory { get; set; }
+        [Required(ErrorMessage = "Please select Asset!")]
         public int AssetInventoryId { get; set; }
+
+        [StringLength(40)]
+        [Display(Name ="Short Description (MAx 40 chars)")]
         public string ShortDesc { get; set; }
+
+        [StringLength(1024)]
+        [Display(Name = "Long Description ")]
         public string LongDesc { get; set; }
+
         public JobPlan JobPlan { get; set; }
         public int? JobPlanId { get; set; }
+
+
         public MaintenanceIssue MaintenanceIssue { get; set; }
+        [Required(ErrorMessage = "Please select Issue!")]
         public int MaintenanceIssueId { get; set; }
     }
 }

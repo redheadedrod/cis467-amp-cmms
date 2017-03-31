@@ -7,6 +7,7 @@ namespace CIS467_AMP.Migrations
     {
         public override void Up()
         {
+            
             Sql("SET IDENTITY_INSERT AssetInventories ON");
             Sql("INSERT INTO AssetInventories (Id, Active, MapId, ManufacturerPartId, Name ) VALUES (0,  1, 4, 0, 'Pump #1' )");
             Sql("INSERT INTO AssetInventories (Id, Active, MapId, ManufacturerPartId, Name ) VALUES (1,  1, 4, 1, 'Pump #2' )");

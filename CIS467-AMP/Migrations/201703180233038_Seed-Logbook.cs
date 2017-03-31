@@ -7,6 +7,7 @@ namespace CIS467_AMP.Migrations
     {
         public override void Up()
         {
+            
             Sql("SET IDENTITY_INSERT LogbookGeneralStatus ON");
             Sql("INSERT INTO LogbookGeneralStatus (Id, Name) VALUES (0, 'General')");
             Sql("INSERT INTO LogbookGeneralStatus (Id, Name) VALUES (1, 'Maintenance')");

@@ -6,6 +6,7 @@ using System.Data.SqlTypes;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Services.Description;
 using Antlr.Runtime;
 using CIS467_AMP.Models;
 using CIS467_AMP.Models.Maintenance;
@@ -44,9 +45,9 @@ namespace CIS467_AMP.Controllers.Maintenance
 
         private WorkOrderViewModel CreateViewModel(int? id, string message)
         {
-            var workers = _context.Workers;
-            var inventory = _context.AssetInventories;
-            var status = _context.MaintenanceStatuses;
+            var workers = _context.Workers.ToList();
+            var inventory = _context.AssetInventories.ToList();
+            var status = _context.MaintenanceStatuses.ToList();
             var issues = _context.MaintenanceIssues;
             var plan = _context.JobPlans;
             int priority = 5;
@@ -77,32 +78,56 @@ namespace CIS467_AMP.Controllers.Maintenance
 
         public ActionResult NewWorkOrder()
         {
-            return View(CreateViewModel(null, ""));
+            return View(CreateViewModel(null, null));
         }
 
         public ActionResult EditWorkOrder(int? id, string message)
         {
-            return View(CreateViewModel(id, message));
+            return View("EditWorkOrder", CreateViewModel(id, message));
         }
 
         [HttpPost]
-        public ActionResult Create(MaintenanceWorkOrder workOrder)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(WorkOrderViewModel dataModel)
         {
-            workOrder.CreatedDateTime = DateTime.Now;
-            workOrder.LastStatusDateTime = DateTime.Now;
-            workOrder.MaintenanceStatusId = 0;
-            _context.MaintenanceWorkOrders.Add(workOrder);
+            
+            if (!ModelState.IsValid)
+            {
+                var workers = _context.Workers.ToList();
+                var inventory = _context.AssetInventories.ToList();
+                var status = _context.MaintenanceStatuses.ToList();
+                var issues = _context.MaintenanceIssues;
+                var plan = _context.JobPlans;
+                int priority = dataModel.MaintenanceWorkOrder.Priority;
+                var viewModel = new WorkOrderViewModel()
+                {
+                    Workers = workers,
+                    AssetInventories = inventory,
+                    MaintenanceStatuses = status,
+                    MaintenanceIssue = issues,
+                    JobPlan = plan,
+                    Priority = priority,
+                    Edit = false
+
+                };
+                return View("NewWorkOrder", viewModel); 
+            }
+            
+            dataModel.MaintenanceWorkOrder.CreatedDateTime = DateTime.Now;
+            dataModel.MaintenanceWorkOrder.LastStatusDateTime = DateTime.Now;
+            dataModel.MaintenanceWorkOrder.MaintenanceStatusId = 0;
+            _context.MaintenanceWorkOrders.Add(dataModel.MaintenanceWorkOrder);
             _context.SaveChanges(); 
             return RedirectToAction("Index", "Maintenance");
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Edit(WorkOrderViewModel viewModel)
         {
             if (Request.Form["time"] != null)
             {
                 System.Diagnostics.Debug.WriteLine("Time");
-                //WorkTime(viewModel.MaintenanceWorkOrder.Id);
                 return WorkTime(viewModel.MaintenanceWorkOrder.Id);
             }
 
@@ -135,7 +160,7 @@ namespace CIS467_AMP.Controllers.Maintenance
                 {
                     workOrder.CreatedDateTime = viewModel.MaintenanceWorkOrder.CreatedDateTime;
                 }
-                workOrder.CreatorId = viewModel.MaintenanceWorkOrder.CreatorId;
+                workOrder.CreatorId = viewModel.MaintenanceWorkOrder.CreatorId; // Remove once logins work
                 workOrder.JobPlanId = viewModel.MaintenanceWorkOrder.JobPlanId;
                 workOrder.LeadWorkerId = viewModel.MaintenanceWorkOrder.LeadWorkerId;
                 workOrder.MaintenanceIssueId = viewModel.MaintenanceWorkOrder.MaintenanceIssueId;
@@ -152,58 +177,121 @@ namespace CIS467_AMP.Controllers.Maintenance
         public ActionResult WorkTime(int id)
         {
             var workers = _context.Workers.ToList();
-            var workOrder = _context.MaintenanceWorkOrders;
-            var workTimes = _context.MaintenanceWorkOrderWorkTime.Where(wo => wo.MaintenanceWorkOrderId == id);
+            var workTimes = _context.MaintenanceWorkOrderWorkTime.Where(wo => wo.MaintenanceWorkOrderId == id).ToList();
             var viewModel = new WorkTimeViewModel()
             {
-                MaintenanceWorkOrder = workOrder,
                 MaintenanceWorkOrderWorkTimes = workTimes,
-                Worker = workers
-
+                Worker = workers,
+                Id = id
             };
-            return View("WorkTime",viewModel);
+            return View("AddWorkTime",viewModel);
         }
 
         [HttpPost]
-        public ActionResult AddTime(MaintenanceWorkOrderWorkTime time)
+        [ValidateAntiForgeryToken]
+        public ActionResult AddTime(WorkTimeViewModel time)
         {
-            if (time.StartTime < SqlDateTime.MinValue.Value)
-                time.StartTime = SqlDateTime.MinValue.Value;
-            _context.MaintenanceWorkOrderWorkTime.Add(time);
+            if (!ModelState.IsValid)
+            {
+                var workers = _context.Workers.ToList();
+                var workTimes =
+                    _context.MaintenanceWorkOrderWorkTime.Where(wo => wo.MaintenanceWorkOrderId == time.Id).ToList();
+                var viewModel = new WorkTimeViewModel()
+                {
+                    MaintenanceWorkOrderWorkTimes = workTimes,
+                    Worker = workers,
+                    Id = time.Id
+                };
+                return View("AddWorkTime", viewModel);
+            }
+            if (time.MaintenanceWorkOrderWorkTime.StartTime < SqlDateTime.MinValue.Value)
+            {
+                time.MaintenanceWorkOrderWorkTime.StartTime = SqlDateTime.MinValue.Value;
+            }
+            var workOrder = _context.MaintenanceWorkOrders.Single(w => w.Id == time.Id);
+            time.MaintenanceWorkOrderWorkTime.MaintenanceWorkOrder = workOrder;
+            _context.MaintenanceWorkOrderWorkTime.Add(time.MaintenanceWorkOrderWorkTime);
             _context.SaveChanges();
-            return WorkTime(time.MaintenanceWorkOrderId);
+            //return RedirectToAction("EditWorkOrder/"+time.Id, "Maintenance");
+            return WorkTime(time.Id);
+        }
+
+        public ActionResult EditTime(int Id)
+        {
+            var timeRecord = _context.MaintenanceWorkOrderWorkTime.Single(wt => wt.Id == Id);
+            var workers = _context.Workers.ToList();
+            var workTimes = _context.MaintenanceWorkOrderWorkTime.Where(wo => wo.MaintenanceWorkOrderId == timeRecord.MaintenanceWorkOrderId).ToList();
+            var viewModel = new WorkTimeViewModel()
+            {
+                MaintenanceWorkOrderWorkTimes = workTimes,
+                Worker = workers,
+                Id = timeRecord.MaintenanceWorkOrderId,
+                MaintenanceWorkOrderWorkTime = timeRecord
+
+            };
+            return View("EditWorkTime", viewModel);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SaveEditedTime(WorkTimeViewModel time)
+        {
+            if (!ModelState.IsValid)
+            {
+                var timeRecord = _context.MaintenanceWorkOrderWorkTime.Single(wt => wt.Id == time.Id);
+                var workers = _context.Workers.ToList();
+                var workTimes = _context.MaintenanceWorkOrderWorkTime.Where(wo => wo.MaintenanceWorkOrderId == timeRecord.MaintenanceWorkOrderId).ToList();
+                var viewModel = new WorkTimeViewModel()
+                {
+                    MaintenanceWorkOrderWorkTimes = workTimes,
+                    Worker = workers,
+                    Id = timeRecord.MaintenanceWorkOrderId,
+                    MaintenanceWorkOrderWorkTime = timeRecord
+
+                };
+                return View("EditWorkTime", viewModel);
+            }
+            var workTime = _context.MaintenanceWorkOrderWorkTime.Single(wt => wt.Id == time.MaintenanceWorkOrderWorkTime.Id);
+            workTime.HoursWorked = time.MaintenanceWorkOrderWorkTime.HoursWorked;
+            _context.SaveChanges();
+            //return RedirectToAction("EditWorkOrder/" + time.MaintenanceWorkOrderWorkTime.MaintenanceWorkOrderId, "Maintenance");
+            return WorkTime(time.MaintenanceWorkOrderWorkTime.MaintenanceWorkOrderId);
         }
 
         public ActionResult JobPlan(int id)
         {
-            var workOrder = _context.MaintenanceWorkOrders.SingleOrDefault(wo => wo.Id == id);
+            var workOrder = _context.MaintenanceWorkOrders.Single(wo => wo.Id == id);
             if (workOrder == null)
             {
                 return Index();
             }
-            /*if (workOrder.JobPlanId == null)
+            if (workOrder.JobPlanId == null)
             {
-                return EditWorkOrder(id, "No Work Plan found!");
-            }*/
-            var jobPlan = _context.JobPlans.SingleOrDefault(w => w.Id == workOrder.JobPlanId);
-            /*if (jobPlan == null)
+                return EditWorkOrder(id, "No Work Plan attached to work order!");
+            }
+            var jobPlan = _context.JobPlans.Single(w => w.Id == workOrder.JobPlanId);
+            if (jobPlan == null)
             {
-                return EditWorkOrder(id, "No Work Plan found!");
-            }*/
-            var jobPlanDocument = _context.JobPlanDocuments.SingleOrDefault(d => d.JobPlanId == jobPlan.Id);
-            /*if (jobPlanDocument == null)
+                return EditWorkOrder(id, "No such Work Plan found on system!");
+            }
+            var jobPlanDocument = _context.JobPlanDocuments.Single(d => d.JobPlanId == jobPlan.Id);
+            if (jobPlanDocument == null)
             {
                 return EditWorkOrder(id, "No Work Plan Document found!");
-            }*/
+            }
             var manufacturerParts = _context.ManufacturerParts.ToList();
             var jobPlanParts = _context.JobPlanParts.Where(p => p.JobPlanId == jobPlan.Id);
 
             List<ManufacturerPart> parts = new List<ManufacturerPart>(); 
             List<int> partIds = new List<int>();
+            List<int> partNums = new List<int>();
+            List<string> partNotes = new List<string>();
 
             foreach (JobPlanPart item in jobPlanParts)
             {
                 partIds.Add(item.ManufacturerPartId);
+                partNums.Add(item.Number > 0 ? item.Number : 1);
+                partNotes.Add("");
             }
             foreach (ManufacturerPart item in manufacturerParts)
             {
@@ -212,20 +300,163 @@ namespace CIS467_AMP.Controllers.Maintenance
                     parts.Add(item);
                 }
             }
-            var viewModel = new JobPlanViewModel()
+            var viewModel = new JobPlanViewModel
             {
                 JobPlan = jobPlan,
                 JobPlanDocument = jobPlanDocument,
-
+                JobPlanId = jobPlan.Id,
+                WorkOrderNumber = id
             };
             if (parts.Any())
+            {
                 viewModel.ManufacturerParts = parts;
+                string partsList = string.Join(";", parts.Select(x => x.Id.ToString()).ToArray());
+                partsList += ";"+ string.Join<int>(";", partNums);
+                viewModel.PartsIdList = partsList;
+                viewModel.PartNotesList = string.Join(";", partNotes);
+            }
             return View("JobPlan",viewModel);
         }
+
+
         [HttpPost]
-        public ActionResult PartsRequest()
+        [ValidateAntiForgeryToken]
+        public ActionResult PartsRequest(JobPlanViewModel formData)
         {
-            return View();
+            var manufacturerPart = _context.ManufacturerParts
+                .Include(m => m.Manufacturer)
+                .ToList();
+            ManufacturerPart part = new ManufacturerPart();
+            var manufacturers = _context.Manufacturers.ToList();
+            List<StockRoomRequestLine> requestLines = new List<StockRoomRequestLine>();
+            StockRoomRequestLine requestLine;
+            string[] tokens = formData.PartsIdList.Split(';');
+            int[] partIds = Array.ConvertAll<string, int>(tokens, int.Parse);
+            int planId = formData.JobPlanId;
+            int partIdsLen = partIds.Length / 2;
+            for (int i = 0; i < partIdsLen; i++)
+            {
+                part = manufacturerPart.Single(m =>m.Id == partIds[i]);
+                if (part != null)
+                {
+                    requestLine = new StockRoomRequestLine();
+                    requestLine.ManufacturerPart = part;
+                    requestLine.Number = partIds[i + partIdsLen];
+                    requestLine.Description = "Test"+ part.Name;
+                    requestLine.Id = i;
+                    requestLines.Add(requestLine);
+                }
+            }
+
+            var viewModel = new PartsRequestViewModel()
+            {
+                RequestLines = requestLines,
+                ManufacturerParts = manufacturerPart,
+                WorkOrderNumber = formData.WorkOrderNumber,
+                Manufacturers = manufacturers,
+                Lines = formData.PartsIdList,
+                Notes = formData.PartNotesList,
+                JobPlanNumber = formData.JobPlanId
+
+            };
+            return View(viewModel);
+        }
+
+        private struct RequestLineStruct
+        {
+            public int PartId { get; set; }
+            public int Number { get; set; }
+            public string Note { get; set; }
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult MakeRequest(PartsRequestViewModel formData)
+        {
+            
+            //get information from form here:
+            string[] tokens = formData.Lines.Split(';');
+            int[] partIds = Array.ConvertAll<string, int>(tokens, int.Parse);
+            string value;
+            int keyNumber;
+            string[] keySplit;
+            bool refresh = false;
+            List<RequestLineStruct> requestLines = new List<RequestLineStruct>();
+            RequestLineStruct requestLine = new RequestLineStruct();
+            foreach (var key in Request.Form.AllKeys)
+            {
+                value = Request.Form.Get(key);
+                if (key == "refresh")
+                {
+                    refresh = true;
+                    System.Diagnostics.Debug.WriteLine("Refresh");
+                }   
+                else if (key == "place")
+                {
+                    System.Diagnostics.Debug.WriteLine("Place");
+                }
+                else if ((key.StartsWith("RequestLine.") && (value != "0")) || (key.StartsWith("Note.")&& (requestLine.Note == null))|| (key.StartsWith("Part.")&& (value != "0")))
+                {
+                    keySplit = key.Split('.');
+                    keyNumber = Int32.Parse(keySplit[1]);
+                    if (keySplit[0] == "RequestLine")
+                    {
+                        if (value != "0")
+                        {
+                            requestLine.Number = Int32.Parse(value);
+                            requestLine.PartId = partIds[keyNumber];
+                            requestLine.Note = null;
+                        }
+                    }
+                    else if (keySplit[0] == "Note" && requestLine.Note == null)
+                    {
+                        requestLine.Note = value;
+                        requestLines.Add(requestLine);
+                    }
+                    else if (keySplit[0] == "Part" && value!= "0")
+                    {
+                        requestLine.PartId = keyNumber;
+                        requestLine.Number = Int32.Parse(value);
+                        requestLine.Note = "";
+                        requestLines.Add(requestLine);
+                    }
+                     
+                        
+                }
+            }
+            List<int> partIdList = new List<int>();
+            List<int> numberList = new List<int>();
+            List<string> noteList = new List<string>();
+
+            foreach (var line in requestLines)
+            {
+                partIdList.Add(line.PartId);
+                numberList.Add(line.Number);
+                noteList.Add(line.Note);
+            }
+            string partString = string.Join<int>(";", partIdList) + ";" + string.Join<int>(";", numberList);
+            string noteString = string.Join(";", noteList);
+
+            if (refresh)
+            {
+
+                JobPlanViewModel viewModel = new JobPlanViewModel()
+                {
+                    WorkOrderNumber = formData.WorkOrderNumber,
+                    PartsIdList = partString,
+                    PartNotesList = noteString,
+                    JobPlanId = formData.JobPlanNumber
+                };
+                //return RedirectToAction("PartsRequest", "Maintenance", viewModel);
+            }
+            else
+            {
+                //save code goes here
+
+            }
+
+
+            return RedirectToAction("Index", "Maintenance");
         }
     }
 

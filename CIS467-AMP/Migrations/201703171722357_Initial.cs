@@ -7,6 +7,7 @@ namespace CIS467_AMP.Migrations
     {
         public override void Up()
         {
+
             CreateTable(
                 "dbo.AspNetRoles",
                 c => new

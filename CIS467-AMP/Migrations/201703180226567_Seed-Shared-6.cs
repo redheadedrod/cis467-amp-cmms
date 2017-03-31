@@ -7,6 +7,7 @@ namespace CIS467_AMP.Migrations
     {
         public override void Up()
         {
+            
             Sql("SET IDENTITY_INSERT JobPlanParts ON");
             Sql("INSERT INTO JobPlanParts (Id, JobPlanId, ManufacturerPartId ) VALUES (0, 0, 6 )");
             Sql("INSERT INTO JobPlanParts (Id, JobPlanId, ManufacturerPartId ) VALUES (1, 0, 7 )");

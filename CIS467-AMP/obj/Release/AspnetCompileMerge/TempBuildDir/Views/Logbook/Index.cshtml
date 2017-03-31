@@ -1,0 +1,62 @@
+﻿@model IEnumerable<CIS467_AMP.Models.Logbook.LogbookGeneral>
+@{
+    /**
+     * Author: Rodney Fulk
+     * General logbook
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Logbook";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @Html.Partial("_LogbookLeftNavBar") @*Could put a model as second argument*@
+    <div class="col-md-10">
+        <h1 id="titleS">@ViewBag.Title</h1>
+    </div>
+    <div>
+        @*Following Here for notes more than anything*@
+        @*@{
+                var className = Model.MoreText.Count > 1 ? "popular" : null;
+
+            }*@
+
+        @*<h2 class ="@className">@Model.Text</h2> *@
+        @* <ul>
+                @foreach (var order in Model)
+                {
+                    <li>@order.Order</li>
+
+                }
+            </ul>*@
+        <div class="col col-md-10">
+            <table class="table">
+                <tr>
+                    <th>Date Entered</th>
+                    <th>Entered by</th>
+                    <th>Asset</th>
+                    <th>Topic</th>
+                    <th>Entry</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.EnteredDateTime)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Worker.LastName), @Html.DisplayFor(modelItem => item.Worker.FirstName)</td>
+                        <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.LogbookGeneralStatus.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Entry)</td>
+                    </tr>
+                }
+            </table>
+            @using (Html.BeginForm("Entry", "Logbook"))
+            {
+                <button type="submit" class="btn btn-primary">Make New Entry</button>
+            }
+        </div>
+    </div>
+</div>

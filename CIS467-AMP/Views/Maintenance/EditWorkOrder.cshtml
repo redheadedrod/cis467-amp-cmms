@@ -8,7 +8,7 @@
      */
 
     //Sets tab bar title
-    ViewBag.Title = "Edit Work Order";
+    ViewBag.Title = "Edit Work Order : "+Model.MaintenanceWorkOrder.Id;
 
     //Uses this scaffolding as main layout --
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
@@ -19,12 +19,16 @@
     @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
     <div>
         <div class="col-md-10">
-            <h1 id="title">@ViewBag.Title</h1>
+            <h1 id="title">@ViewBag.Title</h1><br />
         </div>
-
+    </div>
+    <div>
+       
         <div class="col-md-10">
             @using (Html.BeginForm("Edit", "Maintenance"))
             {
+                <div class="field-validation-error"><br />@Model.Message<br /><br/></div>
+                @Html.AntiForgeryToken()
                 @Html.Partial("WorkOrder", Model)
                 @Html.HiddenFor(i => i.MaintenanceWorkOrder.Id)
                 <button type="submit" class="btn btn-primary" name ="save" value="save">Save Entry</button>

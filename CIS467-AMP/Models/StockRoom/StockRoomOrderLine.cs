@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using CIS467_AMP.Models.Shared;
@@ -26,6 +27,8 @@ namespace CIS467_AMP.Models.StockRoom
         public int? StockRoomOrderId { get; set; }
         public StockRoomSupplierPartIndex StockRoomSupplierPartIndex { get; set; }
         public int StockRoomSupplierPartIndexId { get; set; }
+
+        [Range(0, 999)]
         public int NumberOfItemsOrdered { get; set; }
         public bool Approved { get; set; }
     }

@@ -1,0 +1,13 @@
+﻿body {
+    padding: 0px;
+}
+#mainLinks{
+    text-align: center;
+}
+#mainLinks a:link {
+   text-decoration: none;
+}
+
+#mainLinks:hover {
+    background: darkgrey;
+}
