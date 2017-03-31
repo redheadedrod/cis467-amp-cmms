@@ -1,0 +1,27 @@
+﻿@{
+    /**
+     * Author: Jason Bensel
+     * Stockroom main page
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Administration";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    <div class="col col-md-2">
+        <ul class="nav nav-pills nav-stacked">
+            <li>@Html.ActionLink("Pending Work Orders", "PendingWorkOrders")</li>
+            <li>@Html.ActionLink("Temp1", "Index")</li>
+            <li>@Html.ActionLink("Temp2", "Index")</li>
+            <li>@Html.ActionLink("Temp3", "Index")</li>
+        </ul>
+    </div>
+    <div class="col-md-10">
+        <h1 id="title">@ViewBag.Title</h1>
+    </div>
+</div>

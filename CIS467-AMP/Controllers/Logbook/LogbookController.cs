@@ -42,9 +42,9 @@ namespace CIS467_AMP.Controllers.Logbook
 
         public ActionResult Entry()
         {
-            var status = _context.LogbookGeneralStatuses;
-            var inventory = _context.AssetInventories;
-            var workers = _context.Workers;
+            var status = _context.LogbookGeneralStatuses.ToList();
+            var inventory = _context.AssetInventories.ToList();
+            var workers = _context.Workers.ToList();
 
 
             var viewModel = new EntryViewModel
@@ -57,8 +57,22 @@ namespace CIS467_AMP.Controllers.Logbook
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Create(LogbookGeneral logbookGeneral)
         {
+            if (!ModelState.IsValid)
+            {
+                var status = _context.LogbookGeneralStatuses.ToList();
+                var inventory = _context.AssetInventories.ToList();
+                var workers = _context.Workers.ToList();
+                var viewModel = new EntryViewModel
+                {
+                    LogbookGeneralStatuses = status,
+                    AssetInventories = inventory,
+                    Workers = workers
+                };
+                return View("Entry", viewModel);
+            }
             logbookGeneral.EnteredDateTime = DateTime.Now;
             _context.LogbookGeneral.Add(logbookGeneral);
             _context.SaveChanges();

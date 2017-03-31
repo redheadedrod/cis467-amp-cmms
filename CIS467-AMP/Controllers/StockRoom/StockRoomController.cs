@@ -233,7 +233,7 @@ namespace CIS467_AMP.Controllers.StockRoom
             _context.StockroomOrderLines.Add(line);
             _context.SaveChanges();
 
-            return RedirectToAction("CreateOrder");
+            return RedirectToAction("OrderRequest");
         }
 
         private string getOrderNumber()

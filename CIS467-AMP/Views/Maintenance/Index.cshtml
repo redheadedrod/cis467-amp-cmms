@@ -47,6 +47,7 @@
             </table>
             @using (Html.BeginForm("NewWorkOrder", "Maintenance"))
             {
+                @Html.AntiForgeryToken()
                 <button type="submit" class="btn btn-primary">Make New Work Order</button>
             }
         </div>

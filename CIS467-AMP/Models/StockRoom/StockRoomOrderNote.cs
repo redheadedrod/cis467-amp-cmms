@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using CIS467_AMP.Models.Shared;
@@ -22,6 +23,7 @@ namespace CIS467_AMP.Models.StockRoom
         public Worker Worker { get; set; }
         public int WorkerId { get; set; }
         public DateTime WhenEntered { get; set; }
+        [StringLength(80)]
         public string Note { get; set; }
     }
 }
