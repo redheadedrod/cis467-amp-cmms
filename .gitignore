@@ -1,6 +1,6 @@
 *.suo
 *.dll
 *.cache
-bin\*.*
-obj\*.*
+bin\*
+obj\*
 
