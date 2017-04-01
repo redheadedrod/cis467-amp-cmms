@@ -1,5 +1,4 @@
-﻿}*/-
-#content-full{
+﻿#content-full{
     width: 100%;
     padding: 0;
     margin: 0;
@@ -10,14 +9,22 @@
 #content{
     width: 100%;
 }
-#sideLinks{
+#sideNav{
     background-color: #333333;
     /*position: fixed;*/
 }
-#sideLinks a{
+#sideNav a{
     color: #999999;
 }
-#sideLinks a:hover{
+#sideNav a:hover{
     color: white;
     background-color: #333333;
 }
+#pills{
+    display: inline-block;
+}
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+

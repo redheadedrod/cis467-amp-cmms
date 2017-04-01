@@ -15,13 +15,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.Partial("_TitleAndLinks")
 <div class="row">
-    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
-    <div>
-        <div class="col-md-10">
-            <h1 id="title">@ViewBag.Title</h1><br />
-        </div>
-    </div>
     <div>
        
         <div class="col-md-10">

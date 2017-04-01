@@ -1,5 +1,5 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
+﻿<div class="navbar navbar-inverse navbar-fixed-top" id="topNav">
+    <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                 <span class="icon-bar"></span>
@@ -10,10 +10,55 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li>@Html.ActionLink("Admin", "Index", "Admin")</li>
-                <li>@Html.ActionLink("Stock Room", "Index", "StockRoom")</li>
-                <li>@Html.ActionLink("Maintenance", "Index", "Maintenance")</li>
-                <li>@Html.ActionLink("Logbook", "Index", "Logbook")</li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Admin
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Home", "Index", "Admin")</li>
+                        <li>@Html.ActionLink("Pending Work Orders", "PendingWorkOrder", "Admin")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Stock Room
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Home", "Index", "StockRoom")</li>
+                        <li>@Html.ActionLink("Inventory", "Inventory", "StockRoom")</li>
+                        <li>@Html.ActionLink("Order Request", "OrderRequest", "StockRoom")</li>
+                        <li>@Html.ActionLink("Part Requests", "PartRequest", "StockRoom")</li>
+                        <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest", "StockRoom")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Maintenance
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Home", "Index", "Maintenance")</li>
+                        <li>@Html.ActionLink("Work Orders", "Index", "Maintenance")</li>
+                        <li>@Html.ActionLink("Create Work Order", "NewWorkOrder", "Maintenance")</li>
+                        <li>@Html.ActionLink("Edit Work Order", "EditWorkOrder", "Maintenance")</li>
+                        <li>@Html.ActionLink("Job Plan", "JobPlan", "Maintenance")</li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown">
+                        Logbooks
+                        <span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>@Html.ActionLink("Home", "Index", "Logbook")</li>
+                        <li>@Html.ActionLink("Logbook Entry", "Entry", "Logbook")</li>
+                        <li>@Html.ActionLink("Maintenance", "Maintenance", "Logbook")</li>
+                        <li>@Html.ActionLink("Stockroom Orders", "StockroomOrders", "Logbook")</li>
+                        <li>@Html.ActionLink("Stockroom Requests", "StockroomOrderRequests", "Logbook")</li>
+                    </ul>
+                </li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

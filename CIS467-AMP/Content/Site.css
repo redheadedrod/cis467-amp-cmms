@@ -31,3 +31,6 @@ textarea {
     border: 2px solid red;
     
 }
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
