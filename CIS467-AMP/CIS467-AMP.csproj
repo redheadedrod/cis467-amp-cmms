@@ -365,6 +365,14 @@
     <Compile Include="Migrations\201703310838033_ValidationStockroom.Designer.cs">
       <DependentUpon>201703310838033_ValidationStockroom.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201704010503221_RemoveAssetFromPartsRequest.cs" />
+    <Compile Include="Migrations\201704010503221_RemoveAssetFromPartsRequest.Designer.cs">
+      <DependentUpon>201704010503221_RemoveAssetFromPartsRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704010535041_AddNullSupportToStockroomRequests.cs" />
+    <Compile Include="Migrations\201704010535041_AddNullSupportToStockroomRequests.Designer.cs">
+      <DependentUpon>201704010535041_AddNullSupportToStockroomRequests.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookGeneralStatus.cs" />
     <Compile Include="Models\Logbook\LogbookGeneral.cs" />
@@ -662,6 +670,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201703310838033_ValidationStockroom.resx">
       <DependentUpon>201703310838033_ValidationStockroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704010503221_RemoveAssetFromPartsRequest.resx">
+      <DependentUpon>201704010503221_RemoveAssetFromPartsRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704010535041_AddNullSupportToStockroomRequests.resx">
+      <DependentUpon>201704010535041_AddNullSupportToStockroomRequests.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

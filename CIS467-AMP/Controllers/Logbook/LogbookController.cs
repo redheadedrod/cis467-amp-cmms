@@ -82,7 +82,6 @@ namespace CIS467_AMP.Controllers.Logbook
         public ActionResult Maintenance()
         {
             var logbook = _context.MaintenanceWorkOrders
-                .Include(a => a.AssetInventory)
                 .Include(w => w.Creator)
                 .Include(s => s.MaintenanceStatus)
                 ;
@@ -101,7 +100,7 @@ namespace CIS467_AMP.Controllers.Logbook
 
         public ActionResult StockroomOrderRequests()
         {
-            var logbook = _context.StockRoomRequests.Include(a => a.AssetInventory)
+            var logbook = _context.StockRoomRequests
                 .Include(w => w.Worker)
                 .Include(o => o.MaintenanceWorkOrder)
                 .Include(s => s.StockRoomRequestStatus)

@@ -484,6 +484,7 @@ namespace CIS467_AMP.Controllers.Maintenance
             List<string> noteList = new List<string>();
             List<StockRoomRequestLine> requestLineList = new List<StockRoomRequestLine>();
             StockRoomRequestLine requestLineLine;
+
             var manufacturerPart = _context.ManufacturerParts.ToList();
             object stockRoomRequest = null;
 
@@ -510,7 +511,6 @@ namespace CIS467_AMP.Controllers.Maintenance
 
                 requestLineList.Add(requestLineLine);
             }
-
             if (refresh)
             {
             
@@ -533,7 +533,6 @@ namespace CIS467_AMP.Controllers.Maintenance
                 if (formData != null && formData.PartRequestNumber != null) // save changed record
                 {
                     int requestId = (int) formData.PartRequestNumber;
-                    // delete old records first
                     var stockRoomRequestLines = _context.StockroomRequestLines;
                     var requestRecords = stockRoomRequestLines.Where(r => r.StockRoomRequestId == requestId).ToList();
                     StockRoomRequestLine record;
@@ -587,9 +586,56 @@ namespace CIS467_AMP.Controllers.Maintenance
                 }
                 else // new record
                 {
-                    
-                }
+                    // create a request first and get the id for it.
+                    int workOrderNumber;
+                    MaintenanceWorkOrder workOrder = null;
+                    Worker worker = null;
+                    var workers = _context.Workers.ToList();
+                    StockRoomRequest newStockRoomRequest = new StockRoomRequest()
+                    {
+                        StockRoomRequestStatus = _context.StockRoomRequestStatuses.Single(i => i.Id == 0),
+                        Requested = DateTime.Now,
+                        Required = DateTime.Now.AddDays(14),
+                        Approval = false
 
+                    };
+                    newStockRoomRequest.StockRoomRequestStatusId = newStockRoomRequest.Id;
+                    if (formData != null && formData.WorkOrderNumber != null)
+                    {
+                        workOrderNumber = (int) formData.WorkOrderNumber;
+                        workOrder = _context.MaintenanceWorkOrders.Single(id => id.Id == workOrderNumber);
+                        if (workOrder.LeadWorkerId != null)
+                        {
+                            worker = workers.Single(i => i.Id == workOrder.LeadWorker.Id);
+                            newStockRoomRequest.Worker = worker;
+                            newStockRoomRequest.WorkerId = worker.Id;
+                        }
+
+                        newStockRoomRequest.MaintenanceWorkOrder = workOrder;
+                        newStockRoomRequest.MaintenanceWorkOrderId = workOrder.Id;
+
+                    }
+                    else
+                    {
+                        // Will be replaced when logins are possible
+                        Random rand = new Random();
+                        Worker rndWorker = workers.ElementAt(rand.Next(_context.Workers.Count()));
+                        newStockRoomRequest.Worker = rndWorker;
+                        newStockRoomRequest.WorkerId = newStockRoomRequest.Worker.Id;
+                    }
+                    _context.StockRoomRequests.Add(newStockRoomRequest);
+                    _context.SaveChanges();
+                    int requestId = newStockRoomRequest.Id; // Id of new request
+                    StockRoomRequest tempStockRoomRequest = _context.StockRoomRequests.Single(i => i.Id == requestId);
+                    foreach (var line in requestLineList)
+                    {
+                        line.StockRoomRequest = tempStockRoomRequest;
+                        line.StockRoomRequestId = tempStockRoomRequest.Id;
+                        _context.StockroomRequestLines.Add(line);
+                    }
+                    _context.SaveChanges();
+
+                }
             }
 
 
