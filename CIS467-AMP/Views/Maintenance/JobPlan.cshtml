@@ -36,6 +36,7 @@
             </table><br /><br /><br />
             @using (Html.BeginForm("PartsRequest", "Maintenance"))
             {
+                @Html.AntiForgeryToken()
                 @Html.HiddenFor(i => i.JobPlanId)
                 @Html.HiddenFor(m=>m.PartsIdList)
                 @Html.HiddenFor(w => w.WorkOrderNumber)

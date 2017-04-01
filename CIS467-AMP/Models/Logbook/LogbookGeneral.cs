@@ -23,14 +23,23 @@ namespace CIS467_AMP.Models.Logbook
     public class LogbookGeneral
     {
         public int Id { get; set; }
+
         public AssetInventory AssetInventory { get; set; }
+        [Required(ErrorMessage = "No Asset selected!")]
         public int AssetInventoryId { get; set; }
+
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy H:mm}")]
         public DateTime EnteredDateTime { get; set; }
+
         public Worker Worker { get; set; }
         public int WorkerId { get; set; }
+
+        [Required(ErrorMessage = "The Entry field can not be blank!")]
+        [StringLength(1024, ErrorMessage = "Maximum length is {1}!")]
         public string Entry { get; set; }
+
         public LogbookGeneralStatus LogbookGeneralStatus { get; set; }
+        [Required(ErrorMessage = "No Topic Selected!")]
         public int LogbookGeneralStatusId { get; set; }
     }
 }
