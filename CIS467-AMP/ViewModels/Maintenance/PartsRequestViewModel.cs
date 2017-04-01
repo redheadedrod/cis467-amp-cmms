@@ -14,8 +14,9 @@ namespace CIS467_AMP.ViewModels.Maintenance
         public List<StockRoomRequestLine> RequestLines { get; set; }
         public List<ManufacturerPart> ManufacturerParts { get; set; }
         public List<Manufacturer> Manufacturers { get; set; }
-        public int WorkOrderNumber { get; set; }
-        public int JobPlanNumber { get; set; }
+        public int? WorkOrderNumber { get; set; }
+        public int? JobPlanNumber { get; set; }
+        public int? PartRequestNumber { get; set; }
         public string Lines { set; get; }
         public string Notes { get; set; }
     }

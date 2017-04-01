@@ -8,6 +8,7 @@ using CIS467_AMP.Models.Shared;
 using CIS467_AMP.Models.StockRoom;
 using Microsoft.Ajax.Utilities;
 using CIS467_AMP.ViewModels.StockRoom;
+using CIS467_AMP.Controllers.Maintenance;
 
 namespace CIS467_AMP.Controllers.StockRoom
 {
@@ -37,14 +38,8 @@ namespace CIS467_AMP.Controllers.StockRoom
             return View();
         }
 
-        // stub called from logbook
+        // stub called from logbook - This needs to pull up an order request by ID
         public ActionResult Order(int id)
-        {
-            return View();
-        }
-
-        //Stub for use with logbook
-        public ActionResult Request(int id)
         {
             return View();
         }
