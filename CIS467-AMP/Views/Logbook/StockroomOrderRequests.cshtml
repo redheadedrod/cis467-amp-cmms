@@ -4,7 +4,7 @@
      */
 
     //Sets tab bar title*@
-    ViewBag.Title = "Order Requests";
+    ViewBag.Title = "Part Requests";
 
     //Uses this scaffolding as main layout --
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
@@ -19,16 +19,14 @@
                 <th>Order Number</th>
                 <th>Date Requested</th>
                 <th>Requested by</th>
-                <th>Asset</th>
                 <th>Order Status</th>
             </tr>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@Html.ActionLink(item.Id.ToString(), "Request", "StockRoom", new { id = item.Id }, null)</td>
+                    <td>@Html.ActionLink(item.Id.ToString(), "EditPartsRequest", "Maintenance", new { id = item.Id }, null)</td>
                     <td>@Html.DisplayFor(modelItem => item.Requested)</td>
                     <td>@Html.DisplayFor(modelItem => item.Worker.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
                     <td>@Html.DisplayFor(modelItem => item.StockRoomRequestStatus.Name)</td>
                 </tr>
             }
