@@ -24,17 +24,15 @@ namespace CIS467_AMP.Models.StockRoom
     {
         public int Id { get; set; }
         public Worker Worker { get; set; }
-        public int WorkerId { get; set; }
+        public int? WorkerId { get; set; }
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
-        public int MaintenanceWorkOrderId { get; set; }
-        public AssetInventory AssetInventory { get; set; }
-        public int AssetInventoryId { get; set; }
+        public int? MaintenanceWorkOrderId { get; set; }
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime Requested { get; set; }
         [DisplayFormat(DataFormatString = "{0:MM/dd/yy}")]
         public DateTime Required { get; set; }
         public bool Approval { get; set; }
         public StockRoomRequestStatus StockRoomRequestStatus { get; set; }
-        public int StockRoomRequestStatusId { get; set; }
+        public int? StockRoomRequestStatusId { get; set; }
     }
 }
