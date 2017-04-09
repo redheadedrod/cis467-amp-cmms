@@ -15,5 +15,6 @@ namespace CIS467_AMP.ViewModels.StockRoom
         public StockRoomSupplier Supplier { get; set; }
         public StockRoomRequestLine Request { get; set; }
         public Manufacturer Manufacturer { get; set; }
+        public int Quantity { get; set; }
     }
 }
