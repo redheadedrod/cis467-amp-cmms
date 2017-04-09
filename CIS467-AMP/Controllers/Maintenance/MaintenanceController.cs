@@ -319,10 +319,10 @@ namespace CIS467_AMP.Controllers.Maintenance
             if (parts.Any())
             {
                 viewModel.ManufacturerParts = parts;
-                string partsList = Join(";", parts.Select(x => x.Id.ToString()).ToArray());
-                partsList += ";"+ Join<int>(";", partNums);
+                string partsList = string.Join(";", parts.Select(x => x.Id.ToString()).ToArray());
+                partsList += ";"+ string.Join<int>(";", partNums);
                 viewModel.PartsIdList = partsList;
-                viewModel.PartNotesList = Join(";", partNotes);
+                viewModel.PartNotesList = string.Join(";", partNotes);
             }
             return View("JobPlan",viewModel);
         }
@@ -381,7 +381,7 @@ namespace CIS467_AMP.Controllers.Maintenance
             return View(viewModel);
         }
 
-        public ActionResult BlankPartsRequest()
+        public ActionResult NewPartsRequest()
         {
             var viewModel = BuildPartsViewModel(null);
             return View("PartsRequest",viewModel);
@@ -513,7 +513,6 @@ namespace CIS467_AMP.Controllers.Maintenance
             }
             if (refresh)
             {
-            
 
             JobPlanViewModel buildModel = new JobPlanViewModel()
             {
@@ -527,7 +526,6 @@ namespace CIS467_AMP.Controllers.Maintenance
                 return View("PartsRequest", viewModel);
 
             }
-            
             else
             {
                 if (formData != null && formData.PartRequestNumber != null) // save changed record

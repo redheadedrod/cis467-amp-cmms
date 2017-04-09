@@ -522,7 +522,6 @@
     <Content Include="Views\Logbook\Maintenance.cshtml" />
     <Content Include="Views\StockRoom\Inventory.cshtml" />
     <Content Include="Views\Admin\PendingWorkOrders.cshtml" />
-    <Content Include="Views\Logbook\_LogbookLeftNavBar.cshtml" />
     <Content Include="Views\Logbook\Entry.cshtml" />
     <Content Include="Views\Logbook\StockroomOrderRequests.cshtml" />
     <Content Include="Views\Logbook\StockroomOrders.cshtml" />
@@ -535,10 +534,12 @@
     <Content Include="Views\Maintenance\PartsRequest.cshtml" />
     <Content Include="Views\Maintenance\WorkOrder.cshtml" />
     <Content Include="Views\Maintenance\AddWorkTime.cshtml" />
-    <Content Include="Views\Maintenance\_MaintenanceLeftNavBar.cshtml" />
     <Content Include="Views\StockRoom\NewOrderRequest.cshtml" />
     <Content Include="Views\StockRoom\PartRequest.cshtml" />
     <Content Include="Views\Maintenance\EditWorkTime.cshtml" />
+    <Content Include="Views\Logbook\_TitleAndLinks.cshtml" />
+    <Content Include="Views\Maintenance\_TitleAndLinks.cshtml" />
+    <Content Include="Views\StockRoom\_TitleAndLinks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

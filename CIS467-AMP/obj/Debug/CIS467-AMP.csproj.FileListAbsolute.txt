@@ -641,3 +641,4 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.ValidationStockroom.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.RemoveAssetFromPartsRequest.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddNullSupportToStockroomRequests.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.csprojResolveAssemblyReference.cache

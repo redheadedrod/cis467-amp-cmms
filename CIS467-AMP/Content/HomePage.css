@@ -11,3 +11,16 @@
 #mainLinks:hover {
     background: darkgrey;
 }
+#mainLinks:hover {
+    background: darkgrey;
+}
+#carouselcontent-admin{
+    color: black;
+}
+.carousel-indicators li{
+    background-color: #428bca;
+    border: #428bca;
+}
+.carousel-indicators .active{
+    background-color:#b94a48;
+}

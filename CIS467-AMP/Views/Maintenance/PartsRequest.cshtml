@@ -26,11 +26,8 @@
     List<int> lines = new List<int>();
 }
 
+@Html.Partial("_TitleAndLinks")
 <div class="row">
-    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
-    <div class="col-md-10">
-        <h1 id="titleS">@ViewBag.Title</h1>
-    </div>
     <div class="col-md-10">
         @using (Html.BeginForm("MakeRequest", "Maintenance"))
         {
@@ -63,6 +60,8 @@
                         }
             </table>
             @Html.HiddenFor(i => i.WorkOrderNumber)
+           @* @Html.HiddenFor(l => l.Lines)
+            @Html.HiddenFor(n => n.Notes)*@
             @Html.HiddenFor(j => j.JobPlanNumber)
             @Html.HiddenFor(r => r.PartRequestNumber)
 
