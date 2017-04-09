@@ -63,7 +63,7 @@ namespace CIS467_AMP.Controllers.StockRoom
         public ActionResult PartRequest()
         {
             var suppliers = _context.StockRoomSuppliers.ToList();
-            var requests = _context.StockroomRequestLines.Include(x => x.ManufacturerPart).ToList();
+            var requests = _context.StockroomRequestLines.Where(x => x.StockRoomRequest.StockRoomRequestStatusId == 0).Include(x => x.ManufacturerPart).ToList();
             var indexes = _context.StockroomSupplierPartIndexes;
             var requestSuppliers = new List<RequestSuppliersViewModel>();
             foreach(var request in requests)
@@ -104,6 +104,13 @@ namespace CIS467_AMP.Controllers.StockRoom
                 }
             }
 
+            foreach(int id in requestLineIds)
+            {
+                var requestLine = _context.StockroomRequestLines.FirstOrDefault(x => x.Id == id);
+                var partRequest = _context.StockRoomRequests.FirstOrDefault(x => x.Id == requestLine.StockRoomRequestId);
+                partRequest.StockRoomRequestStatusId = 2; 
+                _context.SaveChanges();
+            }
             var orderNumber = getOrderNumber();
 
             DateTime createdDate = DateTime.Now;
