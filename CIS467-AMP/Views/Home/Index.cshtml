@@ -1,101 +1,30 @@
 ﻿@{
     ViewBag.Title = "AMP Home Page";
-    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 @Html.Partial("_Navbar")
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-    </ol>
-
-    <div class="carousel-inner" role="listbox">
-        <div class="item active">
-            <img src="~/Content/img/maintenance.jpg" alt="Maintenance" width="1600" height="600" />
-            <div class="carousel-caption">
-                <div class="col-md-12">
-                    <h1>Maintenance</h1>
-                    <a href="@Url.Action("Index", "Maintenance")">
-                        <h1>
-                            <span class="glyphicon glyphicon-wrench"></span>
-                        </h1>
-                    </a>
-                    <p>Increase maintenance productivity by reducing paper trail</p>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/Content/img/documents.jpg" alt="Documents" width="1600" height="600" />
-            <div class="carousel-caption">
-                <div class="col-md-4" id="carouselcontent-admin">
-                        <h1>Administration</h1>
-                        <a href="@Url.Action("Index", "Admin")">
-                            <h1>
-                                <span class="glyphicon glyphicon-user"></span>
-                            </h1>
-                        </a>
-                        <p>Reduce the overhead and cost with accurate work order tracking and maintentnace approval processes</p>
-                </div>
-            </div>
-        </div>
-        <div class="item">
-            <img src="~/Content/img/stockroom.jpg" alt="Stock room" width="1600" height="600" />
-            <div class="carousel-caption">
-                <div class="col-md-12">
-                    <h1>Stockroom</h1>
-                    <a href="@Url.Action("Index", "StockRoom")">
-                        <h1>
-                            <span class="glyphicon glyphicon-th"></span>
-                        </h1>
-                    </a>
-                    <p>Improve inventory accuracy and efficiency with proper inventory management</p>
-                </div>
-            </div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>System Dashboard</h1>
         </div>
     </div>
+    <div class="row">
+        <div class="col-md-8">
+            <h3>News</h3>
+            <ul>
+                <li><strong>March 30th -</strong>Stuff going on here</li>
+                <li><strong>March 27th -</strong>Important stuff here too</li>
+            </ul>
+        </div>
+        <div class="col-md-4">
+            <h4>System Updates</h4>
+            <ul>
+                <li>Admins - Update your passwords</li>
+                <li>Update scheduled 4/15/2017</li>
+            </ul>
+        </div>
+    </div>
+
 </div>
 
-@*<div class="row">
-    <div class="col-md-4" id="mainLinks">
-        <a href="@Url.Action("Index", "Admin")">
-            <h2>Admin</h2>
-            <h1>
-                <span class="glyphicon glyphicon-user"></span>
-            </h1>
-        </a>
-    </div>
-    <div class="col-md-4" id="mainLinks">
-        <a href="@Url.Action("Index", "Maintenance")">
-            <h2>Maintenance</h2>
-            <h1>
-                <span class="glyphicon glyphicon-wrench"></span>
-            </h1>
-        </a>
-    </div>
-    <div class="col-md-4" id="mainLinks">
-        <a href="@Url.Action("Index", "StockRoom")">
-            <h2>Stock Room</h2>
-            <h1>
-                <span class="glyphicon glyphicon-th"></span>
-            </h1>
-        </a>
-    </div>
-</div>
-<div class="row">
-    <div class="col-md-4">
-        
-    </div>
-    <div class="col-md-4" id="mainLinks">
-        <a href="@Url.Action("Index", "Logbook")">
-            <h2>Logbook</h2>
-            <h1>
-                <span class="glyphicon glyphicon-book" style="text-align: center"></span>
-            </h1>
-        </a>
-    </div>
-    <div class="col-md-4">
-        
-    </div>
-</div>*@
