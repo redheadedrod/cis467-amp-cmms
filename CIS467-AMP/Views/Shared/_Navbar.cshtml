@@ -10,7 +10,7 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                <li class="dropdown">
+                @*<li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         Admin
                         <span class="caret"></span>
@@ -19,7 +19,7 @@
                         <li>@Html.ActionLink("Home", "Index", "Admin")</li>
                         <li>@Html.ActionLink("Pending Work Orders", "PendingWorkOrder", "Admin")</li>
                     </ul>
-                </li>
+                </li>*@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         Stock Room
@@ -29,7 +29,7 @@
                         <li>@Html.ActionLink("Home", "Index", "StockRoom")</li>
                         <li>@Html.ActionLink("Inventory", "Inventory", "StockRoom")</li>
                         <li>@Html.ActionLink("Order Request", "OrderRequest", "StockRoom")</li>
-                        <li>@Html.ActionLink("Part Requests", "PartRequest", "StockRoom")</li>
+                        <li>@Html.ActionLink("Part Requests", "NewPartsRequest", "Maintenance")</li>
                         <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest", "StockRoom")</li>
                     </ul>
                 </li>
@@ -39,11 +39,8 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Home", "Index", "Maintenance")</li>
-                        <li>@Html.ActionLink("Work Orders", "Index", "Maintenance")</li>
-                        <li>@Html.ActionLink("Create Work Order", "NewWorkOrder", "Maintenance")</li>
-                        <li>@Html.ActionLink("Edit Work Order", "EditWorkOrder", "Maintenance")</li>
-                        <li>@Html.ActionLink("Job Plan", "JobPlan", "Maintenance")</li>
+                        <li>@Html.ActionLink("Work Order Listing", "Index", "Maintenance")</li>
+                        <li>@Html.ActionLink("Create New Work Order", "NewWorkOrder", "Maintenance")</li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -52,11 +49,11 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Home", "Index", "Logbook")</li>
-                        <li>@Html.ActionLink("Logbook Entry", "Entry", "Logbook")</li>
-                        <li>@Html.ActionLink("Maintenance", "Maintenance", "Logbook")</li>
-                        <li>@Html.ActionLink("Stockroom Orders", "StockroomOrders", "Logbook")</li>
-                        <li>@Html.ActionLink("Stockroom Requests", "StockroomOrderRequests", "Logbook")</li>
+                        <li>@Html.ActionLink("Main Logbook", "Index", "Logbook")</li>
+                        <li>@Html.ActionLink("Make New Logbook Entry", "Entry", "Logbook")</li>
+                        <li>@Html.ActionLink("Work Order Status", "Maintenance", "Logbook")</li>
+                        <li>@Html.ActionLink("Order Status", "StockroomOrders", "Logbook")</li>
+                        <li>@Html.ActionLink("Part Request Status", "StockroomOrderRequests", "Logbook")</li>
                     </ul>
                 </li>
             </ul>

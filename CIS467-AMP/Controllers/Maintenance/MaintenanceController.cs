@@ -4,6 +4,7 @@ using System.Data.Entity.Infrastructure;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
 using System.Linq;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Services.Description;
@@ -13,6 +14,8 @@ using CIS467_AMP.Models.Maintenance;
 using CIS467_AMP.Models.StockRoom;
 using CIS467_AMP.Models.Shared;
 using CIS467_AMP.ViewModels.Maintenance;
+using WebGrease.Css.Ast.Selectors;
+using static System.String;
 
 namespace CIS467_AMP.Controllers.Maintenance
 {
@@ -258,6 +261,12 @@ namespace CIS467_AMP.Controllers.Maintenance
             return WorkTime(time.MaintenanceWorkOrderWorkTime.MaintenanceWorkOrderId);
         }
 
+        private JobPlanViewModel CreateJobPlanModel(int? id)
+        {
+
+            return null;
+        }
+
         public ActionResult JobPlan(int id)
         {
             var workOrder = _context.MaintenanceWorkOrders.Single(wo => wo.Id == id);
@@ -318,53 +327,86 @@ namespace CIS467_AMP.Controllers.Maintenance
             return View("JobPlan",viewModel);
         }
 
+        public PartsRequestViewModel BuildPartsViewModel(JobPlanViewModel formData)
+        {
+            var manufacturerPart = _context.ManufacturerParts
+                .Include(m => m.Manufacturer)
+                .ToList();
+            ManufacturerPart part = null;
+            var manufacturers = _context.Manufacturers.ToList();
+            List<StockRoomRequestLine> requestLines = null;
+            if (formData != null && formData.PartsIdList != null )  
+            {
+                part = new ManufacturerPart();
+                requestLines = new List<StockRoomRequestLine>();
+                string[] tokens = formData.PartsIdList.Split(';');
+                int[] partIds = Array.ConvertAll<string, int>(tokens, int.Parse);
+                int partIdsLen = partIds.Length / 2;
+                StockRoomRequestLine requestLine;
+                for (int i = 0; i < partIdsLen; i++)
+                {
+                    part = manufacturerPart.Single(m => m.Id == partIds[i]);
+                    if (part != null)
+                    {
+                        requestLine = new StockRoomRequestLine();
+                        requestLine.ManufacturerPart = part;
+                        requestLine.Number = partIds[i + partIdsLen];
+                        requestLine.Description = "Test" + part.Name;
+                        requestLine.Id = i;
+                        requestLines.Add(requestLine);
+                    }
+                }
+            }
+            var viewModel = new PartsRequestViewModel()
+            {
+                RequestLines = requestLines,
+                ManufacturerParts = manufacturerPart,
+                Manufacturers = manufacturers,
+                WorkOrderNumber = null,
+                JobPlanNumber = null
+            };
+            if (formData == null || formData.JobPlanId == null || formData.WorkOrderNumber == null) return viewModel;
+            viewModel.WorkOrderNumber = (int) formData.WorkOrderNumber;
+            viewModel.Lines = formData.PartsIdList;
+            viewModel.Notes = formData.PartNotesList;
+            viewModel.JobPlanNumber = (int) formData.JobPlanId;
+            return viewModel;
+        }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult PartsRequest(JobPlanViewModel formData)
         {
-            var manufacturerPart = _context.ManufacturerParts
-                .Include(m => m.Manufacturer)
-                .ToList();
-            ManufacturerPart part = new ManufacturerPart();
-            var manufacturers = _context.Manufacturers.ToList();
-            List<StockRoomRequestLine> requestLines = new List<StockRoomRequestLine>();
-            StockRoomRequestLine requestLine;
-            string[] tokens = formData.PartsIdList.Split(';');
-            int[] partIds = Array.ConvertAll<string, int>(tokens, int.Parse);
-            int planId = formData.JobPlanId;
-            int partIdsLen = partIds.Length / 2;
-            for (int i = 0; i < partIdsLen; i++)
-            {
-                part = manufacturerPart.Single(m =>m.Id == partIds[i]);
-                if (part != null)
-                {
-                    requestLine = new StockRoomRequestLine();
-                    requestLine.ManufacturerPart = part;
-                    requestLine.Number = partIds[i + partIdsLen];
-                    requestLine.Description = "Test"+ part.Name;
-                    requestLine.Id = i;
-                    requestLines.Add(requestLine);
-                }
-            }
-
-            var viewModel = new PartsRequestViewModel()
-            {
-                RequestLines = requestLines,
-                ManufacturerParts = manufacturerPart,
-                WorkOrderNumber = formData.WorkOrderNumber,
-                Manufacturers = manufacturers,
-                Lines = formData.PartsIdList,
-                Notes = formData.PartNotesList,
-                JobPlanNumber = formData.JobPlanId
-
-            };
+            var viewModel = BuildPartsViewModel(formData); 
             return View(viewModel);
         }
 
+        public ActionResult NewPartsRequest()
+        {
+            var viewModel = BuildPartsViewModel(null);
+            return View("PartsRequest",viewModel);
+        }
+
+        public ActionResult EditPartsRequest(int id)
+        {
+            var viewModel = BuildPartsViewModel(null);
+            viewModel.PartRequestNumber = id;
+            List<int> lines = new List<int>();
+            List<int> nums = new List<int>();
+            List<string> notes = new List<string>();
+            viewModel.RequestLines = new List<StockRoomRequestLine>();
+            var requestLines = _context.StockroomRequestLines.Where(rl => rl.StockRoomRequestId == id).ToList();
+            foreach (StockRoomRequestLine requestLine in requestLines)
+            {
+                viewModel.RequestLines.Add(requestLine);  
+            }
+            return View("PartsRequest", viewModel);
+        }
+
+
         private struct RequestLineStruct
         {
-            public int PartId { get; set; }
+            public int? PartId { get; set; }
             public int Number { get; set; }
             public string Note { get; set; }
         }
@@ -373,16 +415,16 @@ namespace CIS467_AMP.Controllers.Maintenance
         [ValidateAntiForgeryToken]
         public ActionResult MakeRequest(PartsRequestViewModel formData)
         {
-            
             //get information from form here:
-            string[] tokens = formData.Lines.Split(';');
-            int[] partIds = Array.ConvertAll<string, int>(tokens, int.Parse);
             string value;
             int keyNumber;
             string[] keySplit;
             bool refresh = false;
             List<RequestLineStruct> requestLines = new List<RequestLineStruct>();
-            RequestLineStruct requestLine = new RequestLineStruct();
+            RequestLineStruct requestLine = new RequestLineStruct()
+            {
+                Number = 0, Note = "", PartId = 0
+            };
             foreach (var key in Request.Form.AllKeys)
             {
                 value = Request.Form.Get(key);
@@ -395,22 +437,35 @@ namespace CIS467_AMP.Controllers.Maintenance
                 {
                     System.Diagnostics.Debug.WriteLine("Place");
                 }
-                else if ((key.StartsWith("RequestLine.") && (value != "0")) || (key.StartsWith("Note.")&& (requestLine.Note == null))|| (key.StartsWith("Part.")&& (value != "0")))
+                else if ((key.StartsWith("RequestLine.") && (value != "0")) 
+                    || (key.StartsWith("Note.")&& (requestLine.Note == null))
+                    || (key.StartsWith("Part.")&& (value != "0"))
+                    || (key.StartsWith("PartId.")))
                 {
                     keySplit = key.Split('.');
                     keyNumber = Int32.Parse(keySplit[1]);
-                    if (keySplit[0] == "RequestLine")
+                    if (keySplit[0] == "RequestLine") // Take advantage of always having the order of requestLine, Note and PartId in same order...
                     {
                         if (value != "0")
                         {
                             requestLine.Number = Int32.Parse(value);
-                            requestLine.PartId = partIds[keyNumber];
+                            requestLine.PartId = null;
                             requestLine.Note = null;
+                        }
+                        else
+                        {
+                            requestLine.Number = 0;
+                            requestLine.PartId = 0;
+                            requestLine.Note = "";
                         }
                     }
                     else if (keySplit[0] == "Note" && requestLine.Note == null)
                     {
-                        requestLine.Note = value;
+                        requestLine.Note = value ?? "";
+                    }
+                    else if (keySplit[0] == "PartId" && requestLine.PartId == null )
+                    { 
+                        requestLine.PartId = Int32.Parse(value);
                         requestLines.Add(requestLine);
                     }
                     else if (keySplit[0] == "Part" && value!= "0")
@@ -427,32 +482,158 @@ namespace CIS467_AMP.Controllers.Maintenance
             List<int> partIdList = new List<int>();
             List<int> numberList = new List<int>();
             List<string> noteList = new List<string>();
+            List<StockRoomRequestLine> requestLineList = new List<StockRoomRequestLine>();
+            StockRoomRequestLine requestLineLine;
 
-            foreach (var line in requestLines)
+            var manufacturerPart = _context.ManufacturerParts.ToList();
+            object stockRoomRequest = null;
+
+            if (formData != null && formData.PartRequestNumber != null)
             {
-                partIdList.Add(line.PartId);
-                numberList.Add(line.Number);
-                noteList.Add(line.Note);
+                stockRoomRequest = _context.StockRoomRequests.Single(r => r.Id == (int)formData.PartRequestNumber);
             }
-            string partString = string.Join<int>(";", partIdList) + ";" + string.Join<int>(";", numberList);
-            string noteString = string.Join(";", noteList);
+            
+                
+            for (int i = 0; i < requestLines.Count; i++)
+            {
+                requestLine = requestLines[i];
+                requestLineLine = new StockRoomRequestLine();
+                requestLineLine.ManufacturerPart = manufacturerPart.Single(p => p.Id == requestLine.PartId);
+                requestLineLine.ManufacturerPartId = requestLineLine.ManufacturerPart.Id; 
+                requestLineLine.Description = requestLine.Note;
+                requestLineLine.Number = requestLine.Number;
+                requestLineLine.Id = i;
+                if (stockRoomRequest != null)
+                {
+                    requestLineLine.StockRoomRequest = (StockRoomRequest) stockRoomRequest;
+                    requestLineLine.StockRoomRequestId = requestLineLine.StockRoomRequest.Id;
+                }
 
+                requestLineList.Add(requestLineLine);
+            }
             if (refresh)
             {
 
-                JobPlanViewModel viewModel = new JobPlanViewModel()
-                {
-                    WorkOrderNumber = formData.WorkOrderNumber,
-                    PartsIdList = partString,
-                    PartNotesList = noteString,
-                    JobPlanId = formData.JobPlanNumber
-                };
-                //return RedirectToAction("PartsRequest", "Maintenance", viewModel);
+            JobPlanViewModel buildModel = new JobPlanViewModel()
+            {
+                WorkOrderNumber = formData.WorkOrderNumber,
+                JobPlanId = formData.JobPlanNumber, 
+            };
+            var viewModel = BuildPartsViewModel(buildModel);
+                viewModel.RequestLines = requestLineList;
+                if (formData.PartRequestNumber != null)
+                    viewModel.PartRequestNumber = formData.PartRequestNumber;
+                return View("PartsRequest", viewModel);
+
             }
             else
             {
-                //save code goes here
+                if (formData != null && formData.PartRequestNumber != null) // save changed record
+                {
+                    int requestId = (int) formData.PartRequestNumber;
+                    var stockRoomRequestLines = _context.StockroomRequestLines;
+                    var requestRecords = stockRoomRequestLines.Where(r => r.StockRoomRequestId == requestId).ToList();
+                    StockRoomRequestLine record;
+                    foreach (var line in requestLineList) // Change or add first
+                    {
+                        record = requestRecords.SingleOrDefault(r => r.ManufacturerPartId == line.ManufacturerPartId);
+                        if (record != null)
+                        {
+                            record.Description = line.Description;
+                            record.Number = line.Number;
+                        }
+                        else
+                        {
+                            stockRoomRequestLines.Add(line);
+                        }
+                    }
+                    _context.SaveChanges();
+                    bool done = false;
+                    while (!done)
+                    {
+                        requestRecords = stockRoomRequestLines.Where(r => r.StockRoomRequestId == requestId).ToList();
+                        bool doDelete;
+                        foreach (var line in requestRecords) // Delete ones no longer needed
+                        {
+                            doDelete = true;
+                            done = true;
+                            foreach (var request in requestLineList)
+                            {
+                                if (request.ManufacturerPartId == line.ManufacturerPartId)
+                                {
+                                    doDelete = false;
+                                    break;
+                                }
+                            }
+                            if (doDelete)
+                            {
+                                var itemToRemove = _context.StockroomRequestLines.SingleOrDefault(x => x.Id == line.Id);
+                                if (itemToRemove != null)
+                                {
+                                    _context.StockroomRequestLines.Remove(itemToRemove);
+                                    _context.SaveChanges();
+                                }
+                                System.Diagnostics.Debug.WriteLine("Delete Record");
+                                done = false;
+                                break;
+                            }
+                        }
+                        
+                    }
 
+                }
+                else // new record
+                {
+                    // create a request first and get the id for it.
+                    int workOrderNumber;
+                    MaintenanceWorkOrder workOrder = null;
+                    Worker worker = null;
+                    var workers = _context.Workers.ToList();
+                    StockRoomRequest newStockRoomRequest = new StockRoomRequest()
+                    {
+                        StockRoomRequestStatus = _context.StockRoomRequestStatuses.Single(i => i.Id == 0),
+                        Requested = DateTime.Now,
+                        Required = DateTime.Now.AddDays(14),
+                        Approval = false
+
+                    };
+                    newStockRoomRequest.StockRoomRequestStatusId = newStockRoomRequest.Id;
+                    if (formData != null && formData.WorkOrderNumber != null)
+                    {
+                        workOrderNumber = (int) formData.WorkOrderNumber;
+                        workOrder = _context.MaintenanceWorkOrders.Single(id => id.Id == workOrderNumber);
+                        if (workOrder.LeadWorkerId != null)
+                        {
+                            worker = workers.Single(i => i.Id == workOrder.LeadWorker.Id);
+                            newStockRoomRequest.Worker = worker;
+                            newStockRoomRequest.WorkerId = worker.Id;
+                        }
+
+                        newStockRoomRequest.MaintenanceWorkOrder = workOrder;
+                        newStockRoomRequest.MaintenanceWorkOrderId = workOrder.Id;
+
+                    }
+                    else
+                    {
+                        // Will be replaced when logins are possible
+                        Random rand = new Random();
+                        Worker rndWorker = workers.ElementAt(rand.Next(_context.Workers.Count()));
+                        newStockRoomRequest.Worker = rndWorker;
+                        newStockRoomRequest.WorkerId = newStockRoomRequest.Worker.Id;
+                    }
+                    _context.StockRoomRequests.Add(newStockRoomRequest);
+                    _context.SaveChanges();
+                    int requestId = newStockRoomRequest.Id; // Id of new request
+                    StockRoomRequest tempStockRoomRequest = _context.StockRoomRequests.Single(i => i.Id == requestId);
+                    foreach (var line in requestLineList)
+                    {
+                        line.StockRoomRequest = tempStockRoomRequest;
+                        line.StockRoomRequestId = tempStockRoomRequest.Id;
+                        _context.StockroomRequestLines.Add(line);
+                    }
+                    _context.SaveChanges();
+
+                }
             }
 
 
