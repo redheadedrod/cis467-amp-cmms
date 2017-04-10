@@ -1,0 +1,56 @@
+﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.StockRoomOrder>
+@{
+    /**
+     * Author: Rodney Fulk
+     * Stockroom orders logbook
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Stockroom Orders";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @Html.Partial("_LogbookLeftNavBar") @*Could put a model as second argument*@
+    <div class="col-md-10">
+        <h1 id="titleS">@ViewBag.Title</h1>
+    </div>
+    <div>
+        @*Following Here for notes more than anything*@
+        @*@{
+                var className = Model.MoreText.Count > 1 ? "popular" : null;
+
+            }*@
+
+        @*<h2 class ="@className">@Model.Text</h2> *@
+        @* <ul>
+                @foreach (var order in Model)
+                {
+                    <li>@order.Order</li>
+
+                }
+            </ul>*@
+        <div class="col col-md-10">
+            <table class="table">
+                <tr>
+                    <th>Order Number</th>
+                    <th>Date Ordered</th>
+                    <th>Order Status</th>
+                    <th>Status Updated</th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new { id = item.Id }, null)</td>
+                        <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
+                        <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+</div>

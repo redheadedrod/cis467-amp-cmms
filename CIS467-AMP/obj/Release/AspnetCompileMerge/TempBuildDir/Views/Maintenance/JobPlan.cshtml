@@ -1,0 +1,50 @@
+﻿@model CIS467_AMP.ViewModels.Maintenance.JobPlanViewModel
+@{
+    /**
+     * Author: Rodney Fulk
+     * Logbook entry page
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Job Plan : "+Model.JobPlan.JobPlanName;
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
+    <div class="col-md-10">
+        <h1 id="titleS">@ViewBag.Title</h1>
+    </div>
+    <div>
+        <div class="col col-md-10">
+            <div><br/>Todo: Display PDF instead of file name here:  @Html.DisplayFor(f => f.JobPlanDocument.Filename)</div>
+            <div><br /><br /><br /><br /><br /></div>
+            <table class="table">
+                <tr>
+                    <th>Suggested Parts</th>
+                </tr>
+                @foreach (var item in Model.ManufacturerParts)
+                {
+                    <tr>
+                        <td>@Html.DisplayFor(modelItem => item.Name)</td>
+
+                    </tr>
+                }
+            </table><br /><br /><br />
+            @using (Html.BeginForm("PartsRequest", "Maintenance"))
+            {
+                @Html.HiddenFor(i => i.JobPlanId)
+                @Html.HiddenFor(m=>m.PartsIdList)
+                @Html.HiddenFor(w => w.WorkOrderNumber)
+                @Html.HiddenFor(n => n.PartNotesList)
+                <button type="submit" class="btn btn-primary">Make Parts Request</button>
+            }
+        </div>
+    </div>
+</div>
+
+
+

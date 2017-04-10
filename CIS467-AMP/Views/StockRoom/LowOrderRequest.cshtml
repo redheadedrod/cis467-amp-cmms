@@ -13,20 +13,8 @@
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-<div class="row" id="content">
-    <div class="col col-md-12">
-        <h1 id="title">@ViewBag.Title</h1>
-    </div>
-</div>
+@Html.Partial("_TitleAndLinks")
 <div class="row">
-    <div class="navbar col-md-2" id="sideLinks">
-        <ul class="nav nav-pills nav-stacked">
-            <li>@Html.ActionLink("Inventory", "Inventory")</li>
-            <li>@Html.ActionLink("Part Requests", "PartRequest")</li>
-            <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest")</li>
-        </ul>
-    </div>
-
     <div class="col col-md-10">
         @using (Html.BeginForm("CreateLowOrder", "StockRoom"))
         {
@@ -40,7 +28,7 @@
                     <th>@Html.DisplayNameFor(m => m.Reserved)</th>
                     <th>Place Order (Quantity)</th>
                 </tr>
-                @{ 
+                @{
                     var count = 0;
                 }
                 @foreach (var item in Model)
@@ -48,9 +36,9 @@
                     count++;
                     <tr>
                         <td>
-                        <div class="form-group">
-                            @Html.TextBoxFor(model => item.StockId, new { @class = "form-control", @readonly = "readonly", @id = count})
-                           </div>
+                            <div class="form-group">
+                                @Html.TextBoxFor(model => item.StockId, new { @class = "form-control", @readonly = "readonly", @id = count })
+                            </div>
                         </td>
                         <td>@Html.DisplayFor(model => item.ManufacturerPart.Name)</td>
                         <td>@Html.DisplayFor(model => item.ManufacturerPart.Number)</td>
@@ -59,25 +47,18 @@
                         <td>@Html.DisplayFor(model => item.Reserved)</td>
                         <td>
                             <div class="form-group">
-                                @Html.TextBoxFor(model => item.MinRequired, new {@class ="form-control", @type = "number" })
+                                @Html.TextBoxFor(model => item.MinRequired, new { Name="Quantity", @class = "form-control", @type = "number"})
                             </div>
 
                         </td>
+                        <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
                         <td>
                     </tr>
                 }
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
-                </tr>
             </table>
         }
 
 
-        </div>
-
+    </div>
 </div>
+    

@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
-  <Import Project="..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -81,8 +81,8 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=10.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -349,6 +349,42 @@
     <Compile Include="Migrations\201703200445351_ChangeHoursWorkedToFloat.Designer.cs">
       <DependentUpon>201703200445351_ChangeHoursWorkedToFloat.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201703302148289_LogbookValidation.cs" />
+    <Compile Include="Migrations\201703302148289_LogbookValidation.Designer.cs">
+      <DependentUpon>201703302148289_LogbookValidation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703310037278_ValidateWorkOrders.cs" />
+    <Compile Include="Migrations\201703310037278_ValidateWorkOrders.Designer.cs">
+      <DependentUpon>201703310037278_ValidateWorkOrders.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703310317331_ValidateWorkOrders2.cs" />
+    <Compile Include="Migrations\201703310317331_ValidateWorkOrders2.Designer.cs">
+      <DependentUpon>201703310317331_ValidateWorkOrders2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703310838033_ValidationStockroom.cs" />
+    <Compile Include="Migrations\201703310838033_ValidationStockroom.Designer.cs">
+      <DependentUpon>201703310838033_ValidationStockroom.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704010503221_RemoveAssetFromPartsRequest.cs" />
+    <Compile Include="Migrations\201704010503221_RemoveAssetFromPartsRequest.Designer.cs">
+      <DependentUpon>201704010503221_RemoveAssetFromPartsRequest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704010535041_AddNullSupportToStockroomRequests.cs" />
+    <Compile Include="Migrations\201704010535041_AddNullSupportToStockroomRequests.Designer.cs">
+      <DependentUpon>201704010535041_AddNullSupportToStockroomRequests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704100112111_SeedUsers.cs" />
+    <Compile Include="Migrations\201704100112111_SeedUsers.Designer.cs">
+      <DependentUpon>201704100112111_SeedUsers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704100113494_SeedRoles.cs" />
+    <Compile Include="Migrations\201704100113494_SeedRoles.Designer.cs">
+      <DependentUpon>201704100113494_SeedRoles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704100115538_AddRolesToUsers.cs" />
+    <Compile Include="Migrations\201704100115538_AddRolesToUsers.Designer.cs">
+      <DependentUpon>201704100115538_AddRolesToUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Logbook\LogbookGeneralStatus.cs" />
     <Compile Include="Models\Logbook\LogbookGeneral.cs" />
@@ -360,6 +396,7 @@
     <Compile Include="Models\Maintenance\MaintenanceWorkOrderWorkTime.cs" />
     <Compile Include="Models\Maintenance\MaintenanceStatus.cs" />
     <Compile Include="Models\Maintenance\MaintenanceType.cs" />
+    <Compile Include="Models\RoleName.cs" />
     <Compile Include="Models\Shared\AssetInventory.cs" />
     <Compile Include="Models\Shared\AssetType.cs" />
     <Compile Include="Models\Shared\JobPlan.cs" />
@@ -404,6 +441,7 @@
     <Compile Include="ViewModels\Maintenance\WorkTimeViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\NewOrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\OrderRequestViewModel.cs" />
+    <Compile Include="ViewModels\StockRoom\PartRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\PrebuiltOrderRequestViewModel.cs" />
     <Compile Include="ViewModels\StockRoom\RequestSuppliersViewModel.cs" />
   </ItemGroup>
@@ -440,6 +478,7 @@
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="JobPlanDocuments\demo.pdf" />
+    <None Include="Properties\PublishProfiles\testServer.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Scripts\bootstrap.js" />
@@ -495,9 +534,7 @@
     <Content Include="Views\Maintenance\Index.cshtml" />
     <Content Include="Views\Logbook\Maintenance.cshtml" />
     <Content Include="Views\StockRoom\Inventory.cshtml" />
-    <Content Include="Views\Maintenance\CurrentWorkOrder.cshtml" />
     <Content Include="Views\Admin\PendingWorkOrders.cshtml" />
-    <Content Include="Views\Logbook\_LogbookLeftNavBar.cshtml" />
     <Content Include="Views\Logbook\Entry.cshtml" />
     <Content Include="Views\Logbook\StockroomOrderRequests.cshtml" />
     <Content Include="Views\Logbook\StockroomOrders.cshtml" />
@@ -509,9 +546,14 @@
     <Content Include="Views\Maintenance\NewWorkOrder.cshtml" />
     <Content Include="Views\Maintenance\PartsRequest.cshtml" />
     <Content Include="Views\Maintenance\WorkOrder.cshtml" />
-    <Content Include="Views\Maintenance\WorkTime.cshtml" />
-    <Content Include="Views\Maintenance\_MaintenanceLeftNavBar.cshtml" />
+    <Content Include="Views\Maintenance\AddWorkTime.cshtml" />
     <Content Include="Views\StockRoom\NewOrderRequest.cshtml" />
+    <Content Include="Views\StockRoom\PartRequest.cshtml" />
+    <Content Include="Views\Maintenance\EditWorkTime.cshtml" />
+    <Content Include="Views\Logbook\_TitleAndLinks.cshtml" />
+    <Content Include="Views\Maintenance\_TitleAndLinks.cshtml" />
+    <Content Include="Views\StockRoom\_TitleAndLinks.cshtml" />
+    <Content Include="Views\Admin\_TitleAndLinks.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -632,6 +674,33 @@
     <EmbeddedResource Include="Migrations\201703200445351_ChangeHoursWorkedToFloat.resx">
       <DependentUpon>201703200445351_ChangeHoursWorkedToFloat.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703302148289_LogbookValidation.resx">
+      <DependentUpon>201703302148289_LogbookValidation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703310037278_ValidateWorkOrders.resx">
+      <DependentUpon>201703310037278_ValidateWorkOrders.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703310317331_ValidateWorkOrders2.resx">
+      <DependentUpon>201703310317331_ValidateWorkOrders2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703310838033_ValidationStockroom.resx">
+      <DependentUpon>201703310838033_ValidationStockroom.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704010503221_RemoveAssetFromPartsRequest.resx">
+      <DependentUpon>201704010503221_RemoveAssetFromPartsRequest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704010535041_AddNullSupportToStockroomRequests.resx">
+      <DependentUpon>201704010535041_AddNullSupportToStockroomRequests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704100112111_SeedUsers.resx">
+      <DependentUpon>201704100112111_SeedUsers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704100113494_SeedRoles.resx">
+      <DependentUpon>201704100113494_SeedRoles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704100115538_AddRolesToUsers.resx">
+      <DependentUpon>201704100115538_AddRolesToUsers.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -665,8 +734,8 @@
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.1.3.2\build\Microsoft.Net.Compilers.props'))" />
     <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.3\build\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.0.1\build\Microsoft.Net.Compilers.props'))" />
   </Target>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

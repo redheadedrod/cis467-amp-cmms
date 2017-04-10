@@ -6,36 +6,35 @@
      */
 
     //Sets tab bar title
-    ViewBag.Title = "Log Book Entry";
+    ViewBag.Title = "Create New Log Book Entry";
 
     //Uses this scaffolding as main layout --
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.Partial("_TitleAndLinks")
 <div class="row">
-    @Html.Partial("_LogbookLeftNavBar") @*Could put a model as second argument*@
-    <div>
-    <div class="col-md-10">
-        <h1 id="title">@ViewBag.Title</h1>
-    </div>
-
         <div class="col-md-10">
             @using (Html.BeginForm("Create", "Logbook"))
             {
+                @Html.AntiForgeryToken()
                 <div class="form-group">
                     @Html.LabelFor(f => f.LogbookGeneral.WorkerId, "Pick Worker (Note for testing purposes only. Normally is logged in person)")
-                    @Html.DropDownListFor(f => f.LogbookGeneral.WorkerId, new SelectList(Model.Workers, "Id", "Name"), "", new { @class = "form-control" })
+                    @Html.DropDownListFor(f => f.LogbookGeneral.WorkerId, new SelectList(Model.Workers, "Id", "Name"), "", new {@class = "form-control"})
                 </div>
                 <div class="form-group">
+                    @Html.ValidationMessageFor(f => f.LogbookGeneral.AssetInventoryId)
                     @Html.LabelFor(f => f.LogbookGeneral.AssetInventoryId, "Pick Asset")
-                    @Html.DropDownListFor(f => f.LogbookGeneral.AssetInventoryId, new SelectList(Model.AssetInventories, "Id", "Name"), "", new { @class = "form-control" })
+                    @Html.DropDownListFor(f => f.LogbookGeneral.AssetInventoryId, new SelectList(Model.AssetInventories, "Id", "Name"), "", new {@class = "form-control"})
                 </div>
                 <div class="form-group">
+                    @Html.ValidationMessageFor(f => f.LogbookGeneral.LogbookGeneralStatusId)
                     @Html.LabelFor(f => f.LogbookGeneral.LogbookGeneralStatusId, "Pick Topic")
-                    @Html.DropDownListFor(f => f.LogbookGeneral.LogbookGeneralStatusId, new SelectList(Model.LogbookGeneralStatuses, "Id", "Name"), "", new { @class = "form-control" })
+                    @Html.DropDownListFor(f => f.LogbookGeneral.LogbookGeneralStatusId, new SelectList(Model.LogbookGeneralStatuses, "Id", "Name"), "", new {@class = "form-control"})
                 </div>
                 <div class="form-group">
+                    @Html.ValidationMessageFor(f => f.LogbookGeneral.Entry)
                     @Html.LabelFor(f => f.LogbookGeneral.Entry)
                     @Html.TextAreaFor(f => f.LogbookGeneral.Entry, new {@class = "form-control"})
                 </div>

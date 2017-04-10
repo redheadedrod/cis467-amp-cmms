@@ -1,0 +1,35 @@
+﻿
+@using System.Web.Mvc.Html
+@using CIS467_AMP.ViewModels.Maintenance
+@model CIS467_AMP.ViewModels.Maintenance.WorkOrderViewModel
+@{
+    /**
+     * Author: Rodney Fulk
+     * Logbook entry page
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "New Work Order";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row">
+    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
+    <div>
+        <div class="col-md-10">
+            <h1 id="title">@ViewBag.Title</h1>
+        </div>
+
+        <div class="col col-md-10">
+            @using (Html.BeginForm("Create", "Maintenance"))
+            {
+
+                @Html.Partial("WorkOrder", Model)
+                <button type="submit" class="btn btn-primary">Save Entry</button>
+            }
+        </div>
+    </div>
+</div>

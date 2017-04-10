@@ -1,0 +1,52 @@
+﻿@{
+    ViewBag.Title = "AMP Home Page";
+    Layout = "~/Views/Shared/_HomeLayout.cshtml";
+}
+
+<div class="jumbotron">
+    <h1>AMP</h1>
+    <p class="lead">Manage all of your assets, hassle free!</p>
+</div>
+
+<div class="row">
+    <div class="col-md-4" id="mainLinks">
+        <a href="@Url.Action("Index", "Admin")">
+            <h2>Admin</h2>
+            <h1>
+                <span class="glyphicon glyphicon-user"></span>
+            </h1>
+        </a>
+    </div>
+    <div class="col-md-4" id="mainLinks">
+        <a href="@Url.Action("Index", "Maintenance")">
+            <h2>Maintenance</h2>
+            <h1>
+                <span class="glyphicon glyphicon-wrench"></span>
+            </h1>
+        </a>
+    </div>
+    <div class="col-md-4" id="mainLinks">
+        <a href="@Url.Action("Index", "StockRoom")">
+            <h2>Stock Room</h2>
+            <h1>
+                <span class="glyphicon glyphicon-th"></span>
+            </h1>
+        </a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4">
+        
+    </div>
+    <div class="col-md-4" id="mainLinks">
+        <a href="@Url.Action("Index", "Logbook")">
+            <h2>Logbook</h2>
+            <h1>
+                <span class="glyphicon glyphicon-book" style="text-align: center"></span>
+            </h1>
+        </a>
+    </div>
+    <div class="col-md-4">
+        
+    </div>
+</div>

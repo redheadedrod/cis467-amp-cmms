@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 using CIS467_AMP.Models.Shared;
@@ -20,8 +21,12 @@ namespace CIS467_AMP.Models.Maintenance
     {
         public int Id { get; set; }
         public Worker Worker { get; set; }
+        [Required(ErrorMessage = "Please select Worker!")]
         public int WorkerId { get; set; }
+        [Required(ErrorMessage = "Please select start date/time!")]
         public DateTime StartTime { get; set; }
+        [Required(ErrorMessage = "Please enter how many hours worked!")]
+        [Range(0.1,24, ErrorMessage = "Please enter number between 0.1 and 24")]
         public float HoursWorked { get; set; }
         public MaintenanceWorkOrder MaintenanceWorkOrder { get; set; }
         public int MaintenanceWorkOrderId { get; set; }

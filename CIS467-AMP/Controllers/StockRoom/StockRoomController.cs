@@ -8,6 +8,7 @@ using CIS467_AMP.Models.Shared;
 using CIS467_AMP.Models.StockRoom;
 using Microsoft.Ajax.Utilities;
 using CIS467_AMP.ViewModels.StockRoom;
+using CIS467_AMP.Controllers.Maintenance;
 
 namespace CIS467_AMP.Controllers.StockRoom
 {
@@ -37,14 +38,8 @@ namespace CIS467_AMP.Controllers.StockRoom
             return View();
         }
 
-        // stub called from logbook
+        // stub called from logbook - This needs to pull up an order request by ID
         public ActionResult Order(int id)
-        {
-            return View();
-        }
-
-        //Stub for use with logbook
-        public ActionResult Request(int id)
         {
             return View();
         }
@@ -68,17 +63,22 @@ namespace CIS467_AMP.Controllers.StockRoom
         public ActionResult PartRequest()
         {
             var suppliers = _context.StockRoomSuppliers.ToList();
-            var requests = _context.StockroomRequestLines.Include(x => x.ManufacturerPart).ToList();
+            var requests = _context.StockroomRequestLines.Where(x => x.StockRoomRequest.StockRoomRequestStatusId == 0).Include(x => x.ManufacturerPart).ToList();
             var indexes = _context.StockroomSupplierPartIndexes;
             var requestSuppliers = new List<RequestSuppliersViewModel>();
             foreach(var request in requests)
             {
                 RequestSuppliersViewModel rs = new RequestSuppliersViewModel();
-                var supplierId = indexes.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).StockRoomSupplierId;
-                rs.Supplier = _context.StockRoomSuppliers.FirstOrDefault(x => x.Id == supplierId);
-                rs.Request = request;
+                if(request.ManufacturerPartId >= 6)
+                {
+                    var supplierId = indexes.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).StockRoomSupplierId;
+                    rs.Supplier = _context.StockRoomSuppliers.FirstOrDefault(x => x.Id == supplierId);
+                    rs.Quantity = _context.StockRoomInventories.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).OnHand;
+                    rs.Request = request;
 
-                requestSuppliers.Add(rs); 
+                    requestSuppliers.Add(rs);
+                }
+               
                 
             }
             PartRequestViewModel viewModel = new PartRequestViewModel()
@@ -95,20 +95,42 @@ namespace CIS467_AMP.Controllers.StockRoom
         /// <param name="collection">chosen request lines to order</param>
         /// <returns>returns to orderrequest</returns>
         [HttpPost]
-        public ActionResult CreateOrder(FormCollection collection)
+        public ActionResult HandlePartRequests(FormCollection collection)
         {
+            if (collection.AllKeys.Contains("ApproveOrder"))
+            {
+                var partid = Convert.ToInt32(collection["ApproveOrder"].Split(',')[0]);
+                var qty = Convert.ToInt32(collection["ApproveOrder"].Split(',')[1]);
+                var requestId = Convert.ToInt32(collection["ApproveOrder"].Split(',')[2]);
+                var updateInventory = _context.StockRoomInventories.FirstOrDefault(x => x.ManufacturerPartId == partid);
+                var partsRequest = _context.StockRoomRequests.FirstOrDefault(x => x.Id == requestId);
+
+                partsRequest.StockRoomRequestStatusId = 1;
+                updateInventory.OnHand = updateInventory.OnHand - qty;
+                _context.SaveChanges();
+
+                return RedirectToAction("PartRequest");
+            }
+
             var count = collection.Count;
             var supplier = collection["Supplier"];
             var requestLineIds = new List<int>();
             for(int i = 0; i < count -1; i++)
             {
-                var requestLineId = collection[i];
+                var requestLineId = collection[i].Split(',');
                 if(requestLineId.Contains("true"))
                 {
                     requestLineIds.Add(Convert.ToInt32(collection.Keys[i]));
                 }
             }
 
+            foreach(int id in requestLineIds)
+            {
+                var requestLine = _context.StockroomRequestLines.FirstOrDefault(x => x.Id == id);
+                var partRequest = _context.StockRoomRequests.FirstOrDefault(x => x.Id == requestLine.StockRoomRequestId);
+                partRequest.StockRoomRequestStatusId = 2; 
+                _context.SaveChanges();
+            }
             var orderNumber = getOrderNumber();
 
             DateTime createdDate = DateTime.Now;
@@ -233,7 +255,7 @@ namespace CIS467_AMP.Controllers.StockRoom
             _context.StockroomOrderLines.Add(line);
             _context.SaveChanges();
 
-            return RedirectToAction("CreateOrder");
+            return RedirectToAction("OrderRequest");
         }
 
         private string getOrderNumber()

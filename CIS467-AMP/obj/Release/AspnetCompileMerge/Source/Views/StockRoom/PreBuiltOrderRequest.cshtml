@@ -1,0 +1,77 @@
+﻿@model CIS467_AMP.ViewModels.StockRoom.PrebuiltOrderRequestViewModel
+
+@{
+    /**
+   * Author: Jason Bensel
+   * Stockroom main page
+   */
+
+    //Sets tab bar title
+    ViewBag.Title = "Order Request - Prebuilt";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="row" id="content">
+    <div class="col col-md-12">
+        <h1 id="title">@ViewBag.Title</h1>
+    </div>
+</div>
+<div class="row">
+    <div class="navbar col-md-2" id="sideLinks">
+        <ul class="nav nav-pills nav-stacked">
+            <li>@Html.ActionLink("Stock Room Home", "Index")</li>
+            <li>@Html.ActionLink("Inventory", "Inventory")</li>
+            <li>@Html.ActionLink("Order Request", "OrderRequest")</li>
+        </ul>
+    </div>
+
+    <div class="col col-md-10">
+        @using (Html.BeginForm("CreatePreBuiltOrder", "StockRoom"))
+        {
+            <div class="form-group">
+                @Html.LabelFor(m => m.CurrentInventory.StockId)
+                @Html.TextBoxFor(m => m.CurrentInventory.StockId, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Order.OrderNumber)
+                @Html.TextBoxFor(m => m.Order.OrderNumber, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Part.Name)
+                @Html.TextBoxFor(m => m.Part.Name, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Part.Number)
+                @Html.TextBoxFor(m => m.Part.Number, new { @class = "form-control" })
+            </div>
+            <div class="form-group">
+                <label>Quantity (Default: Mininimum required)</label>
+                @Html.TextBoxFor(m => m.CurrentInventory.MinRequired, new { @class = "form-control" })
+                <label id="costPerUnit"></label><br/>
+                <label id="expectedCost"></label>
+            </div>
+            <div class="form-group">
+                @Html.LabelFor(m => m.Suppliers)
+                @Html.DropDownListFor(m => m.Order.Supplier.Id, new SelectList(Model.Suppliers, "Id", "Name"), "Select Supplier", new { @class = "form-control" })
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Inventory")
+        </div>
+    </div>
+</div>
+<script type="text/javascript">
+    var cost = @Html.Raw(Json.Encode(Model.Cost));
+    document.getElementById("costPerUnit").innerHTML = "Cost Per Unit: $"+cost;
+    var element = document.getElementById("CurrentInventory_MinRequired").addEventListener("keyup", changePrice);
+    function changePrice(){
+        var units = document.getElementById("CurrentInventory_MinRequired").value;
+        document.getElementById("expectedCost").innerHTML = "Expected Cost: $"+units*cost;
+    }
+
+ </script>

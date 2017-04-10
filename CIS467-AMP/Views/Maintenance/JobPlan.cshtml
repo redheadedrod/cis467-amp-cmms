@@ -13,11 +13,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+@Html.Partial("_TitleAndLinks")
 <div class="row">
-    @Html.Partial("_MaintenanceLeftNavBar") @*Could put a model as second argument*@
-    <div class="col-md-10">
-        <h1 id="titleS">@ViewBag.Title</h1>
-    </div>
     <div>
         <div class="col col-md-10">
             <div><br/>Todo: Display PDF instead of file name here:  @Html.DisplayFor(f => f.JobPlanDocument.Filename)</div>
@@ -36,6 +33,7 @@
             </table><br /><br /><br />
             @using (Html.BeginForm("PartsRequest", "Maintenance"))
             {
+                @Html.AntiForgeryToken()
                 @Html.HiddenFor(i => i.JobPlanId)
                 @Html.HiddenFor(m=>m.PartsIdList)
                 @Html.HiddenFor(w => w.WorkOrderNumber)
