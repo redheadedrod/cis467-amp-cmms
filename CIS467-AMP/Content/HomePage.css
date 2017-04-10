@@ -24,3 +24,6 @@
 .carousel-indicators .active{
     background-color:#b94a48;
 }
+#myCarousel img{
+    margin: auto;
+}

@@ -642,3 +642,6 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.RemoveAssetFromPartsRequest.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddNullSupportToStockroomRequests.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.csprojResolveAssemblyReference.cache
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedUsers.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedRoles.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddRolesToUsers.resources

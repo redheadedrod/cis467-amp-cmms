@@ -65,7 +65,7 @@
             @Html.HiddenFor(j => j.JobPlanNumber)
             @Html.HiddenFor(r => r.PartRequestNumber)
 
-            <button type="submit" class="btn btn-primary" name="refresh" value="refresh">Refresh Parts Listing</button>
+            <button type="submit" class="btn btn-primary" name="refresh" value="refresh">Add parts</button>
             if (Model.RequestLines != null && Model.RequestLines.Count > 0)
             {
                 <button type="submit" class="btn btn-primary" name="place" value="place">Make Request</button>

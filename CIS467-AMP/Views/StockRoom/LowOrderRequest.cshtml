@@ -47,23 +47,16 @@
                         <td>@Html.DisplayFor(model => item.Reserved)</td>
                         <td>
                             <div class="form-group">
-                                @Html.TextBoxFor(model => item.MinRequired, new { @class = "form-control", @type = "number" })
+                                @Html.TextBoxFor(model => item.MinRequired, new { Name="Quantity", @class = "form-control", @type = "number"})
                             </div>
 
                         </td>
+                        <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
                         <td>
                     </tr>
                 }
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
-                </tr>
             </table>
-                    }
+        }
 
 
     </div>

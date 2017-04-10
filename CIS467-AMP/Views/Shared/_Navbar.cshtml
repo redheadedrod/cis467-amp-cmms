@@ -26,11 +26,11 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Home", "Index", "StockRoom")</li>
                         <li>@Html.ActionLink("Inventory", "Inventory", "StockRoom")</li>
                         <li>@Html.ActionLink("Order Request", "OrderRequest", "StockRoom")</li>
-                        <li>@Html.ActionLink("Part Requests", "NewPartsRequest", "Maintenance")</li>
+                        <li>@Html.ActionLink("View Parts Requests", "PartRequest", "StockRoom")</li>
                         <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest", "StockRoom")</li>
+                        <li>@Html.ActionLink("Create Part Request", "NewPartsRequest", "Maintenance")</li>
                     </ul>
                 </li>
                 <li class="dropdown">
@@ -56,6 +56,7 @@
                         <li>@Html.ActionLink("Part Request Status", "StockroomOrderRequests", "Logbook")</li>
                     </ul>
                 </li>
+                <li>@Html.ActionLink("About", "About", "Home")</li>
             </ul>
             @Html.Partial("_LoginPartial")
         </div>

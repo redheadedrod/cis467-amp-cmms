@@ -17,7 +17,7 @@
         <div class="col col-md-10">
             @foreach (var supplier in Model.Suppliers)
             {
-                using (Html.BeginForm("CreateOrder", "StockRoom"))
+                using (Html.BeginForm("HandlePartRequests", "StockRoom"))
                 {
                     <div class="row">
                         <table class="table">
@@ -26,7 +26,9 @@
                                 <th>Part Name</th>
                                 <th>Part Number</th>
                                 <th>Qty Requested</th>
+                                <th>Qty Onhand</th>
                                 <th>Supplier</th>
+                                <th>Approve?</th>
                                 <th>Place Order</th>
 
                             </tr>
@@ -39,11 +41,16 @@
                                         <td>@request.Request.ManufacturerPart.Name</td>
                                         <td>@request.Request.ManufacturerPart.Number</td>
                                         <td>@request.Request.Number</td>
+                                        <td>@request.Quantity</td>
                                         <td>@request.Supplier.Name</td>
+                                        <td><button type="submit" name="ApproveOrder" value="@request.Request.ManufacturerPartId,
+                                                                                             @request.Request.Number,
+                                                                                             @request.Request.StockRoomRequestId" class="btn btn-primary">Approve</button></td>
                                         <td id="@request.Request.ManufacturerPart.Number">
                                             @Html.CheckBox("" + request.Request.Id)
                                         </td>
                                     </tr>
+
                                 }
 
 
@@ -54,7 +61,9 @@
                                 <td></td>
                                 <td></td>
                                 <td>@Html.TextBox("Supplier", supplier.Name, new { @class = "form-control", @readonly = "readonly" })</td>
-                                <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
+                                <td></td>
+                                <td></td>
+                                <td><button type="submit" name="CreateOrder" class="btn btn-primary">Confirm Order</button></td>
                             </tr>
                         </table>
                     </div>
@@ -69,6 +78,3 @@
     
 
 </div>
-<script>
-    
-</script>

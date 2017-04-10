@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
 using System.Security.Claims;
@@ -9,6 +10,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using CIS467_AMP.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace CIS467_AMP.Controllers
 {
@@ -155,6 +157,21 @@ namespace CIS467_AMP.Controllers
                 var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
+                    // code to set new user register permissions
+                    /*var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
+                    var roleManager = new RoleManager<IdentityRole>(roleStore);
+                    await roleManager.CreateAsync(new IdentityRole("CanApproveOrder")); */
+                    //await UserManager.AddToRoleAsync(user.Id, RoleName.CanApproveOrder);
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CanCreateWorkOrder);
+                    //await UserManager.AddToRoleAsync(user.Id, RoleName.CanEditWorkOrder);
+                    //await UserManager.AddToRoleAsync(user.Id, RoleName.CanApproveWorkOrder);
+                    //await UserManager.AddToRoleAsync(user.Id, RoleName.CanCreateOrder);
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CanCreateRequest);
+                    //await UserManager.AddToRoleAsync(user.Id, RoleName.CanApproveRequest);
+                    await UserManager.AddToRoleAsync(user.Id, RoleName.CanCreateLogbookEntry); 
+
+                    //await UserManager.AddToRoleAsync(user.Id, RoleName.Administrator); // actual setting of user permission
+                    // end of user permissions
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
                     
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
