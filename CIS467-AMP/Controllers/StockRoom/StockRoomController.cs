@@ -69,12 +69,16 @@ namespace CIS467_AMP.Controllers.StockRoom
             foreach(var request in requests)
             {
                 RequestSuppliersViewModel rs = new RequestSuppliersViewModel();
-                var supplierId = indexes.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).StockRoomSupplierId;
-                rs.Supplier = _context.StockRoomSuppliers.FirstOrDefault(x => x.Id == supplierId);
-                rs.Quantity = _context.StockRoomInventories.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).OnHand;
-                rs.Request = request;
+                if(request.ManufacturerPartId >= 6)
+                {
+                    var supplierId = indexes.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).StockRoomSupplierId;
+                    rs.Supplier = _context.StockRoomSuppliers.FirstOrDefault(x => x.Id == supplierId);
+                    rs.Quantity = _context.StockRoomInventories.FirstOrDefault(x => x.ManufacturerPartId == request.ManufacturerPartId).OnHand;
+                    rs.Request = request;
 
-                requestSuppliers.Add(rs); 
+                    requestSuppliers.Add(rs);
+                }
+               
                 
             }
             PartRequestViewModel viewModel = new PartRequestViewModel()
@@ -104,7 +108,6 @@ namespace CIS467_AMP.Controllers.StockRoom
 
                 partsRequest.StockRoomRequestStatusId = 1;
                 updateInventory.OnHand = updateInventory.OnHand - qty;
-
                 _context.SaveChanges();
 
                 return RedirectToAction("PartRequest");
