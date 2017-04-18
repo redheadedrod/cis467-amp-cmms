@@ -79,11 +79,13 @@ namespace CIS467_AMP.Controllers.Maintenance
             return (viewModel);
         }
 
+        [Authorize(Roles = RoleName.Administrator + "," +RoleName.CanCreateWorkOrder )]
         public ActionResult NewWorkOrder()
         {
             return View(CreateViewModel(null, null));
         }
 
+        // will change view to support just viewing or able to edit work order       
         public ActionResult EditWorkOrder(int? id, string message)
         {
             return View("EditWorkOrder", CreateViewModel(id, message));
@@ -257,7 +259,6 @@ namespace CIS467_AMP.Controllers.Maintenance
             var workTime = _context.MaintenanceWorkOrderWorkTime.Single(wt => wt.Id == time.MaintenanceWorkOrderWorkTime.Id);
             workTime.HoursWorked = time.MaintenanceWorkOrderWorkTime.HoursWorked;
             _context.SaveChanges();
-            //return RedirectToAction("EditWorkOrder/" + time.MaintenanceWorkOrderWorkTime.MaintenanceWorkOrderId, "Maintenance");
             return WorkTime(time.MaintenanceWorkOrderWorkTime.MaintenanceWorkOrderId);
         }
 

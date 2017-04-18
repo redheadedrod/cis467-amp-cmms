@@ -20,10 +20,11 @@
             <p>&copy; @DateTime.Now.Year - AMP</p>
         </footer>
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @*@Scripts.Render("~/bundles/jqueryval")*@
-    @Scripts.Render("~/bundles/bootstrap")
+   
+    @*@Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap") *@
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/lib")
     @RenderSection("scripts", required: false)
 </body>
 </html>
