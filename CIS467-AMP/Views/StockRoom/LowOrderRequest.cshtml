@@ -18,47 +18,61 @@
     <div class="col col-md-10">
         @using (Html.BeginForm("CreateLowOrder", "StockRoom"))
         {
-            <table class="table">
-                <tr>
-                    <th>@Html.DisplayNameFor(m => m.StockId)</th>
-                    <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Name)</th>
-                    <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Number)</th>
-                    <th>@Html.DisplayNameFor(m => m.MinRequired)</th>
-                    <th>@Html.DisplayNameFor(m => m.OnHand)</th>
-                    <th>@Html.DisplayNameFor(m => m.Reserved)</th>
-                    <th>Place Order (Quantity)</th>
-                </tr>
+            @Html.AntiForgeryToken()
+            <table class="table" id="loworders">
+                <thead>
+                    <tr>
+                        <th>@Html.DisplayNameFor(m => m.StockId)</th>
+                        <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Name)</th>
+                        <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Number)</th>
+                        <th>@Html.DisplayNameFor(m => m.MinRequired)</th>
+                        <th>@Html.DisplayNameFor(m => m.OnHand)</th>
+                        <th>@Html.DisplayNameFor(m => m.Reserved)</th>
+                        <th>Place Order (Quantity)</th>
+                    </tr>
+                </thead>
+
                 @{
                     var count = 0;
                 }
-                @foreach (var item in Model)
+                <tbody>
+                    @foreach (var item in Model)
                 {
                     count++;
-                    <tr>
-                        <td>
-                            <div class="form-group">
-                                @Html.TextBoxFor(model => item.StockId, new { @class = "form-control", @readonly = "readonly", @id = count })
-                            </div>
-                        </td>
-                        <td>@Html.DisplayFor(model => item.ManufacturerPart.Name)</td>
-                        <td>@Html.DisplayFor(model => item.ManufacturerPart.Number)</td>
-                        <td>@Html.DisplayFor(model => item.MinRequired)</td>
-                        <td>@Html.DisplayFor(model => item.OnHand)</td>
-                        <td>@Html.DisplayFor(model => item.Reserved)</td>
-                        <td>
-                            <div class="form-group">
-                                @Html.TextBoxFor(model => item.MinRequired, new { Name="Quantity", @class = "form-control", @type = "number"})
-                            </div>
+                        <tr>
+                            <td>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(model => item.StockId, new { @class = "form-control", @readonly = "readonly", @id = count })
+                                </div>
+                            </td>
+                            <td>@Html.DisplayFor(model => item.ManufacturerPart.Name)</td>
+                            <td>@Html.DisplayFor(model => item.ManufacturerPart.Number)</td>
+                            <td>@Html.DisplayFor(model => item.MinRequired)</td>
+                            <td>@Html.DisplayFor(model => item.OnHand)</td>
+                            <td>@Html.DisplayFor(model => item.Reserved)</td>
+                            <td>
+                                <div class="form-group">
+                                    @Html.TextBoxFor(model => item.MinRequired, new { Name = "Quantity", @class = "form-control", @type = "number" })
+                                </div>
 
-                        </td>
-                        <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
-                        <td>
-                    </tr>
-                }
+                            </td>
+                            <td><button type="submit" class="btn btn-primary">Confirm Order</button></td>
+                            <td>
+                        </tr>
+                    }
+                </tbody>
             </table>
         }
 
 
     </div>
 </div>
-    
+@section scripts
+{
+<script>
+    $(document).ready(function () {
+        $("#loworders").DataTable();
+    });
+</script>
+}
+

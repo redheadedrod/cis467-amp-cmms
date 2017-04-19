@@ -32,21 +32,25 @@
             </ul>*@
         <div class="col col-md-10">
             <table id="main" class="table" >
-                <tr>
-                    <th>Order Number</th>
-                    <th>Date Ordered</th>
-                    <th>Order Status</th>
-                    <th>Status Updated</th>
-                </tr>
-                @foreach (var item in Model)
-                {
+                <thead>
                     <tr>
-                        <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new { id = item.Id }, null)</td>
-                        <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
-                        <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
+                        <th>Order Number</th>
+                        <th>Date Ordered</th>
+                        <th>Order Status</th>
+                        <th>Status Updated</th>
                     </tr>
-                }
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new { id = item.Id }, null)</td>
+                            <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
+                        </tr>
+                    }
+                </tbody>
             </table>
         </div>
     </div>

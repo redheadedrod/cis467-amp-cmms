@@ -18,25 +18,30 @@
     <div>
         <div class="col col-md-10">
             <table id="main" class="table">
-                <tr>
-                    <th>Work Order</th>
-                    <th>Requested</th>
-                    <th>Requested by</th>
-                    <th>Asset</th>
-                    <th>Status</th>
-                    <th>Status Updated</th>
-                </tr>
-                @foreach (var item in Model)
-                {
+                <thead>
                     <tr>
-                        <td>@Html.ActionLink(item.Id.ToString(), "EditWorkOrder", "Maintenance", new {id = item.Id}, null)</td>
-                        <td>@Html.DisplayFor(modelItem => item.CreatedDateTime)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Creator.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.MaintenanceStatus.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.LastStatusDateTime)</td>
+                        <th>Work Order</th>
+                        <th>Requested</th>
+                        <th>Requested by</th>
+                        <th>Asset</th>
+                        <th>Status</th>
+                        <th>Status Updated</th>
                     </tr>
-                }
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(item.Id.ToString(), "EditWorkOrder", "Maintenance", new { id = item.Id }, null)</td>
+                            <td>@Html.DisplayFor(modelItem => item.CreatedDateTime)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Creator.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.MaintenanceStatus.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.LastStatusDateTime)</td>
+                        </tr>
+                    }
+                </tbody>
+
             </table>
         </div>
     </div>

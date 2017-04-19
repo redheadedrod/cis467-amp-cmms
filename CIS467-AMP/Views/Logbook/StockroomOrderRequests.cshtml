@@ -15,21 +15,25 @@
 <div class="row">
     <div class="col col-md-10">
         <table id="main" class="table">
-            <tr>
-                <th>Order Number</th>
-                <th>Date Requested</th>
-                <th>Requested by</th>
-                <th>Order Status</th>
-            </tr>
-            @foreach (var item in Model)
-            {
+            <thead>
                 <tr>
-                    <td>@Html.ActionLink(item.Id.ToString(), "EditPartsRequest", "Maintenance", new { id = item.Id }, null)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Requested)</td>
-                    <td>@Html.DisplayFor(modelItem => item.Worker.Name)</td>
-                    <td>@Html.DisplayFor(modelItem => item.StockRoomRequestStatus.Name)</td>
+                    <th>Order Number</th>
+                    <th>Date Requested</th>
+                    <th>Requested by</th>
+                    <th>Order Status</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(item.Id.ToString(), "EditPartsRequest", "Maintenance", new { id = item.Id }, null)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Requested)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Worker.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.StockRoomRequestStatus.Name)</td>
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
 

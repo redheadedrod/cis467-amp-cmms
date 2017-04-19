@@ -96,6 +96,7 @@ namespace CIS467_AMP.Controllers.StockRoom
         /// <param name="collection">chosen request lines to order</param>
         /// <returns>returns to orderrequest</returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult HandlePartRequests(FormCollection collection)
         {
             if (collection.AllKeys.Contains("ApproveOrder"))
