@@ -115,7 +115,10 @@ namespace CIS467_AMP.Controllers.StockRoom
             }
 
             var count = collection.Count;
-            var supplier = collection["Supplier"];
+
+            //THIS ONLY WORKS IF USER SELECTS SAME SUPPLIER 
+            //this is a quick fix for altering the order process
+            var supplier = collection["Supplier"].Split(',')[0];
             var requestLineIds = new List<int>();
             for(int i = 0; i < count -1; i++)
             {

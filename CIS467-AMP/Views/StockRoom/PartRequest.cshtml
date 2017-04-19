@@ -15,13 +15,11 @@
 @Html.Partial("_TitleAndLinks")
     <div class="row">
         <div class="col col-md-10">
-            @foreach (var supplier in Model.Suppliers)
-            {
-                using (Html.BeginForm("HandlePartRequests", "StockRoom"))
+                @using (Html.BeginForm("HandlePartRequests", "StockRoom"))
                 {
                     @Html.AntiForgeryToken()
                     <div class="row">
-                        <table class="table" id="@supplier.Name">
+                        <table class="table" id="requests">
                             <thead>
                                 <tr>
                                     <th>Part Name</th>
@@ -37,60 +35,52 @@
                             <tbody>
                                 @foreach (var request in Model.RequestSupplier)
                                 {
-                                    if (supplier.Id == request.Supplier.Id)
-                                    {
-                                        <tr>
-                                            <td>@request.Request.ManufacturerPart.Name</td>
-                                            <td>@request.Request.ManufacturerPart.Number</td>
-                                            <td>@request.Request.Number</td>
-                                            <td>@request.Quantity</td>
-                                            <td>@request.Supplier.Name</td>
-                                            <td>
-                                                <button type="submit" name="ApproveOrder" value="@request.Request.ManufacturerPartId,
-                                                                                             @request.Request.Number,
-                                                                                             @request.Request.StockRoomRequestId" class="btn btn-primary">
-                                                    Approve
-                                                </button>
-                                            </td>
-                                            <td id="@request.Request.ManufacturerPart.Number">
-                                                @Html.CheckBox("" + request.Request.Id)
-                                            </td>
-                                        </tr>
-
-                                    }
-
-
+                                    <tr>
+                                        <td>@request.Request.ManufacturerPart.Name</td>
+                                        <td>@request.Request.ManufacturerPart.Number</td>
+                                        <td>@request.Request.Number</td>
+                                        <td>@request.Quantity</td>
+                                        <td>@Html.TextBox("Supplier", request.Supplier.Name, new { @class = "form-control", @readonly = "readonly" })</td>
+                                        <td>
+                                            <button type="submit" name="ApproveOrder" value="@request.Request.ManufacturerPartId,
+                                                                                         @request.Request.Number,
+                                                                                         @request.Request.StockRoomRequestId" class="btn btn-primary">
+                                                Approve
+                                            </button>
+                                        </td>
+                                        <td id="@request.Request.ManufacturerPart.Number">
+                                            @Html.CheckBox("" + request.Request.Id)
+                                        </td>
+                                    </tr>
                                 }
-                                <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td>@Html.TextBox("Supplier", supplier.Name, new { @class = "form-control", @readonly = "readonly" })</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><button type="submit" name="CreateOrder" class="btn btn-primary">Confirm Order</button></td>
-                                </tr>
+
+                             
+                                
+
                             </tbody>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <button type="submit" name="CreateOrder" class="btn btn-primary">Confirm Order</button>
+                                </td>
+                            </tr>
                         </table>
-                    </div>
-                }
-            }
-
-
-
-
+                        </div>
+                        }
       </div>
  </div>
 @section scripts
 {
     <script>
-    @foreach(var supplier in Model.Suppliers)
-    {
-        @:$(document).ready(function () {
-            @:$(@supplier.Name).DataTable();
-        @:})
-    }
-</script>
+        $(document).ready(function () {
+            $('#requests').DataTable();
+        })
+    </script>
+  
 }
 
