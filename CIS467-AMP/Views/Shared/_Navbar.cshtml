@@ -19,8 +19,10 @@
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Home", "Index", "Admin")</li>
-                       @* <li>@Html.ActionLink("Pending Work Orders", "PendingWorkOrder", "Admin")</li>*@
+                        <li>@Html.ActionLink("Add System News", "NewsEntry", "Admin")</li>
+                        <li>@Html.ActionLink("Parts Requests", "StockroomOrderRequests", "Admin")</li>
+                        <li>@Html.ActionLink("Work orders", "Maintenance", "Admin")</li>
+                        <li>@Html.ActionLink("Order Requests", "StockroomOrders", "Admin")</li>
                     </ul>
                 </li>
                 }
@@ -33,10 +35,16 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Inventory", "Inventory", "StockRoom")</li>
-                            <li>@Html.ActionLink("Order Request", "OrderRequest", "StockRoom")</li>
-                            <li>@Html.ActionLink("View Parts Requests", "PartRequest", "StockRoom")</li>
-                            <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest", "StockRoom")</li>
-                            <li>@Html.ActionLink("Create Part Request", "NewPartsRequest", "Maintenance")</li>
+                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateOrder)))
+                            {
+                                <li>@Html.ActionLink("Order Request", "OrderRequest", "StockRoom")</li>
+                                <li>@Html.ActionLink("View Parts Requests", "PartRequest", "StockRoom")</li>
+                                <li>@Html.ActionLink("Low Quantity Inventory", "LowOrderRequest", "StockRoom")</li>
+                            }
+                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateRequest)))
+                            {
+                                <li>@Html.ActionLink("Create Part Request", "NewPartsRequest", "Maintenance")</li>
+                            }
                         </ul>
                     </li>
 
@@ -47,7 +55,10 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li>@Html.ActionLink("Work Order Listing", "Index", "Maintenance")</li>
-                            <li>@Html.ActionLink("Create New Work Order", "NewWorkOrder", "Maintenance")</li>
+                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateWorkOrder)))
+                            {
+                                <li>@Html.ActionLink("Create New Work Order", "NewWorkOrder", "Maintenance")</li>
+                            }
                         </ul>
                     </li>
                     <li class="dropdown">

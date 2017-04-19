@@ -1,38 +1,58 @@
-﻿@model CIS467_AMP.ViewModels.HomeViewModel
+﻿@using CIS467_AMP.Models
+@model IEnumerable<CIS467_AMP.Models.Admin.SystemNews>
 @{
-    ViewBag.Title = "AMP Home Page";
+    /**
+     * Author: Rodney Fulk
+     * General logbook
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "System News";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@Html.Partial("_Navbar")
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h1>System Dashboard</h1>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-8">
-            <h3>News</h3>
-            <ul>
-                <li><strong>March 30th - </strong>Stuff going on here</li>
-                <li><strong>March 27th - </strong>Important stuff here too</li>
-            </ul>
-        </div>
-        <div class="col-md-4">
-            <h4>System Updates</h4>
-            <ul>
-                <li>Admins - Update your passwords</li>
-                <li>Update scheduled 4/15/2017</li>
-            </ul>
-        </div>
-    </div>
-</div>
-<div>
-    <br/><br/><br/>To test, login use one of following user accounts with password of Guest1!
-    @foreach (var user in Model.Users)
-    {
-        <div>@user</div>
-    }
-    NOTE: This is intended to be removed before actual demo. 
-</div>
 
+@Html.Partial("_TitleAndLinks")
+<div class="row">
+
+    <div>
+        <div class="col col-md-10">
+            @if ((Model == null) || (Model.Count() == 0)) 
+            {
+                <p>No current news</p>
+            }
+            else
+            {
+
+
+                <table id="main" class="table">
+                    <thead>
+                        <tr>
+                            <th>Date Entered</th>
+                            <th>News</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>@Html.DisplayFor(modelItem => item.EnteredDateTime)</td>
+                                <td>@Html.DisplayFor(modelItem => item.Entry)</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

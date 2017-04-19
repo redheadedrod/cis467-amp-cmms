@@ -49,6 +49,9 @@ namespace CIS467_AMP.Controllers.Maintenance
         private WorkOrderViewModel CreateViewModel(int? id, string message)
         {
             var workers = _context.Workers.ToList();
+            var worker = workers
+                .SingleOrDefault(w => w.EmailAddress == User.Identity.Name)
+            ;
             var inventory = _context.AssetInventories.ToList();
             var status = _context.MaintenanceStatuses.ToList();
             var issues = _context.MaintenanceIssues;
@@ -66,6 +69,10 @@ namespace CIS467_AMP.Controllers.Maintenance
                 Edit = false
                 
             };
+            if (worker != null)
+            {
+                viewModel.WorkerId = worker.Id;
+            }
             if (id != null)
             {
                 var workOrder = _context.MaintenanceWorkOrders.FirstOrDefault(x => x.Id == id);
@@ -95,10 +102,13 @@ namespace CIS467_AMP.Controllers.Maintenance
         [ValidateAntiForgeryToken]
         public ActionResult Create(WorkOrderViewModel dataModel)
         {
-            
+            var workers = _context.Workers.ToList();
+            var worker = workers
+                .SingleOrDefault(w => w.EmailAddress == User.Identity.Name)
+            ;
             if (!ModelState.IsValid)
             {
-                var workers = _context.Workers.ToList();
+
                 var inventory = _context.AssetInventories.ToList();
                 var status = _context.MaintenanceStatuses.ToList();
                 var issues = _context.MaintenanceIssues;
@@ -115,9 +125,14 @@ namespace CIS467_AMP.Controllers.Maintenance
                     Edit = false
 
                 };
+                if (worker != null)
+                {
+                    viewModel.WorkerId = worker.Id;
+                }
                 return View("NewWorkOrder", viewModel); 
             }
-            
+            if (dataModel.WorkerId != null)
+                dataModel.MaintenanceWorkOrder.Creator = workers.Single(w => w.Id == dataModel.WorkerId);
             dataModel.MaintenanceWorkOrder.CreatedDateTime = DateTime.Now;
             dataModel.MaintenanceWorkOrder.LastStatusDateTime = DateTime.Now;
             dataModel.MaintenanceWorkOrder.MaintenanceStatusId = 0;

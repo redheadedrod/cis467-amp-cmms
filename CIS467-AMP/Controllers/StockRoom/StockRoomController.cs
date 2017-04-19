@@ -89,12 +89,14 @@ namespace CIS467_AMP.Controllers.StockRoom
             return View(viewModel);
         }
 
+
         /// <summary>
         /// Creates orders and all associated order lines
         /// </summary>
         /// <param name="collection">chosen request lines to order</param>
         /// <returns>returns to orderrequest</returns>
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult HandlePartRequests(FormCollection collection)
         {
             if (collection.AllKeys.Contains("ApproveOrder"))
@@ -113,7 +115,10 @@ namespace CIS467_AMP.Controllers.StockRoom
             }
 
             var count = collection.Count;
-            var supplier = collection["Supplier"];
+
+            //THIS ONLY WORKS IF USER SELECTS SAME SUPPLIER 
+            //this is a quick fix for altering the order process
+            var supplier = collection["Supplier"].Split(',')[0];
             var requestLineIds = new List<int>();
             for(int i = 0; i < count -1; i++)
             {

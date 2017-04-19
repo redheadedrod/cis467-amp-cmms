@@ -41,57 +41,67 @@
                     <th>Number Requesting</th>
                     <th>Notes</th>
                 </tr>
-                        @if (Model.RequestLines != null)
-                        {
-                            StockRoomRequestLine item;
-                            for (int i = 0; i < Model.RequestLines.Count; i++)
-                            {
-                                item = Model.RequestLines[i];
-                                lines.Add(item.ManufacturerPart.Id);
-                                <tr>
-                                    <td>@Html.DisplayFor(m => item.ManufacturerPart.Manufacturer.Name)</td>
-                                    <td>@Html.DisplayFor(m => item.ManufacturerPart.Number)</td>
-                                    <td>@Html.DisplayFor(m => item.ManufacturerPart.Name)</td>
-                                    <td>@Html.TextBox("RequestLine." + i, "RequestLine." + item.Id, new {@class = "form-control", @type = "number", @min = "0", @Value = item.Number})</td>
-                                    <td>@Html.TextBox("Note." + i, item.Description, new {@class = "form-control"})</td>
-                                    @Html.Hidden("PartId."+i, item.ManufacturerPart.Id)
-                                </tr>
-                            }
-                        }
+                @if (Model.RequestLines != null)
+                {
+                    StockRoomRequestLine item;
+                    for (int i = 0; i < Model.RequestLines.Count; i++)
+                    {
+                        item = Model.RequestLines[i];
+                        lines.Add(item.ManufacturerPart.Id);
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.ManufacturerPart.Manufacturer.Name)</td>
+                            <td>@Html.DisplayFor(m => item.ManufacturerPart.Number)</td>
+                            <td>@Html.DisplayFor(m => item.ManufacturerPart.Name)</td>
+                            <td>@Html.TextBox("RequestLine." + i, "RequestLine." + item.Id, new {@class = "form-control", @type = "number", @min = "0", @Value = item.Number, @style = "width:100px"})</td>
+                            <td>@Html.TextBox("Note." + i, item.Description, new {@class = "form-control"})</td>
+                            @Html.Hidden("PartId."+i, item.ManufacturerPart.Id)
+                        </tr>
+                    }
+                }
             </table>
             @Html.HiddenFor(i => i.WorkOrderNumber)
-           @* @Html.HiddenFor(l => l.Lines)
-            @Html.HiddenFor(n => n.Notes)*@
             @Html.HiddenFor(j => j.JobPlanNumber)
             @Html.HiddenFor(r => r.PartRequestNumber)
 
-            <button type="submit" class="btn btn-primary" name="refresh" value="refresh">Add parts</button>
+            <button type="submit" class="btn btn-primary" name="refresh" value="refresh">Update Parts</button>
             if (Model.RequestLines != null && Model.RequestLines.Count > 0)
             {
                 <button type="submit" class="btn btn-primary" name="place" value="place">Make Request</button>
             }
             <br />
-                <h2>Parts Listing</h2>
-                <table class="table">
-                    <tr>
-                        <th>Manufacturer</th>
-                        <th>Part Number</th>
-                        <th>Part Name</th>
-                        <th>Number To Request</th>
-                    </tr>
-                    @foreach (var item in Model.ManufacturerParts)
+            <h2>Parts Listing</h2>
+            <table class="table" id="main" data-page-length='5'>
+                <thead>
+                <tr>
+                    <th>Manufacturer</th>
+                    <th>Part Number</th>
+                    <th>Part Name</th>
+                    <th>Number To Request</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach (var item in Model.ManufacturerParts)
+                {
+                    if (Model.RequestLines == null || !lines.Contains(item.Id))
                     {
-                        if (Model.RequestLines == null  || !lines.Contains(item.Id))
-                        {
-                            <tr>
-                                <td>@Html.DisplayFor(m => item.Manufacturer.Name)</td>
-                                <td>@Html.DisplayFor(m => item.Number)</td>
-                                <td>@Html.DisplayFor(m => item.Name)</td>
-                                <td>@Html.TextBox("Part." + item.Id, "0", new {@class = "form-control", @type = "number", @Value = "0", @min = "0"})</td>
-                            </tr>
-                        }
+                        <tr>
+                            <td>@Html.DisplayFor(m => item.Manufacturer.Name)</td>
+                            <td>@Html.DisplayFor(m => item.Number)</td>
+                            <td>@Html.DisplayFor(m => item.Name)</td>
+                            <td>@Html.TextBox("Part." + item.Id, "0", new { @class = "form-control", @type = "number", @Value = "0", @min = "0", @style = "width:100px" })</td>
+                        </tr>
                     }
-                </table>
+                }
+                </tbody>
+            </table>
         }
     </div>
 </div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

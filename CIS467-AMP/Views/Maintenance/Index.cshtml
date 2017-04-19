@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CIS467_AMP.Models.Maintenance.MaintenanceWorkOrder>
+﻿@using CIS467_AMP.Models
+@model IEnumerable<CIS467_AMP.Models.Maintenance.MaintenanceWorkOrder>
 @{
     /**
      * Author: Rodney Fulk
@@ -18,7 +19,8 @@
     <div>
 
         <div class="col col-md-10">
-            <table class="table">
+            <table class="table" id="workOrders">
+                <thead>
                 <tr>
                     <th>Work Order</th>
                     <th>Requested</th>
@@ -29,10 +31,19 @@
                     <th>Lead Worker</th>
 
                 </tr>
+                </thead>
+                <tbody>
                 @foreach (var item in Model)
                 {
                     <tr>
-                        <td>@Html.ActionLink(item.Id.ToString(), "EditWorkOrder", "Maintenance", new { id = item.Id }, null)</td>
+                        @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanEditWorkOrder)))
+                        {
+                            <td>@Html.ActionLink(item.Id.ToString(), "EditWorkOrder", "Maintenance", new { id = item.Id }, null)</td>
+                        }
+                        else
+                        {
+                            <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                        }
                         <td>@Html.DisplayFor(modelItem => item.CreatedDateTime)</td>
                         <td>@Html.DisplayFor(modelItem => item.Creator.Name)</td>
                         <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
@@ -41,12 +52,28 @@
                         <td>@Html.DisplayFor(modelItem => item.LeadWorker.Name)</td>
                     </tr>
                 }
+                </tbody>
             </table>
-            @using (Html.BeginForm("NewWorkOrder", "Maintenance"))
+            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateWorkOrder)))
             {
-                @Html.AntiForgeryToken()
-                <button type="submit" class="btn btn-primary">Make New Work Order</button>
+                using (Html.BeginForm("NewWorkOrder", "Maintenance"))
+                 {
+                     @Html.AntiForgeryToken()
+
+                     {
+                         <button type="submit" class="btn btn-primary">Make New Work Order</button>
+                     }
+                 }
             }
         </div>
     </div>
 </div>
+
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#workOrders').DataTable();
+        });
+    </script>
+}

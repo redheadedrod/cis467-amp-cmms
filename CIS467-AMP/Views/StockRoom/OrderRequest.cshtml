@@ -19,6 +19,7 @@
             <div class="col-md-12">
                 @using (Html.BeginForm("CreateNewOrder", "StockRoom"))
             {
+                    @Html.AntiForgeryToken()
                     <div class="form-group">
                         @Html.LabelFor(m => m.Inv.StockId)
                         @Html.DropDownListFor(m => m.Inv.StockId, new SelectList(Model.Inventory, "Id", "StockId"), "", new { @class = "form-control" })

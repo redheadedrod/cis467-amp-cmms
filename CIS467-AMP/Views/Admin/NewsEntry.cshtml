@@ -1,0 +1,30 @@
+﻿@model CIS467_AMP.ViewModels.Admin.NewsEntryViewModel
+@{
+    /**
+     * Author: Rodney Fulk
+     * Logbook entry page
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Create New System News Entry";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_TitleAndLinks")
+<div class="row">
+        <div class="col-md-10">
+            @using (Html.BeginForm("Create", "Admin"))
+            {
+                @Html.AntiForgeryToken()
+                <div class="form-group">
+                    @Html.ValidationMessageFor(f => f.SystemNews.Entry)
+                    @Html.LabelFor(f => f.SystemNews.Entry)
+                    @Html.TextAreaFor(f => f.SystemNews.Entry, new {@class = "form-control"})
+                </div>
+                <button type="submit" class="btn btn-primary">Save Entry</button>
+            }
+        </div>
+</div>

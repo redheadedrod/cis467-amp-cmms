@@ -1,6 +1,7 @@
 ﻿using System.Data.Entity;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using CIS467_AMP.Models.Admin;
 using CIS467_AMP.Models.Logbook;
 using CIS467_AMP.Models.Maintenance;
 using CIS467_AMP.Models.Shared;
@@ -67,7 +68,7 @@ namespace CIS467_AMP.Models
         public DbSet<LogbookGeneralStatus> LogbookGeneralStatuses { get; set; }
         public DbSet<LogbookGeneral> LogbookGeneral { get; set; }
         //admin databases (Settings, Permissions, defaults)
-        //todo
+        public DbSet<SystemNews> SystemNews { get; set; }
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {

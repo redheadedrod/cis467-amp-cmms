@@ -1,4 +1,5 @@
-﻿@model CIS467_AMP.ViewModels.Logbook.EntryViewModel
+﻿@using CIS467_AMP.Models
+@model CIS467_AMP.ViewModels.Logbook.EntryViewModel
 @{
     /**
      * Author: Rodney Fulk
@@ -20,8 +21,15 @@
             {
                 @Html.AntiForgeryToken()
                 <div class="form-group">
-                    @Html.LabelFor(f => f.LogbookGeneral.WorkerId, "Pick Worker (Note for testing purposes only. Normally is logged in person)")
-                    @Html.DropDownListFor(f => f.LogbookGeneral.WorkerId, new SelectList(Model.Workers, "Id", "Name"), "", new {@class = "form-control"})
+                    @if (Model.WorkerId == null)
+                    {
+                        @Html.LabelFor(f => f.LogbookGeneral.WorkerId, "Pick Worker")
+                        @Html.DropDownListFor(f => f.LogbookGeneral.WorkerId, new SelectList(Model.Workers, "Id", "Name"), "", new { @class = "form-control" })
+                    }
+                    else
+                    {
+                        @Html.HiddenFor(h => h.WorkerId);
+                    }
                 </div>
                 <div class="form-group">
                     @Html.ValidationMessageFor(f => f.LogbookGeneral.AssetInventoryId)

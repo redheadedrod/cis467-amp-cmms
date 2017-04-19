@@ -1,0 +1,49 @@
+﻿@using CIS467_AMP.Models
+@model IEnumerable<CIS467_AMP.Models.StockRoom.StockRoomRequest>
+@{  /* Author: Rodney Fulk
+     * Logbook for Parts Request
+     */
+
+    //Sets tab bar title*@
+    ViewBag.Title = "Part Requests";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+} 
+
+@Html.Partial("_TitleAndLinks")
+<div class="row">
+    <div class="col col-md-10">
+        <table id="main" class="table">
+            <thead>
+                <tr>
+                    <th>Order Number</th>
+                    <th>Date Requested</th>
+                    <th>Requested by</th>
+                    <th>Order Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@Html.ActionLink(item.Id.ToString(), "EditPartsRequest", "Maintenance", new {id = item.Id}, null)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Requested)</td>
+                        <td>@Html.DisplayFor(modelItem => item.Worker.Name)</td>
+                        <td>@Html.DisplayFor(modelItem => item.StockRoomRequestStatus.Name)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

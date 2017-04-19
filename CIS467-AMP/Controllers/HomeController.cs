@@ -5,7 +5,9 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Web.Security;
+using System.Web.UI.WebControls;
 using CIS467_AMP.Models;
+using CIS467_AMP.Models.Admin;
 using CIS467_AMP.ViewModels;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -29,18 +31,9 @@ namespace CIS467_AMP.Controllers
         [AllowAnonymous]  // allows anonymous users access to home page
         public ActionResult Index()
         {
-            var context = new IdentityDbContext();
-            var users = context.Users.ToList(); 
-            List<string> nameList = new List<string>();
-            foreach (var user in users)
-            {
-                nameList.Add(user.Email);
-            }
-            HomeViewModel viewModel = new HomeViewModel()
-            {
-                Users = nameList
-            };
-            return View(viewModel);
+            var systemNews = _context.SystemNews
+                .OrderByDescending(o => o.EnteredDateTime);
+            return View(systemNews);
         }
         [AllowAnonymous]
         public ActionResult About()

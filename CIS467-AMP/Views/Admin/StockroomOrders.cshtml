@@ -1,0 +1,52 @@
+﻿@using CIS467_AMP.Models
+@model IEnumerable<CIS467_AMP.Models.StockRoom.StockRoomOrder>
+@{
+    /**
+     * Author: Rodney Fulk
+     * Stockroom orders logbook
+     */
+
+    //Sets tab bar title
+    ViewBag.Title = "Stockroom Orders";
+
+    //Uses this scaffolding as main layout --
+    //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@Html.Partial("_TitleAndLinks")
+<div class="row">
+    <div>
+        <div class="col col-md-10">
+            <table id="main" class="table" >
+                <thead>
+                    <tr>
+                        <th>Order Number</th>
+                        <th>Date Ordered</th>
+                        <th>Order Status</th>
+                        <th>Status Updated</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new {id = item.Id}, null)</td>
+                            <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}
