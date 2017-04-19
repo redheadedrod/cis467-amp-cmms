@@ -14,7 +14,7 @@
 @Html.Partial("_TitleAndLinks")
 <div class="row">
     <div class="col col-md-10">
-        <table class="table">
+        <table id="main" class="table">
             <tr>
                 <th>Order Number</th>
                 <th>Date Requested</th>
@@ -34,3 +34,11 @@
     </div>
 
 </div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

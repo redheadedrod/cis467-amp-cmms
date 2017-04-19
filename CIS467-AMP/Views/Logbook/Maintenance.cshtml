@@ -17,7 +17,7 @@
 <div class="row">
     <div>
         <div class="col col-md-10">
-            <table class="table">
+            <table id="main" class="table">
                 <tr>
                     <th>Work Order</th>
                     <th>Requested</th>
@@ -41,3 +41,11 @@
         </div>
     </div>
 </div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

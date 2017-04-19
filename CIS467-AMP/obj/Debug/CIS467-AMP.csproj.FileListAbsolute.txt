@@ -515,7 +515,6 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.OA
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.Google.xml
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.Twitter.xml
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.csprojResolveAssemblyReference.cache
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.Initial.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddShared1.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedShared1.resources
@@ -640,3 +639,9 @@ D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migration
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.ValidateWorkOrders.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.ValidateWorkOrders2.resources
 D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.ValidationStockroom.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.RemoveAssetFromPartsRequest.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddNullSupportToStockroomRequests.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467-AMP.csprojResolveAssemblyReference.cache
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedUsers.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.SeedRoles.resources
+D:\Rodney\OneDrive\git\cis467-amp-cmms\CIS467-AMP\obj\Debug\CIS467_AMP.Migrations.AddRolesToUsers.resources
