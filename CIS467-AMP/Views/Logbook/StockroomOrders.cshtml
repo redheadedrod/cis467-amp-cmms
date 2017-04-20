@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CIS467_AMP.Models.StockRoom.StockRoomOrder>
+﻿@using CIS467_AMP.Models
+@model IEnumerable<CIS467_AMP.Models.StockRoom.StockRoomOrder>
 @{
     /**
      * Author: Rodney Fulk
@@ -16,38 +17,43 @@
 @Html.Partial("_TitleAndLinks")
 <div class="row">
     <div>
-        @*Following Here for notes more than anything*@
-        @*@{
-                var className = Model.MoreText.Count > 1 ? "popular" : null;
-
-            }*@
-
-        @*<h2 class ="@className">@Model.Text</h2> *@
-        @* <ul>
-                @foreach (var order in Model)
-                {
-                    <li>@order.Order</li>
-
-                }
-            </ul>*@
         <div class="col col-md-10">
-            <table class="table">
-                <tr>
-                    <th>Order Number</th>
-                    <th>Date Ordered</th>
-                    <th>Order Status</th>
-                    <th>Status Updated</th>
-                </tr>
-                @foreach (var item in Model)
-                {
+            <table id="main" class="table" >
+                <thead>
                     <tr>
-                        <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new { id = item.Id }, null)</td>
-                        <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
-                        <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
+                        <th>Order Number</th>
+                        <th>Date Ordered</th>
+                        <th>Order Status</th>
+                        <th>Status Updated</th>
                     </tr>
-                }
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateOrder)))
+                            {
+                                <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new {id = item.Id}, null)</td>
+                            }
+                            else
+                            {
+                                <td>@Html.DisplayFor(modelItem => item.OrderNumber)</td>
+                            }
+                            <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
+                        </tr>
+                    }
+                </tbody>
             </table>
         </div>
     </div>
 </div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

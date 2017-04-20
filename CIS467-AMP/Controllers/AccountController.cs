@@ -160,7 +160,18 @@ namespace CIS467_AMP.Controllers
                     // code to set new user register permissions
                     /*var roleStore = new RoleStore<IdentityRole>(new ApplicationDbContext());
                     var roleManager = new RoleManager<IdentityRole>(roleStore);
-                    await roleManager.CreateAsync(new IdentityRole("CanApproveOrder")); */
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanApproveOrder));
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanCreateWorkOrder));
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanEditWorkOrder));
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanApproveWorkOrder));
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanCreateOrder));
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanCreateRequest));
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanApproveRequest));
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.CanCreateLogbookEntry)); 
+
+                    await roleManager.CreateAsync(new IdentityRole(RoleName.Administrator)); */
+
+                    //code to set user permissions
                     //await UserManager.AddToRoleAsync(user.Id, RoleName.CanApproveOrder);
                     await UserManager.AddToRoleAsync(user.Id, RoleName.CanCreateWorkOrder);
                     //await UserManager.AddToRoleAsync(user.Id, RoleName.CanEditWorkOrder);
@@ -172,8 +183,8 @@ namespace CIS467_AMP.Controllers
 
                     //await UserManager.AddToRoleAsync(user.Id, RoleName.Administrator); // actual setting of user permission
                     // end of user permissions
-                    await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
+                    //await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
+
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
                     // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);

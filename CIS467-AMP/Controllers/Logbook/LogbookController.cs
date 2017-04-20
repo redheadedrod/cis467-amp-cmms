@@ -45,36 +45,52 @@ namespace CIS467_AMP.Controllers.Logbook
             var status = _context.LogbookGeneralStatuses.ToList();
             var inventory = _context.AssetInventories.ToList();
             var workers = _context.Workers.ToList();
-
-
+            var worker = workers
+                    .SingleOrDefault(w => w.EmailAddress == User.Identity.Name)
+            ;
             var viewModel = new EntryViewModel
             {
+                Workers = workers,
                 LogbookGeneralStatuses = status,
                 AssetInventories = inventory,
-                Workers = workers
             };
+            if (worker != null)
+            {
+                viewModel.WorkerId = worker.Id;
+            }
             return View(viewModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(LogbookGeneral logbookGeneral)
+        public ActionResult Create(EntryViewModel dataModel)
         {
+            var workers = _context.Workers.ToList();
             if (!ModelState.IsValid)
             {
                 var status = _context.LogbookGeneralStatuses.ToList();
                 var inventory = _context.AssetInventories.ToList();
-                var workers = _context.Workers.ToList();
+
+                var worker = workers
+                    .SingleOrDefault(w => w.EmailAddress == User.Identity.Name)
+                ;
                 var viewModel = new EntryViewModel
                 {
+                    Workers = workers,
                     LogbookGeneralStatuses = status,
-                    AssetInventories = inventory,
-                    Workers = workers
+                    AssetInventories = inventory
                 };
+                if (worker != null)
+                {
+                    viewModel.WorkerId = worker.Id;
+                }
+
                 return View("Entry", viewModel);
             }
-            logbookGeneral.EnteredDateTime = DateTime.Now;
-            _context.LogbookGeneral.Add(logbookGeneral);
+            dataModel.LogbookGeneral.EnteredDateTime = DateTime.Now;
+            if (dataModel.WorkerId != null)
+                dataModel.LogbookGeneral.Worker = workers.Single(w => w.Id == dataModel.WorkerId); 
+            _context.LogbookGeneral.Add(dataModel.LogbookGeneral);
             _context.SaveChanges();
             return RedirectToAction("Index", "Logbook");
         }

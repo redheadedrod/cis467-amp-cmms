@@ -16,38 +16,46 @@
 @Html.Partial("_TitleAndLinks")
 <div class="row">
     <div class="col col-md-10">
-        <table class="table">
-            <tr>
-                <th>@Html.DisplayNameFor(m => m.StockId)</th>
-                <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Name)</th>
-                <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Number)</th>
-                <th>@Html.DisplayNameFor(m => m.MinRequired)</th>
-                <th>@Html.DisplayNameFor(m => m.OnHand)</th>
-                <th>@Html.DisplayNameFor(m => m.Reserved)</th>
-                <th>Place Order</th>
-            </tr>
-
-            @foreach (var item in Model)
-            {
-                var className = "active";
-                if (item.MinRequired > item.OnHand - item.Reserved || item.MinRequired > item.OnHand)
-                {
-                    className = "danger";
-                }
-                <tr class=@className>
-                    <td>@Html.DisplayFor(model => item.StockId)</td>
-                    <td>@Html.DisplayFor(model => item.ManufacturerPart.Name)</td>
-                    <td>@Html.DisplayFor(model => item.ManufacturerPart.Number)</td>
-                    <td>@Html.DisplayFor(model => item.MinRequired)</td>
-                    <td>@Html.DisplayFor(model => item.OnHand)</td>
-                    <td>@Html.DisplayFor(model => item.Reserved)</td>
-                    <td>@Html.CheckBox(item.StockId)</td>
-
+        <table class="table" id="inventory">
+            <thead>
+                <tr>
+                    <th>@Html.DisplayNameFor(m => m.StockId)</th>
+                    <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Name)</th>
+                    <th>@Html.DisplayNameFor(m => m.ManufacturerPart.Number)</th>
+                    <th>@Html.DisplayNameFor(m => m.MinRequired)</th>
+                    <th>@Html.DisplayNameFor(m => m.OnHand)</th>
+                    <th>@Html.DisplayNameFor(m => m.Reserved)</th>
                 </tr>
-            }
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    var className = "active";
+                    if (item.MinRequired > item.OnHand - item.Reserved || item.MinRequired > item.OnHand)
+                    {
+                        className = "danger";
+                    }
+                    <tr class=@className>
+                        <td>@Html.DisplayFor(model => item.StockId)</td>
+                        <td>@Html.DisplayFor(model => item.ManufacturerPart.Name)</td>
+                        <td>@Html.DisplayFor(model => item.ManufacturerPart.Number)</td>
+                        <td>@Html.DisplayFor(model => item.MinRequired)</td>
+                        <td>@Html.DisplayFor(model => item.OnHand)</td>
+                        <td>@Html.DisplayFor(model => item.Reserved)</td>
 
+                    </tr>
+                }
+            </tbody>
         </table>
     </div>
 </div>
+@section scripts
+{
+    <script>
+        $(document).ready(function () {
+            $('#inventory').DataTable();
+        });
+    </script>
+}
 
 

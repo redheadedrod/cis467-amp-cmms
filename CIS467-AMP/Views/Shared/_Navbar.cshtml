@@ -1,4 +1,5 @@
-﻿<div class="navbar navbar-inverse navbar-fixed-top" id="topNav">
+﻿@using CIS467_AMP.Models
+<div class="navbar navbar-inverse navbar-fixed-top" id="topNav">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -10,52 +11,73 @@
         </div>
         <div class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-                @*<li class="dropdown">
+                @if (User.IsInRole(RoleName.Administrator))
+                {
+                <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown">
                         Admin
                         <span class="caret"></span>
                     </a>
                     <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Home", "Index", "Admin")</li>
-                        <li>@Html.ActionLink("Pending Work Orders", "PendingWorkOrder", "Admin")</li>
-                    </ul>
-                </li>*@
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">
-                        Stock Room
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Inventory", "Inventory", "StockRoom")</li>
-                        <li>@Html.ActionLink("Order Request", "OrderRequest", "StockRoom")</li>
-                        <li>@Html.ActionLink("View Parts Requests", "PartRequest", "StockRoom")</li>
-                        <li>@Html.ActionLink("Low Quanty Inventory", "LowOrderRequest", "StockRoom")</li>
-                        <li>@Html.ActionLink("Create Part Request", "NewPartsRequest", "Maintenance")</li>
+                        <li>@Html.ActionLink("Add System News", "NewsEntry", "Admin")</li>
+                        <li>@Html.ActionLink("Parts Requests", "StockroomOrderRequests", "Admin")</li>
+                        <li>@Html.ActionLink("Work orders", "Maintenance", "Admin")</li>
+                        <li>@Html.ActionLink("Order Requests", "StockroomOrders", "Admin")</li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">
-                        Maintenance
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Work Order Listing", "Index", "Maintenance")</li>
-                        <li>@Html.ActionLink("Create New Work Order", "NewWorkOrder", "Maintenance")</li>
-                    </ul>
-                </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown">
-                        Logbooks
-                        <span class="caret"></span>
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li>@Html.ActionLink("Main Logbook", "Index", "Logbook")</li>
-                        <li>@Html.ActionLink("Make New Logbook Entry", "Entry", "Logbook")</li>
-                        <li>@Html.ActionLink("Work Order Status", "Maintenance", "Logbook")</li>
-                        <li>@Html.ActionLink("Order Status", "StockroomOrders", "Logbook")</li>
-                        <li>@Html.ActionLink("Part Request Status", "StockroomOrderRequests", "Logbook")</li>
-                    </ul>
-                </li>
+                }
+                @if (User.Identity.IsAuthenticated)
+                {
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Stock Room
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Inventory", "Inventory", "StockRoom")</li>
+                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateOrder)))
+                            {
+                                <li>@Html.ActionLink("Order Request", "OrderRequest", "StockRoom")</li>
+                                <li>@Html.ActionLink("View Parts Requests", "PartRequest", "StockRoom")</li>
+                                <li>@Html.ActionLink("Low Quantity Inventory", "LowOrderRequest", "StockRoom")</li>
+                            }
+                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateRequest)))
+                            {
+                                <li>@Html.ActionLink("Create Part Request", "NewPartsRequest", "Maintenance")</li>
+                            }
+                        </ul>
+                    </li>
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Maintenance
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Work Order Listing", "Index", "Maintenance")</li>
+                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateWorkOrder)))
+                            {
+                                <li>@Html.ActionLink("Create New Work Order", "NewWorkOrder", "Maintenance")</li>
+                            }
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown">
+                            Logbooks
+                            <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>@Html.ActionLink("Main Logbook", "Index", "Logbook")</li>
+                            @if (User.IsInRole(RoleName.CanCreateLogbookEntry) || User.IsInRole(RoleName.Administrator))
+                            {
+                                <li>@Html.ActionLink("Make New Logbook Entry", "Entry", "Logbook")</li>
+                            }
+                            <li>@Html.ActionLink("Work Order Status", "Maintenance", "Logbook")</li>
+                            <li>@Html.ActionLink("Order Status", "StockroomOrders", "Logbook")</li>
+                            <li>@Html.ActionLink("Part Request Status", "StockroomOrderRequests", "Logbook")</li>
+                        </ul>
+                    </li>
+                }
                 <li>@Html.ActionLink("About", "About", "Home")</li>
             </ul>
             @Html.Partial("_LoginPartial")

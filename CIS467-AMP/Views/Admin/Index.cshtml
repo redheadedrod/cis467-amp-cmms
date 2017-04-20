@@ -1,11 +1,13 @@
-﻿@{
+﻿@using CIS467_AMP.Models
+@model IEnumerable<CIS467_AMP.Models.Admin.SystemNews>
+@{
     /**
-     * Author: Jason Bensel
-     * Stockroom main page
+     * Author: Rodney Fulk
+     * General logbook
      */
 
     //Sets tab bar title
-    ViewBag.Title = "Administration";
+    ViewBag.Title = "System News";
 
     //Uses this scaffolding as main layout --
     //can change later, but the below cshtml is called by RenderBody() in _layout.cshmtl
@@ -13,3 +15,44 @@
 }
 
 @Html.Partial("_TitleAndLinks")
+<div class="row">
+
+    <div>
+        <div class="col col-md-10">
+            @if (Model == null)
+            {
+                <p>No current news</p>
+            }
+            else
+            {
+
+
+                <table id="main" class="table">
+                    <thead>
+                    <tr>
+                        <th>Date Entered</th>
+                        <th>News</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.EnteredDateTime)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Entry)</td>
+                        </tr>
+                    }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

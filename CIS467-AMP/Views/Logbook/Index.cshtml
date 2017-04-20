@@ -1,4 +1,5 @@
-﻿@model IEnumerable<CIS467_AMP.Models.Logbook.LogbookGeneral>
+﻿@using CIS467_AMP.Models
+@model IEnumerable<CIS467_AMP.Models.Logbook.LogbookGeneral>
 @{
     /**
      * Author: Rodney Fulk
@@ -17,44 +18,46 @@
 <div class="row">
 
     <div>
-        @*Following Here for notes more than anything*@
-        @*@{
-                var className = Model.MoreText.Count > 1 ? "popular" : null;
-
-            }*@
-
-        @*<h2 class ="@className">@Model.Text</h2> *@
-        @* <ul>
-                @foreach (var order in Model)
-                {
-                    <li>@order.Order</li>
-
-                }
-            </ul>*@
         <div class="col col-md-10">
-            <table class="table">
-                <tr>
-                    <th>Date Entered</th>
-                    <th>Entered by</th>
-                    <th>Asset</th>
-                    <th>Topic</th>
-                    <th>Entry</th>
-                </tr>
-                @foreach (var item in Model)
-                {
+            <table id="main" class="table">
+                <thead>
                     <tr>
-                        <td>@Html.DisplayFor(modelItem => item.EnteredDateTime)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Worker.LastName), @Html.DisplayFor(modelItem => item.Worker.FirstName)</td>
-                        <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.LogbookGeneralStatus.Name)</td>
-                        <td>@Html.DisplayFor(modelItem => item.Entry)</td>
+                        <th>Date Entered</th>
+                        <th>Entered by</th>
+                        <th>Asset</th>
+                        <th>Topic</th>
+                        <th>Entry</th>
                     </tr>
-                }
+                </thead>
+              
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.EnteredDateTime)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Worker.LastName), @Html.DisplayFor(modelItem => item.Worker.FirstName)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AssetInventory.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.LogbookGeneralStatus.Name)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Entry)</td>
+                        </tr>
+                    }
+                </tbody>
             </table>
             @using (Html.BeginForm("Entry", "Logbook"))
             {
-                <button type="submit" class="btn btn-primary">Make New Entry</button>
+                if (User.IsInRole(RoleName.CanCreateLogbookEntry) || User.IsInRole(RoleName.Administrator))
+                {
+                    <button type="submit" class="btn btn-primary">Make New Entry</button>
+                }
             }
         </div>
     </div>
 </div>
+@section scripts
+{
+    <script>
+        $(document).ready(function() {
+             $('#main').DataTable();
+        });
+    </script>
+}

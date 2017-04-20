@@ -8,7 +8,7 @@ namespace CIS467_AMP
         public static void RegisterGlobalFilters(GlobalFilterCollection filters)
         {
             filters.Add(new HandleErrorAttribute());
-            //filters.Add(new AuthorizeAttribute()); // Do not allow anonymous users Anywhere (use tag to allow)
+            filters.Add(new AuthorizeAttribute()); // Do not allow anonymous users Anywhere (use tag to allow)
         }
     }
 }
