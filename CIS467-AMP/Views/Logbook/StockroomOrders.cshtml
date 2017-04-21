@@ -31,14 +31,14 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            @if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateOrder)))
+                            @*@if ((User.IsInRole(RoleName.Administrator)) || (User.IsInRole(RoleName.CanCreateOrder)))
                             {
                                 <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new {id = item.Id}, null)</td>
                             }
                             else
-                            {
+                            { *@
                                 <td>@Html.DisplayFor(modelItem => item.OrderNumber)</td>
-                            }
+                            @*}*@
                             <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
                             <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
                             <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
