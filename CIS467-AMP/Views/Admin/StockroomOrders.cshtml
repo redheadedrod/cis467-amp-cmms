@@ -31,7 +31,8 @@
                     @foreach (var item in Model)
                     {
                         <tr>
-                            <td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new {id = item.Id}, null)</td>
+                            @*<td>@Html.ActionLink(item.OrderNumber.ToString(), "Order", "StockRoom", new {id = item.Id}, null)</td>*@
+                            <td>@Html.DisplayFor(modelItem => item.OrderNumber)</td>
                             <td>@Html.DisplayFor(modelItem => item.OrderPlaced)</td>
                             <td>@Html.DisplayFor(modelItem => item.StockRoomOrderStatus.Name)</td>
                             <td>@Html.DisplayFor(modelItem => item.StatusLastUpDate)</td>
